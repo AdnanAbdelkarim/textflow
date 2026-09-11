@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pre-Processing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}"> 
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- Core foundation. preprocessing.js calls window.isDatasetLabeled() at
+       init; without state.js the page threw immediately and nothing on the
+       Pre-Processing tab worked. -->
+  <script src="{{ url_for('static', filename='js/core/debug.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/utils.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/state.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/sessionCache.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/preprocessing.js') }}"></script>
+  <style>
+    .preproc-overlay{
+        position:fixed;inset:0;
+        background:rgba(0,0,0,0.45);
+        display:flex;align-items:center;justify-content:center;
+        z-index:9999;
+        opacity:0;pointer-events:none;
+        transition:opacity 0.25s ease;
+    }
+    .preproc-overlay.visible{opacity:1;pointer-events:all;}
+    
+    .preproc-modal{
+        background:var(--color-background-primary, #fff);
+        border-radius:16px;
+        padding:2.25rem 2.25rem 1.75rem;
+        width:440px;max-width:90vw;
+        border:0.5px solid rgba(0,0,0,0.1);
+    }
+    
+    .preproc-icon{
+        width:48px;height:48px;border-radius:12px;
+        background:#E6F1FB;
+        display:flex;align-items:center;justify-content:center;
+        margin:0 auto 1.25rem;
+    }
+    
+    .preproc-title{
+        font-size:17px;font-weight:600;
+        color:#0f172a;
+        text-align:center;margin-bottom:4px;
+    }
+    
+    .preproc-methods{
+        font-size:12.5px;color:#64748b;
+        text-align:center;margin-bottom:1.75rem;
+        letter-spacing:0.01em;
+    }
+    
+    .preproc-steps{
+        display:flex;flex-direction:column;
+        gap:8px;margin-bottom:1.75rem;
+    }
+    
+    .preproc-step{
+        display:flex;align-items:center;gap:12px;
+        padding:10px 14px;
+        border-radius:10px;
+        background:#f8fafc;
+        border:0.5px solid #e2e8f0;
+        transition:background 0.3s,border-color 0.3s;
+    }
+    
+    .preproc-step.ps-active{
+        background:#EFF6FF;
+        border-color:#BFDBFE;
+    }
+    
+    .preproc-step.ps-done{
+        opacity:0.55;
+    }
+    
+    .ps-dot{
+        width:26px;height:26px;border-radius:50%;
+        display:flex;align-items:center;justify-content:center;
+        flex-shrink:0;font-size:11px;font-weight:600;
+        border:0.5px solid #e2e8f0;
+        background:#f1f5f9;color:#94a3b8;
+        transition:all 0.3s;
+    }
+    
+    .ps-dot.dot-active{
+        background:#2563EB;color:#fff;border-color:#2563EB;
+    }
+    
+    .ps-dot.dot-done{
+        background:#EFF6FF;color:#2563EB;border-color:#BFDBFE;
+    }
+    
+    @keyframes ps-pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .dot-active{animation:ps-pulse 1.5s ease-in-out infinite;}
+    
+    .ps-text{}
+    .ps-label{
+        font-size:13px;font-weight:500;color:#1e293b;
+    }
+    .preproc-step.ps-active .ps-label{color:#1d4ed8;}
+    .ps-sublabel{
+        font-size:11px;color:#94a3b8;margin-top:2px;
+    }
+    .preproc-step.ps-active .ps-sublabel{color:#3b82f6;}
+    
+    .preproc-bar-header{
+        display:flex;justify-content:space-between;
+        margin-bottom:8px;
+    }
+    .preproc-bar-step-label{font-size:12px;color:#64748b;}
+    .preproc-bar-pct{font-size:13px;font-weight:600;color:#2563EB;}
+    
+    .preproc-track{
+        height:6px;background:#f1f5f9;
+        border-radius:999px;overflow:hidden;
+        border:0.5px solid #e2e8f0;
+    }
+    .preproc-fill{
+        height:100%;border-radius:999px;
+        background:#2563EB;
+        transition:width 0.12s linear;
+    }
+    .preproc-eta{
+        font-size:11px;color:#94a3b8;
+        text-align:right;margin-top:6px;
+    }
+    </style>
+</head>
+<body>
+  <div class="sticky-header">
+    <div class="tabs">
+      <a href="{{ url_for('index') }}" class="tab-button {% if request.endpoint == 'index' %}active{% endif %}">Input</a>
+      <a href="{{ url_for('overview') }}" class="tab-button {% if request.endpoint == 'overview' %}active{% endif %}">Overview</a>
+      <a href="{{ url_for('visualizations') }}" class="tab-button {% if request.endpoint == 'visualizations' %}active{% endif %}">Visualizations</a>
+      <a href="{{ url_for('advanced') }}" class="tab-button {% if request.endpoint == 'advanced' %}active{% endif %}">Advanced Analysis</a>
+      <a href="{{ url_for('preprocessing') }}" class="tab-button {% if request.endpoint == 'preprocessing' %}active{% endif %}">Pre-Processing</a>
+      <a href="{{ url_for('predictive') }}" class="tab-button {% if request.endpoint == 'predictive' %}active{% endif %}">Predictive Modelling</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Text Pre-Processing Pipeline</h2>
+    
+    <div class="preprocessing-controls">
+      <!-- Text Normalization Section -->
+      
+
+      <!-- Feature Extraction Section -->
+      <div class="control-section">
+        <h3>Feature Extraction</h3>
+        <div class="checkbox-group">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="useTF" name="feature">
+            <span class="checkmark"></span>
+            Term Frequency (TF)
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="useTFIDF" name="feature">
+            <span class="checkmark"></span>
+            TF-IDF
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="useWord2Vec" name="feature">
+            <span class="checkmark"></span>
+            Word2Vec
+          </label>
+        </div>
+        <div class="info-text">Note: Only one feature extraction method can be used at a time</div>
+      </div>
+
+      <div class="control-section" id="normalizationSection">
+        <h3>Text Normalization</h3>
+        <div class="info-text" id="normalizationDisabledMessage" style="color: #999; font-style: italic;">
+            Available only for TF and TF-IDF feature extraction methods
+        </div>
+        <div class="checkbox-group" id="normalizationCheckboxes" style="display: none;">
+            <label class="checkbox-wrapper">
+                <input type="checkbox" id="useStemming" name="normalization">
+                <span class="checkmark"></span>
+                Apply Stemming
+            </label>
+            <label class="checkbox-wrapper">
+                <input type="checkbox" id="useLemmatization" name="normalization">
+                <span class="checkmark"></span>
+                Apply Lemmatization
+            </label>
+        </div>
+        <div class="info-text" id="normalizationNote" style="display: none;">
+            Note: Stemming and Lemmatization cannot be used together
+        </div>
+    </div>
+
+      <!-- Class Imbalance Section -->
+      <div class="control-section">
+        <h3>Class Imbalance Handling</h3>
+        <div class="checkbox-group">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="useSMOTE" name="imbalance">
+            <span class="checkmark"></span>
+            SMOTE (Synthetic Minority Over-sampling)
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="useOversampling" name="imbalance">
+            <span class="checkmark"></span>
+            Random Oversampling
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="useUndersampling" name="imbalance">
+            <span class="checkmark"></span>
+            Random Undersampling
+          </label>
+        </div>
+        <div class="info-text">Note: Only one class imbalance method can be applied at a time</div>
+      </div>
+
+      <!-- Vectorization Section -->
+      <div class="control-section">
+        <h3>Vectorization</h3>
+        <div class="vector-controls">
+          <label for="vectorSize">Vector Size (% of vocabulary):</label>
+          <input type="range" id="vectorSize" min="10" max="100" value="100" class="vector-slider">
+          <span id="vectorSizeValue">100%</span>
+          <div class="vector-info">
+            <span id="vocabSize">Vocabulary size: calculating...</span>
+            <span id="actualVectorSize">Actual vector size: -</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="preprocessBtn" class="styled-button primary">Apply Pre-Processing</button>
+        <button id="resetBtn" class="styled-button secondary">Reset</button>
+      </div>
+
+      <!-- Results Display -->
+      <div id="preprocessingResults" class="results-section" style="display: none;">
+        <h3>Pre-Processing Results</h3>
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Original Text Sample</h4>
+            <div id="originalText" class="text-sample"></div>
+          </div>
+          <div class="result-card">
+            <h4>Processed Text Sample</h4>
+            <div id="processedText" class="text-sample"></div>
+          </div>
+          <div class="result-card">
+            <h4>Vector Information</h4>
+            <div id="vectorInfo" class="vector-stats"></div>
+          </div>
+        </div>
+        <div class="proceed-section">
+          <button id="proceedToModeling" class="styled-button success">Proceed to Predictive Modeling</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="copyright">
+    © 2026 Adnan Abdelkarim, Uzair Ahmad. All rights reserved.
+  </footer>
+</body>
+</html>

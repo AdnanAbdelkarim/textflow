@@ -1,0 +1,18 @@
+services:
+  textflow:
+    build: .
+    image: textflow:latest
+    ports:
+      - "${TEXTFLOW_PORT:-5000}:5000"
+    environment:
+      # Caps that bound per-request work; see routes/nlp.py.
+      TOPIC_MAX_DOCS: "5000"
+      TOPIC_MAX_FEATURES: "10000"
+      SPACY_MAX_LENGTH: "1000000"
+    volumes:
+      # Keeps downloaded pretrained BERT weights across container restarts.
+      - hf-cache:/home/textflow/.cache/huggingface
+    restart: unless-stopped
+
+volumes:
+  hf-cache:

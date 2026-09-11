@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Predictive Modelling</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}"> 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="sticky-header">
+    <div class="tabs">
+      <a href="{{ url_for('index') }}" class="tab-button {% if request.endpoint == 'index' %}active{% endif %}">Input</a>
+      <a href="{{ url_for('overview') }}" class="tab-button {% if request.endpoint == 'overview' %}active{% endif %}">Overview</a>
+      <a href="{{ url_for('visualizations') }}" class="tab-button {% if request.endpoint == 'visualizations' %}active{% endif %}">Visualizations</a>
+      <a href="{{ url_for('advanced') }}" class="tab-button {% if request.endpoint == 'advanced' %}active{% endif %}">Advanced Analysis</a>
+      <a href="{{ url_for('preprocessing') }}" class="tab-button {% if request.endpoint == 'preprocessing' %}active{% endif %}">Pre-Processing</a>
+      <a href="{{ url_for('predictive') }}" class="tab-button {% if request.endpoint == 'predictive' %}active{% endif %}" id="predictiveTab">Predictive Modelling</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="modeling-header">
+      <h2>Predictive Modeling</h2>
+      <div id="preprocessingInfo" class="preprocessing-info-card">
+        <!-- Dynamic preprocessing info will be inserted here -->
+      </div>
+    </div>
+
+    <!-- Model Selection -->
+    <div class="control-panel">
+      <div class="panel-section">
+          <h3>Model Selection</h3>
+          
+          <!-- Two Column Layout for Models -->
+          <div class="models-two-column">
+              
+              <!-- Left Column: Traditional ML -->
+              <div class="model-column">
+                  <h4 class="column-title">Traditional</h4>
+                  <div class="model-checkboxes">
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="nbModel" checked>
+                          <div class="checkbox-content">
+                              <span class="model-name">Naive Bayes</span>
+                              <span class="model-desc">Fast, works well with text data</span>
+                          </div>
+                      </label>
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="lrModel">
+                          <div class="checkbox-content">
+                              <span class="model-name">Logistic Regression</span>
+                              <span class="model-desc">Good for binary classification</span>
+                          </div>
+                      </label>
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="knnModel">
+                          <div class="checkbox-content">
+                              <span class="model-name">K-Nearest Neighbors</span>
+                              <span class="model-desc">Instance-based learning</span>
+                          </div>
+                      </label>
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="svmModel">
+                          <div class="checkbox-content">
+                              <span class="model-name">SVM</span>
+                              <span class="model-desc">Effective for high-dimensional data</span>
+                          </div>
+                      </label>
+                  </div>
+              </div>
+              
+              <!-- Right Column: Transformer -->
+              <div class="model-column">
+                  <h4 class="column-title">Transformer</h4>
+                  <div class="model-checkboxes">
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="bertTinyModel">
+                          <div class="checkbox-content">
+                              <span class="model-name">BERT-Tiny</span>
+                              <span class="model-desc">Lightweight transformer model</span>
+                          </div>
+                      </label>
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="bertSmallModel">
+                          <div class="checkbox-content">
+                              <span class="model-name">BERT-Small</span>
+                              <span class="model-desc">Compact BERT variant</span>
+                          </div>
+                      </label>
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="distilbertModel">
+                          <div class="checkbox-content">
+                              <span class="model-name">Distill-BERT</span>
+                              <span class="model-desc">Distilled BERT, faster inference</span>
+                          </div>
+                      </label>
+                      <label class="checkbox-card">
+                          <input type="checkbox" id="bertModel">
+                          <div class="checkbox-content">
+                              <span class="model-name">BERT</span>
+                              <span class="model-desc">Full BERT base model</span>
+                          </div>
+                      </label>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+      
+      <div class="panel-section">
+          <h3>Training Configuration</h3>
+          <div class="config-controls">
+              <div class="config-item">
+                  <label for="testSize">Test Size:</label>
+                  <input type="range" id="testSize" min="10" max="90" value="20" class="config-slider">
+                  <span id="testSizeValue">20%</span>
+              </div>
+              <div class="config-item">
+                  <label for="randomState">Random State:</label>
+                  <input type="number" id="randomState" min="0" max="100" value="42" class="config-input">
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <div class="action-section">
+      <button id="runModel" class="styled-button primary large">
+        <span class="button-icon"></span>
+        Run Selected Models
+      </button>
+    </div>
+
+    <!-- Unified Results Container -->
+    <div id="unifiedResults" class="unified-results" style="display: none;">
+        
+      <!-- Horizontal Tab Headers -->
+      <div class="tabs-header-container">
+          <div class="section-header" data-section="accuracy" onclick="expandSection('accuracy')">
+              <h4>Accuracy Metrics</h4>
+          </div>
+          <div class="section-header" data-section="report" onclick="expandSection('report')">
+              <h4>Classification Report</h4>
+          </div>
+          <div class="section-header" data-section="matrix" onclick="expandSection('matrix')">
+              <h4>Confusion Matrix</h4>
+          </div>
+          <div class="section-header" data-section="roc" onclick="expandSection('roc')">
+              <h4>ROC Curve Comparison</h4>
+          </div>
+          <div class="section-header" data-section="misclassified" onclick="expandSection('misclassified')">
+              <h4>Misclassified Docs</h4>
+          </div>
+      </div>
+
+      <!-- Expanded Content Area (Below All Tabs) -->
+      <div class="expanded-content-area">
+          <div id="accuracy-content" class="section-content-panel">
+              <div id="accuracyContent"></div>
+          </div>
+          <div id="report-content" class="section-content-panel">
+              <div id="reportContent"></div>
+          </div>
+          <div id="matrix-content" class="section-content-panel">
+              <div id="matrixContent"></div>
+          </div>
+          <div id="roc-content" class="section-content-panel">
+              <div id="rocContent"></div>
+          </div>
+          <div id="misclassified-content" class="section-content-panel">
+              <div id="misclassifiedContent"></div>
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/core/debug.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/utils.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/state.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  <!-- ADD: Dependencies for predictive.js -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- ADD: Predictive page logic -->
+  <script src="{{ url_for('static', filename='js/predictive.js') }}"></script>
+  <footer class="copyright">
+    © 2026 Adnan Abdelkarim, Uzair Ahmad. All rights reserved.
+  </footer>
+</body>
+</html>

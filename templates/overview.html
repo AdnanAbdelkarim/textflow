@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Overview - Text Analysis Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}"> 
+
+</head>
+<body>
+
+  <div class="sticky-header">
+    <div class="tabs">
+      <a href="{{ url_for('index') }}" class="tab-button {% if request.endpoint == 'index' %}active{% endif %}">Input</a>
+      <a href="{{ url_for('overview') }}" class="tab-button {% if request.endpoint == 'overview' %}active{% endif %}">Overview</a>
+      <a href="{{ url_for('visualizations') }}" class="tab-button {% if request.endpoint == 'visualizations' %}active{% endif %}">Visualizations</a>
+      <a href="{{ url_for('advanced') }}" class="tab-button {% if request.endpoint == 'advanced' %}active{% endif %}">Advanced Analysis</a>
+      <a href="{{ url_for('preprocessing') }}" class="tab-button {% if request.endpoint == 'preprocessing' %}active{% endif %}">Pre-Processing</a>
+      <a href="{{ url_for('predictive') }}" class="tab-button {% if request.endpoint == 'predictive' %}active{% endif %}" style="display: none;" id="predictiveTab">Predictive Modelling</a>
+    </div>
+  </div>
+
+  <h2>Text Overview</h2>
+  <p class="section-description">Quick summary of your input text, including counts and sentiment score.</p>
+
+  <div class="metrics-grid">
+    <div class="metric-card">Total Words<br><span id="totalWords">--</span></div>
+    <div class="metric-card">Unique Words<br><span id="uniqueWords">--</span></div>
+    <div class="metric-card">Sentiment Score<br><span id="sentimentScore">--</span></div>
+    <div class="metric-card">Lexical Diversity (TTR)<br><span id="vocabStats">--</span></div>
+  </div>
+
+  <div class="export-controls" style="margin-top: 40px; text-align: center;">
+    <button onclick="exportToCSV()" class="btn-blue">Export as CSV</button>
+    <button onclick="window.print()" class="btn-blue">Print / Export as PDF</button>
+  </div>
+
+
+<!-- Phase 5: foundation -->
+<script src="{{ url_for('static', filename='js/core/debug.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/api.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/utils.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/state.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/sessionCache.js') }}"></script>
+
+<!-- UI utilities -->
+<script src="{{ url_for('static', filename='js/ui/forms.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ui/tabs.js') }}"></script>
+
+<!-- Page initializer -->
+<script src="{{ url_for('static', filename='js/pages/overview.js') }}"></script>
+
+<!-- Main script -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+<footer class="copyright">
+  © 2026 Adnan Abdelkarim, Uzair Ahmad. All rights reserved.
+</footer>
+</body>
+</html>

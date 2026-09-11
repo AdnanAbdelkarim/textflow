@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Analysis - Input</title>
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}"> -->
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/tabs.css') }}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}"> 
+  <!-- External libs (deferred, in order) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script defer src="https://unpkg.com/mammoth@1.6.0/mammoth.browser.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/docx-preview@0.3.6/dist/docx-preview.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="sticky-header">
+    <div class="tabs">
+      <a href="{{ url_for('index') }}" class="tab-button {% if request.endpoint == 'index' %}active{% endif %}">Input</a>
+      <a href="{{ url_for('overview') }}" class="tab-button {% if request.endpoint == 'overview' %}active{% endif %}">Overview</a>
+      <a href="{{ url_for('visualizations') }}" class="tab-button {% if request.endpoint == 'visualizations' %}active{% endif %}">Visualizations</a>
+      <a href="{{ url_for('advanced') }}" class="tab-button {% if request.endpoint == 'advanced' %}active{% endif %}">Advanced Analysis</a>
+      <a href="{{ url_for('preprocessing') }}" class="tab-button {% if request.endpoint == 'preprocessing' %}active{% endif %}">Pre-Processing</a>
+      <a href="{{ url_for('predictive') }}" class="tab-button {% if request.endpoint == 'predictive' %}active{% endif %}" style="display: none;" id="predictiveTab">Predictive Modelling</a>
+    </div>
+  </div>
+
+  <!-- Input section (Paste + Upload side by side) -->
+  <div class="input-wrapper">
+    <div class="input-left">
+      <label class="section-label"><span>Paste your text here:</span></label>
+      <div class="info-box">
+        <strong>Note:</strong> Maximum allowed input is 1,000,000 words.
+      </div>      
+      <textarea id="textInput" placeholder="Paste your text here..."></textarea>
+      <p id="liveWordCount" class="word-counter">Words: 0 / 1,000,000</p>
+    </div>
+
+    <div class="input-right">
+      <label class="section-label"><span>Upload text file:</span></label>
+      <div class="info-box">
+        <strong>Note:</strong> Accepted formats are .txt, .docx, .PDF - Max size: 10 MB.
+      </div>      
+      <div class="upload-box">
+        <input type="file" id="fileInput" accept=".txt,.docx,.pdf,.csv,.xlsx">
+        <p class="file-note">Accepted formats: .txt, .docx, .pdf, .csv, .xlsx</p>
+      </div>
+    </div>
+    
+    <div class="input-right">
+      <label class="section-label"><span>Or enter a URL:</span></label>
+      <input type="text" id="urlInput" placeholder="https://raw.-----.------.txt" style="width: 80%;">
+      <button id='urlClickBtn' onclick="fetchURLText()">Analyze URL</button>
+    </div>
+    
+  </div>
+
+  <!-- Analyze button -->
+  <div class="analyze-button-wrapper">
+    <button id="analyzeButton">Analyze</button>
+    <div id="loadingSpinner" class="spinner hidden">Analyzing...</div>
+  </div>
+  
+  <!-- Configure PDF.js worker AFTER libs are ready -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
+      }
+    });
+    
+  </script>
+
+  <!-- All JavaScript loaded at end of body for guaranteed DOM availability -->
+
+<!-- External libraries (if any are loaded via CDN, keep them here too) -->
+<!-- e.g., Chart.js, D3, Papa Parse - only if used on the input page -->
+
+<!-- Phase 5: foundation -->
+<script src="{{ url_for('static', filename='js/core/debug.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/api.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/utils.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/state.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core/sessionCache.js') }}"></script>
+
+<!-- Phase 5: file handler -->
+<script src="{{ url_for('static', filename='js/core/fileHandler.js') }}"></script>
+
+<!-- Phase 5: UI utilities (forms.js used for live word count on input page) -->
+<script src="{{ url_for('static', filename='js/ui/forms.js') }}"></script>
+
+<!-- Page initializers - loaded everywhere so navigation works -->
+<script src="{{ url_for('static', filename='js/pages/overview.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/visualizations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/advanced.js') }}"></script>
+
+<!-- Main script (auto-init via temporary hotfix) -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+<footer class="copyright">
+  © 2026 Adnan Abdelkarim, Uzair Ahmad. All rights reserved.
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Analysis - Text Analysis Dashboard</title>
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}"> -->
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/tabs.css') }}"> -->
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/advanced.css') }}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}"> 
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  
+<body>
+
+  <div class="sticky-header">
+    <div class="tabs">
+      <a href="{{ url_for('index') }}" class="tab-button {% if request.endpoint == 'index' %}active{% endif %}">Input</a>
+      <a href="{{ url_for('overview') }}" class="tab-button {% if request.endpoint == 'overview' %}active{% endif %}">Overview</a>
+      <a href="{{ url_for('visualizations') }}" class="tab-button {% if request.endpoint == 'visualizations' %}active{% endif %}">Visualizations</a>
+      <a href="{{ url_for('advanced') }}" class="tab-button {% if request.endpoint == 'advanced' %}active{% endif %}">Advanced Analysis</a>
+      <a href="{{ url_for('preprocessing') }}" class="tab-button {% if request.endpoint == 'preprocessing' %}active{% endif %}">Pre-Processing</a>
+      <a href="{{ url_for('predictive') }}" class="tab-button {% if request.endpoint == 'predictive' %}active{% endif %}" style="display: none;" id="predictiveTab">Predictive Modelling</a>
+    </div>
+  </div>
+
+  <h2>Advanced Analysis</h2>
+  <p class="section-description">Deep insights into the text using NLP models and techniques.</p>
+  <div class="advanced-card">
+    <div class="ner-controls" style="margin-bottom: 15px; padding: 10px; background: #f5f5f5; border-radius: 6px;">
+      <div style="font-weight: bold; margin-bottom: 8px; color: #333;">NER Method:</div>
+      <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+        <label style="display: flex; align-items: center; cursor: pointer; white-space: nowrap;">
+          <input type="radio" name="nerMethod" value="both" checked 
+                 style="margin-right: 6px; accent-color: #0074cc;" onchange="updateNERMethod()">
+          <span>Both (spaCy + NLTK)</span>
+        </label>
+        <label style="display: flex; align-items: center; cursor: pointer; white-space: nowrap;">
+          <input type="radio" name="nerMethod" value="spacy" 
+                 style="margin-right: 6px; accent-color: #0074cc;" onchange="updateNERMethod()">
+          <span>Only spaCy</span>
+        </label>
+        <label style="display: flex; align-items: center; cursor: pointer; white-space: nowrap;">
+          <input type="radio" name="nerMethod" value="nltk" 
+                 style="margin-right: 6px; accent-color: #0074cc;" onchange="updateNERMethod()">
+          <span>Only NLTK</span>
+        </label>
+        <div style="display: flex; gap: 10px; margin-left: auto;">
+        </div>
+      </div>
+    </div>
+    <div id="nerResults">[Entities like people, organizations, locations will appear here]</div>
+  </div>
+  <div class="advanced-card">
+    <div id="sentimentResults">[Sentence-level sentiment will be shown here]</div>
+  </div>
+
+  <div class="advanced-card">
+    <div id="topicModeling">[Topics extracted from text]</div>
+  </div>
+
+  <div class="advanced-card">
+    <div id="ngramAnalysis">[N-gram frequency analysis]</div>
+  </div>
+
+  <div class="advanced-card">
+    <div id="classification">[Document type, label, or category]</div>
+  </div>
+
+  <!-- Phase 5: foundation -->
+  <script src="{{ url_for('static', filename='js/core/debug.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/utils.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/state.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/sessionCache.js') }}"></script>
+
+  <!-- UI utilities -->
+  <script src="{{ url_for('static', filename='js/ui/forms.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/ui/classification.js') }}"></script>
+
+  <!-- Visualizations (pieChart used by topic modeling) -->
+  <script src="{{ url_for('static', filename='js/visualizations/pieChart.js') }}"></script>
+
+  <!-- NLP modules (this page uses all three) -->
+  <script src="{{ url_for('static', filename='js/nlp/ner.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/nlp/sentiment.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/nlp/topicModeling.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/nlp/ngrams.js') }}"></script>
+
+  <!-- Page initializer -->
+  <script src="{{ url_for('static', filename='js/pages/advanced.js') }}"></script>
+
+  <!-- Main script -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  <footer class="copyright">
+    © 2026 Adnan Abdelkarim, Uzair Ahmad. All rights reserved.
+  </footer>
+</body>
+</html>

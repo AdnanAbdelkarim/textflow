@@ -1,0 +1,17 @@
+.git/
+.github/
+.venv/
+env311/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.vscode/
+experiments/
+results/
+logs/
+*.md
+!README.md
+Dockerfile
+.dockerignore
+docker-compose.yml
