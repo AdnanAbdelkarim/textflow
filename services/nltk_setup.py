@@ -3,11 +3,14 @@ NLP library setup and lazy loaders.
 
 Three independent loaders:
   - ensure_nltk_data() - call once at startup; downloads NLTK data only if missing
-  - get_nlp() - lazy-load spaCy model on first call (cached via lru_cache)
+  - get_nlp() - lazy-load spaCy model on first call (cached, and serialised
+    so that concurrent first callers share one load rather than each
+    starting their own)
   - get_afinn() - lazy-load AFINN sentiment lexicon on first call
 """
 import os
 import logging
+import threading
 from functools import lru_cache
 
 import nltk
@@ -37,8 +40,22 @@ def ensure_nltk_data():
             nltk.download(name, quiet=True)
 
 
-@lru_cache(maxsize=1)
+# lru_cache alone does not serialise concurrent first calls, so two callers
+# arriving together would each load their own copy of the transformer. That
+# matters here because the model is warmed up in a background thread at
+# startup: without this lock a request arriving during the warm-up would load
+# a second copy, doubling both the load time and the memory used.
+_nlp_lock = threading.Lock()
+
+
 def get_nlp():
+    """Return the spaCy NER model, loading it once on first use."""
+    with _nlp_lock:
+        return _load_nlp()
+
+
+@lru_cache(maxsize=1)
+def _load_nlp():
     """
     Lazy-load spaCy NER model. Returns cached instance after first call.
 
