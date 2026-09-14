@@ -145,7 +145,7 @@
         return;
       }
   
-      const displayTitle = className === 'all' ? 'All Data' : `Class ${className}`;
+      const displayTitle = className === 'all' ? 'All Data' : `Class ${typeof window.classDisplayName === 'function' ? window.classDisplayName(className) : className}`;
       networkContainer.innerHTML = `<h5 style="margin-top: 20px;text-align: center;">${displayTitle}</h5>`;
   
       const svgContainer = document.createElement('div');

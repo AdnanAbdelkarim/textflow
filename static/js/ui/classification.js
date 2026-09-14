@@ -26,7 +26,8 @@
             return `
               <div class="distribution-item">
                 <div class="distribution-label">
-                  <span class="class-name">Class ${className}</span>
+                  <span class="class-name">Class ${typeof window.classDisplayName === 'function'
+                    ? window.classDisplayName(className) : className}</span>
                   <span class="class-stats">${count} (${percentage}%)</span>
                 </div>
                 <div class="distribution-bar">

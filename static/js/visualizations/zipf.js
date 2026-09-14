@@ -45,7 +45,7 @@
         return;
       }
   
-      const displayLabel = className === 'all' ? 'All Data' : `Class ${className}`;
+      const displayLabel = className === 'all' ? 'All Data' : `Class ${typeof window.classDisplayName === 'function' ? window.classDisplayName(className) : className}`;
       container.innerHTML = `<h5 style="margin-top: 20px;text-align: center;">${displayLabel}</h5>`;
   
       const plotWrapper = document.createElement('div');

@@ -489,18 +489,23 @@ async function loadOriginalData() {
         // identical text are two training examples, and dropping them
         // silently discards data.
         const processed = [];
-        const seenMultiLabelTexts = new Set();
+        // A multi-label document appears once per active label, so the labels
+        // are collected back into one row carrying all of them.
+        const multiLabelByText = new Map();
 
         multiLabelData.forEach(row => {
           if (row.text && row.labelNames && Array.isArray(row.labelNames) && row.labelNames.length > 0) {
             const text = row.text.toString().trim();
-            if (!seenMultiLabelTexts.has(text)) {
-              seenMultiLabelTexts.add(text);
-              processed.push({
-                text: text,
-                label: row.labelNames[0].toString().trim()
-              });
+            if (!multiLabelByText.has(text)) {
+              const entry = { text: text, labels: [] };
+              multiLabelByText.set(text, entry);
+              processed.push(entry);
             }
+            const entry = multiLabelByText.get(text);
+            row.labelNames.forEach(name => {
+              const clean = name.toString().trim();
+              if (clean && !entry.labels.includes(clean)) entry.labels.push(clean);
+            });
           } else if (row.text && row.label && row.label !== "-1") {
             processed.push({
               text: row.text.toString().trim(),
@@ -509,9 +514,9 @@ async function loadOriginalData() {
           }
         });
 
-        const filtered = processed.filter(row => row.text && row.label);
+        const filtered = processed.filter(row => row.text && (row.label || (row.labels && row.labels.length)));
         console.log(`Predictive Modeling: ${filtered.length} documents ` +
-                    `(${seenMultiLabelTexts.size} multi-label documents collapsed)`);
+                    `(${multiLabelByText.size} multi-label documents)`);
         
         // Debug: Show all unique labels found
         const uniqueLabels = [...new Set(filtered.map(row => row.label))];
@@ -591,6 +596,77 @@ function displayUnifiedResults(selectedModels) {
   
 }
 
+// Multi-label results report Hamming loss and F1 averages rather than
+// accuracy, because a prediction can be partly correct.
+function renderMultiLabelMetrics(model, modelName, result) {
+  const m = result.metrics;
+  const stats = result.label_statistics || {};
+  const note = (result.resampling && result.resampling.note)
+    ? `<div class="info-box" style="margin-top:10px;">${result.resampling.note}</div>` : '';
+  return `
+      <div class="model-subsection">
+          <div class="model-subsection-header" onclick="toggleSubsection(this)">
+              <h5 style="color: ${getModelColor(model)};">
+                  <span class="model-icon">●</span> ${modelName}
+              </h5>
+              <span class="collapse-icon">▼</span>
+          </div>
+          <div class="model-subsection-content">
+              <div class="metrics-grid">
+                  <div class="metric-card primary">
+                      <div class="metric-value">${m.hamming_loss.toFixed(4)}</div>
+                      <div class="metric-label">Hamming Loss (lower is better)</div>
+                  </div>
+                  <div class="metric-card success">
+                      <div class="metric-value">${(m.f1_macro * 100).toFixed(2)}%</div>
+                      <div class="metric-label">F1-Macro</div>
+                  </div>
+                  <div class="metric-card warning">
+                      <div class="metric-value">${(m.f1_micro * 100).toFixed(2)}%</div>
+                      <div class="metric-label">F1-Micro</div>
+                  </div>
+                  <div class="metric-card info">
+                      <div class="metric-value">${(m.subset_accuracy * 100).toFixed(2)}%</div>
+                      <div class="metric-label">Exact Match</div>
+                  </div>
+              </div>
+              <p style="margin-top:10px;color:#555;">
+                ${result.labels.length} labels, ${stats.label_cardinality ? stats.label_cardinality.toFixed(2) : '-'}
+                labels per document on average. ${result.model_implementation}.
+              </p>
+              ${note}
+          </div>
+      </div>`;
+}
+
+function renderPerLabelTable(result) {
+  const rows = (result.per_label || []).map(p => `
+      <tr>
+        <td style="padding:4px 10px;">${p.label}</td>
+        <td style="padding:4px 10px;text-align:right;">${(p.precision * 100).toFixed(1)}%</td>
+        <td style="padding:4px 10px;text-align:right;">${(p.recall * 100).toFixed(1)}%</td>
+        <td style="padding:4px 10px;text-align:right;">${(p.f1 * 100).toFixed(1)}%</td>
+        <td style="padding:4px 10px;text-align:right;">${p.support}</td>
+      </tr>`).join('');
+  return `
+      <table style="width:100%;border-collapse:collapse;">
+        <thead><tr style="border-bottom:2px solid #ddd;text-align:left;">
+          <th style="padding:6px 10px;">Label</th>
+          <th style="padding:6px 10px;text-align:right;">Precision</th>
+          <th style="padding:6px 10px;text-align:right;">Recall</th>
+          <th style="padding:6px 10px;text-align:right;">F1</th>
+          <th style="padding:6px 10px;text-align:right;">Support</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+}
+
+function multiLabelNotice(what) {
+  return `<div class="info-box">${what} is defined for single-label
+          classification. This dataset is multi-label, so the per-label scores
+          are shown under Classification Report instead.</div>`;
+}
+
 function populateAccuracyMetrics(selectedModels) {
   const container = document.getElementById('accuracyContent');
   if (!container) return;
@@ -601,6 +677,12 @@ function populateAccuracyMetrics(selectedModels) {
       if (!result) return;
       
       const modelName = getModelName(model);
+
+      if (result.task === 'multilabel') {
+        html += renderMultiLabelMetrics(model, modelName, result);
+        return;
+      }
+
       const accuracy = (result.metrics.accuracy * 100).toFixed(2);
       const precision = (result.metrics.precision * 100).toFixed(2);
       const recall = (result.metrics.recall * 100).toFixed(2);
@@ -649,6 +731,14 @@ function populateClassificationReports(selectedModels) {
   selectedModels.forEach(model => {
       const result = allModelResults[model];
       if (!result) return;
+      if (result.task === 'multilabel') {
+        html += `<div class="model-subsection">` +
+                `<div class="model-subsection-header">` +
+                `<h5 style="color: ${getModelColor(model)};">` +
+                `<span class="model-icon">\u25cf</span> ${getModelName(model)}</h5></div>` +
+                `<div class="model-subsection-content">${renderPerLabelTable(result)}</div></div>`;
+        return;
+      }
       
       const modelName = getModelName(model);
       
@@ -681,7 +771,11 @@ function populateConfusionMatrices(selectedModels) {
   selectedModels.forEach(model => {
       const result = allModelResults[model];
       if (!result) return;
-      
+      if (result.task === 'multilabel') {
+        container.insertAdjacentHTML('beforeend', multiLabelNotice('A confusion matrix'));
+        return;
+      }
+
       const modelName = getModelName(model);
       const sortedLabels = sortLabels([...new Set([...result.y_true, ...result.y_pred])]);
       const matrix = buildConfusionMatrix(result.y_true, result.y_pred, sortedLabels);
@@ -724,7 +818,14 @@ function populateUnifiedROC(selectedModels) {
   }
   
   container.innerHTML = '';
-  
+
+  // An ROC curve needs one score per document against one positive class,
+  // which a multi-label prediction does not provide.
+  if (selectedModels.some(m => allModelResults[m] && allModelResults[m].task === 'multilabel')) {
+      container.innerHTML = multiLabelNotice('An ROC curve');
+      return;
+  }
+
   const binaryModels = selectedModels.filter(model => {
       const result = allModelResults[model];
       if (!result) return false;
@@ -951,7 +1052,12 @@ function populateMisclassifiedDocuments(selectedModels) {
   selectedModels.forEach(model => {
       const result = allModelResults[model];
       if (!result) return;
-      
+      if (result.task === 'multilabel') {
+        container.insertAdjacentHTML('beforeend',
+          multiLabelNotice('Misclassified document inspection'));
+        return;
+      }
+
       const sortedLabels = sortLabels([...new Set([...result.y_true, ...result.y_pred])]);
       
       // Only show misclassified for binary classification

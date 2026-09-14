@@ -167,9 +167,11 @@
         const methodNames = { spacy: 'spaCy', nltk: 'NLTK', both: 'spaCy + NLTK' };
         container.innerHTML = `<em>Analyzing named entities using ${methodNames[method]}...</em>`;
   
-        // 60s timeout - spaCy transformer can be slow on CPU for large texts
+        // The transformer model is warmed up when the server starts, so a
+        // request normally returns in seconds. The allowance is generous
+        // anyway, to cover a large corpus on a slow CPU.
         const nerCtrl = new AbortController();
-        const nerTimeout = setTimeout(() => nerCtrl.abort(), 60000);
+        const nerTimeout = setTimeout(() => nerCtrl.abort(), 180000);
 
         const response = await fetch('/ner', {
           method: 'POST',
@@ -304,8 +306,10 @@
         if (error.name === 'AbortError') {
           container.innerHTML = `
             <i style="color:#92400e;">
-              NER timed out. Your text may be too long for real-time analysis.<br>
-              Try uploading a smaller sample, or switch to NLTK-only mode (faster).
+              Named entity recognition timed out.<br>
+              If the server has just started, the model may still be loading; wait a
+              moment and open this tab again. Otherwise try a smaller sample, or
+              switch to NLTK-only mode, which is considerably faster.
             </i>`;
           return;
         }

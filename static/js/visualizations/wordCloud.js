@@ -71,7 +71,7 @@ console.log('wordCloud.js loaded');
       // 0. If this class is actively rendering (user switched away mid-render),
       //    show a waiting state instead of starting a duplicate d3-cloud run.
       if (_classRenderState.has(className)) {
-        const displayTitle = className === 'all' ? 'All Data' : `Class ${className}`;
+        const displayTitle = className === 'all' ? 'All Data' : `Class ${typeof window.classDisplayName === 'function' ? window.classDisplayName(className) : className}`;
         container.innerHTML = `
           <h5 style="margin-top:20px;text-align:center;">${displayTitle}</h5>
           <div style="text-align:center;padding:40px;color:#666;">
@@ -129,7 +129,7 @@ console.log('wordCloud.js loaded');
       }
   
       if (!classData || !classData.length) {
-        const displayTitle = className === 'all' ? 'All Data' : `Class ${className}`;
+        const displayTitle = className === 'all' ? 'All Data' : `Class ${typeof window.classDisplayName === 'function' ? window.classDisplayName(className) : className}`;
         container.innerHTML = `<h5 style="margin-top: 20px;text-align: center;">${displayTitle}</h5>
                               <div style="color: #666; margin-top: 20px; text-align: center;">
                                 No data available for this class.
@@ -174,7 +174,7 @@ console.log('wordCloud.js loaded');
       const textData = classData.map(row => row.text || '').filter(text => text.trim());
       const combinedText = textData.join(' ');
   
-      const displayTitle = className === 'all' ? 'All Data' : `Class ${className}`;
+      const displayTitle = className === 'all' ? 'All Data' : `Class ${typeof window.classDisplayName === 'function' ? window.classDisplayName(className) : className}`;
       container.innerHTML = `
         <h5 style="margin-top: 20px;text-align: center;">${displayTitle}</h5>
         <div style="text-align: center; padding: 40px; color: #666;">
@@ -539,7 +539,7 @@ console.log('wordCloud.js loaded');
   
     function _renderWordCloudFromFrequencies(container, className, freqArray, maxFreq, minFreq) {
       container.innerHTML = '';
-      const displayTitle = className === 'all' ? 'All Data' : `Class ${className}`;
+      const displayTitle = className === 'all' ? 'All Data' : `Class ${typeof window.classDisplayName === 'function' ? window.classDisplayName(className) : className}`;
       container.innerHTML = `<h5 style="margin-top: 20px;text-align: center;">${displayTitle}</h5>`;
   
       const frequencyRanges = _buildSmartFrequencyRanges(freqArray);

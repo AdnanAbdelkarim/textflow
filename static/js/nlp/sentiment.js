@@ -118,8 +118,13 @@
             displayText = labelMatch[2];
           }
   
+          const labelName = extractedLabel != null
+                && typeof window.classDisplayName === 'function'
+            ? window.classDisplayName(extractedLabel)
+            : extractedLabel;
+
           const summary = extractedLabel != null
-            ? `Sentence ${r.sentence_id} (Label: ${extractedLabel}) - ${r.sentiment}`
+            ? `Sentence ${r.sentence_id} (Label: ${labelName}) - ${r.sentiment}`
             : `Sentence ${r.sentence_id} - ${r.sentiment}`;
   
           sentenceHTML += `

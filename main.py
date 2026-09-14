@@ -16,6 +16,7 @@ This file is responsible only for:
 import logging
 import os
 import ssl
+import threading
 
 from flask import Flask, render_template
 
@@ -81,6 +82,24 @@ def preprocessing():
 @app.route('/predictive')
 def predictive():
     return render_template('predictive.html')
+
+
+# --- Model warm-up ---
+# The spaCy transformer used for NER is loaded on first use, which takes long
+# enough on a CPU-only machine that the browser's request would time out before
+# it finished. Loading it in a background thread at startup keeps that cost off
+# the first request; the page itself stays available while it loads.
+def _warm_up_models():
+    try:
+        from services.nltk_setup import get_nlp
+        get_nlp()
+        logging.info("NER model warm-up complete.")
+    except Exception as exc:
+        logging.warning("NER model warm-up failed: %s", exc)
+
+
+if os.getenv("TEXTFLOW_WARMUP", "1") != "0":
+    threading.Thread(target=_warm_up_models, daemon=True).start()
 
 
 # --- API blueprints ---

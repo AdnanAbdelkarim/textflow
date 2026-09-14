@@ -17,8 +17,10 @@ import numpy as np
 from flask import Blueprint, Response, request, jsonify
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
+from sklearn.base import clone
 from sklearn.metrics import (
-    accuracy_score, precision_recall_fscore_support, classification_report
+    accuracy_score, precision_recall_fscore_support, classification_report,
+    hamming_loss, f1_score
 )
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
@@ -147,6 +149,147 @@ def preprocess():
         return jsonify({'error': 'Preprocessing failed', 'detail': str(e)}), 500
 
 
+def _rows_are_multilabel(rows):
+    """True when any row carries a list of labels rather than a single label."""
+    return any(isinstance(r.get('labels'), list) and r.get('labels') for r in rows)
+
+
+class BinaryRelevance:
+    """
+    One independent binary classifier per label.
+
+    A label that is constant in the training split has no second class to
+    learn from, so its classifier is replaced by that constant. Without this
+    an all-negative label in a small split raises inside scikit-learn.
+    """
+
+    def __init__(self, base_estimator):
+        self.base_estimator = base_estimator
+        self.models_ = []
+
+    def fit(self, X, Y):
+        self.models_ = []
+        for j in range(Y.shape[1]):
+            col = Y[:, j]
+            if len(np.unique(col)) < 2:
+                self.models_.append(int(col[0]))
+            else:
+                self.models_.append(clone(self.base_estimator).fit(X, col))
+        return self
+
+    def predict(self, X):
+        n = X.shape[0]
+        out = np.zeros((n, len(self.models_)), dtype=int)
+        for j, m in enumerate(self.models_):
+            out[:, j] = np.full(n, m, dtype=int) if isinstance(m, int) else m.predict(X)
+        return out
+
+    @property
+    def n_constant_labels(self):
+        return sum(1 for m in self.models_ if isinstance(m, int))
+
+
+def _predict_multilabel(rows, model_type, test_size, random_state,
+                        use_preprocessed, settings):
+    """Train one classifier per label and report multi-label metrics."""
+    texts = [r.get('text', '') for r in rows]
+    label_lists = [[str(x) for x in (r.get('labels') or [])] for r in rows]
+    label_names = sorted({lab for labs in label_lists for lab in labs})
+    if not label_names:
+        return jsonify({'error': 'No labels found in the uploaded data.'}), 400
+
+    index = {lab: j for j, lab in enumerate(label_names)}
+    Y = np.zeros((len(texts), len(label_names)), dtype=int)
+    for i, labs in enumerate(label_lists):
+        for lab in labs:
+            Y[i, index[lab]] = 1
+
+    # Resampling is not defined for multi-label targets, so it is switched off
+    # and reported rather than applied silently.
+    settings = dict(settings or {})
+    resampling_requested = [k for k in ('useSMOTE', 'useOversampling',
+                                        'useUndersampling') if settings.get(k)]
+    for k in resampling_requested:
+        settings[k] = False
+
+    idx_train, idx_test = train_test_split(
+        np.arange(len(texts)), test_size=test_size, random_state=random_state)
+
+    texts_train = [texts[i] for i in idx_train]
+    texts_test = [texts[i] for i in idx_test]
+    Y_train, Y_test = Y[idx_train], Y[idx_test]
+
+    if use_preprocessed and settings:
+        train = preprocess_pipeline(texts=texts_train,
+                                    labels=['multilabel'] * len(texts_train),
+                                    settings=settings, artifacts=None,
+                                    random_state=random_state)
+        X_train = train['vectors']
+        X_test = preprocess_pipeline(texts=texts_test,
+                                     labels=['multilabel'] * len(texts_test),
+                                     settings=settings,
+                                     artifacts=train['artifacts'])['vectors']
+    else:
+        from sklearn.feature_extraction.text import TfidfVectorizer
+        vec = TfidfVectorizer(max_features=1000)
+        X_train = vec.fit_transform(texts_train)
+        X_test = vec.transform(texts_test)
+
+    base = _build_model(model_type, random_state)
+    if base is None:
+        return jsonify({'error': f"Unknown model '{model_type}'."}), 400
+
+    clf = BinaryRelevance(base).fit(X_train, Y_train)
+    Y_pred = clf.predict(X_test)
+
+    per_label_p, per_label_r, per_label_f1, support = \
+        precision_recall_fscore_support(Y_test, Y_pred, average=None,
+                                        zero_division=0)
+
+    logger.info("predict (multi-label): model=%s labels=%d train=%s test=%s",
+                model_type, len(label_names), X_train.shape, X_test.shape)
+
+    return jsonify({
+        'task': 'multilabel',
+        'metrics': {
+            'hamming_loss': float(hamming_loss(Y_test, Y_pred)),
+            'f1_macro': float(f1_score(Y_test, Y_pred, average='macro',
+                                       zero_division=0)),
+            'f1_micro': float(f1_score(Y_test, Y_pred, average='micro',
+                                       zero_division=0)),
+            'subset_accuracy': float(accuracy_score(Y_test, Y_pred)),
+        },
+        'labels': label_names,
+        'per_label': [
+            {'label': label_names[j], 'precision': float(per_label_p[j]),
+             'recall': float(per_label_r[j]), 'f1': float(per_label_f1[j]),
+             'support': int(support[j])}
+            for j in range(len(label_names))
+        ],
+        'label_statistics': {
+            'label_cardinality': float(Y.sum(axis=1).mean()),
+            'label_density': float(Y.sum(axis=1).mean() / Y.shape[1]),
+            'label_prevalence': {label_names[j]: float(Y[:, j].mean())
+                                 for j in range(len(label_names))},
+        },
+        'model_implementation':
+            f"Binary relevance, one {_MODEL_DISPLAY.get(model_type, model_type)} "
+            f"per label",
+        'resampling': {
+            'method': None, 'applied': False, 'n_synthetic': 0,
+            'note': ('Resampling is not defined for multi-label targets and was '
+                     'not applied: ' + ', '.join(resampling_requested))
+            if resampling_requested else None,
+        },
+        'debug_info': {
+            'train_size': int(len(idx_train)), 'test_size': int(len(idx_test)),
+            'n_features': int(X_train.shape[1]),
+            'n_labels': len(label_names),
+            'constant_labels_in_training': int(clf.n_constant_labels),
+        },
+    })
+
+
 @pred_bp.route('/api/predict', methods=['POST'])
 def predict():
     """
@@ -170,6 +313,10 @@ def predict():
 
         if not rows:
             return jsonify({'error': 'No data provided'}), 400
+
+        if _rows_are_multilabel(rows):
+            return _predict_multilabel(rows, model_type, test_size,
+                                       random_state, use_preprocessed, settings)
 
         texts = [r.get('text', '') for r in rows]
         labels = [r.get('label') for r in rows]
