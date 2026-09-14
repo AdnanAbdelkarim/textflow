@@ -1,0 +1,857 @@
+equal,greater,greater-equal,less,less-equal,necessity,not-part-of,part-of,selection,text
+0,0,0,0,0,1,0,0,0,The text should be displayed over three lines.
+0,0,1,0,0,1,0,1,0,"In addition, on one side of the toilet seat there shall be a free space of at least 800 millimetres."
+0,0,0,0,1,0,0,1,1,The smaller dimension of each panel which can be either the width or height of the panel should be 230mm or less.
+0,0,1,0,0,1,0,1,1,Each air terminal should have a free area of at least 90 of the free area of its associated duct.
+0,0,0,0,0,1,0,1,0,The layers of attic floor structures and the ventilation must prevent the accumulation of damaging moisture into the roof structure resulting from water vapour diffusion or airflow.
+0,0,0,0,1,0,0,1,1,"If stairs are used only as an emergency exit and if they lead to spaces in a dwelling or accommodation facility other than those that are necessary for living, the riser may be no more than 220 millimetres and the tread must be no less than 220 millimetres."
+0,0,0,0,0,1,0,0,0,"Where there is a prevailing wind direction, exhaust outlets should be downwind of intakes."
+0,0,0,0,0,1,0,1,1,"When determining the free area available for ventilation during sleeping hours, only the proportion of openings that can be opened securely should be considered to provide useful ventilation."
+0,0,1,0,0,1,0,1,0,Perimeter insulation should be continuous and have a minimum thickness of 25mm.
+0,0,0,0,0,1,0,0,1,"A power socket, suitable for powering the lifting device, is provided close to the liftway."
+0,0,1,0,0,0,0,1,1,The minimum full load EER of the absorption chillers should be no worse than 0.7.
+0,0,0,0,0,1,0,0,1,Public Health Englands Indoor Air Quality Guidelines for Selected Volatile Organic Compounds (VOCs) in the UK should be used.
+0,0,0,0,0,1,0,1,1,"When a new residential building is erected, information about the building must be given to the owner of the building to allow them to use the overheating mitigation strategy effectively."
+0,0,0,0,0,1,0,1,0,"If all the terminals have to be set to a significantly closed position to achieve the required air flow rate, then the fan speed should be reduced and the terminals rebalanced."
+0,0,0,0,0,1,0,0,1,A drainage point shall be equipped with a cleansable water seal.
+0,0,0,0,0,1,0,0,0,Provision shall be made to ensure a clear view of the space on either side of a swing door or gate.
+0,0,0,0,0,1,0,0,1,"Before elements are concealed by subsequent work, an onsite audit should be undertaken to confirm that the designed details have been constructed."
+0,0,0,0,0,1,0,1,0,The storm water sewers within the building shall be equipped with condensation insulation.
+0,1,0,1,0,0,0,1,1,Modular and portable buildings with a planned service life of more than two years but with an intended time of use in a single location of less than two years should be shown to comply with the energy efficiency requirements.
+0,0,0,0,0,1,0,0,1,Standing areas must be terraced so that it is safe to move in the rows.
+1,0,0,0,0,1,0,1,1,"For a timber frame where the intermediate floor structure breaches the external wall insulation, further insulation of the same thickness as the insulation used in the external wall should be included within the depth of the intermediate floor structure."
+0,0,0,0,0,1,0,1,0,Entrance doors should be capable of being held closed when not in use.
+0,0,0,0,0,1,0,0,1,Insulated cavity closers should be installed where appropriate.
+0,0,0,0,0,1,0,1,0,CO2 emissions and primary energy associated with the thermal energy streams of a trigeneration scheme should be attributed in proportion to the output energy streams.
+0,0,0,0,0,1,0,0,1,"Provision shall be made for any windows, skylights, or any transparent or translucent walls, ceilings or roofs to be safely accessible for cleaning."
+0,0,0,0,0,1,0,0,0,Purge ventilation should be capable of extracting at least four air changes per hour per room directly to the outside.
+0,0,0,0,0,1,0,0,1,"The average dwelling primary energy rate, dwelling emission rate and dwelling fabric energy efficiency rate should be calculated using the same averaging methodology."
+0,1,0,0,0,0,0,1,1,"In connection with the door of an outside space of an individual dwelling the level difference outside the door may be more than 20 millimetres if the level difference can, with reasonable effort, be eliminated with equipment in the outdoor space."
+0,0,0,0,0,1,0,0,1,Standard WC compartments should also have a minimum manoeuvring space clear of any door swing.
+0,0,0,0,0,1,0,1,0,The equivalent area of the opening should meet or exceed the free area of the opening.
+0,0,0,0,0,1,0,1,0,The quality of the installation of the ventilator product should be checked to ensure it is correctly mounted within the wall or window aperture.
+1,0,0,0,0,1,0,1,1,"Each of the two sections of the centrally hinged window should be assessed as a single side, bottom or top hung window."
+0,0,0,0,0,1,0,0,1,The methodology for determining costs should be consistent between all elements of the calculation to allow a fair comparison between the cost of the major renovation and the cost of electric vehicle charge point infrastructure.
+1,0,1,0,0,0,0,1,1,"Door entry controls, where provided, are mounted 900-1000mm above finished ground level, and at least 300mm away from any projecting corner."
+0,0,0,0,0,1,0,0,1,"Windows, skylights and ventilators which can be opened by people in or about the building shall be so constructed or equipped that they may be opened, closed or adjusted safely."
+0,0,0,0,0,1,0,0,1,"The type and quality of public address, hearing enhancement and telephone systems should be chosen carefully to ensure intelligibility."
+0,0,0,0,0,1,0,0,1,"Wheelchair-accessible bedrooms should be sufficiently spacious to enable a wheelchair user to transfer to one side of a bed, with or without assistance."
+0,0,0,0,1,0,0,0,1,The floor area of the extension does not exceed 30m2.
+0,0,0,0,0,1,0,0,0,commissioning notice must be given to the building control body.
+0,0,0,0,1,1,0,1,1,"In a building consisting primarily of one storey, no more than 200 m2 of fire-compartmented and no more than 50 m2 of non-fire-compartmented areas that essentially relate to the business of the building may be located on the level of second storey."
+0,0,0,0,0,1,0,0,0,Calibration should be carried out in accordance with CIBSEs TM23.
+0,0,0,0,0,1,0,1,1,"Where a wet heating system is either: a. newly installed b. fully replaced in an existing building, including the heating appliance, emitters and associated pipework all parts of the system including pipework and emitters should be sized to allow the space heating system to operate effectively and in a manner that meets the heating needs of the dwelling, at a maximum flow temperature of 55C or lower."
+0,0,0,0,0,1,0,0,1,"There should be sufficient space for people to approach the building, pass others who are travelling in the opposite direction and carry out all necessary manoeuvres."
+0,0,0,0,0,1,0,1,1,A building and its environment must be lit in a way that enables safe use and servicing.
+0,0,0,0,0,1,0,1,0,"A proportion of the sleeping accommodation in hotels, motels and student accommodation should be designed for independent use by wheelchair users."
+1,0,0,0,0,0,0,1,1,the minimum clear dimensions of the platform are: 1100mm wide and 1400mm deep where two doors are located at 90Â° relative to each other and where the lifting platform is enclosed or where provision is being made for an accompanied wheelchair user.
+0,0,0,0,0,1,0,1,0,"A certain proportion of the changing rooms, washing facilities, saunas and swimming pools in a non-residential building shall be suitable for a person with mobility and functional impairment."
+0,0,1,0,0,0,0,1,1,"The width of an exit must be at least 1,200 millimetres and its free height must be at least 2,100 millimetres."
+0,0,0,0,0,1,0,1,0,The foundation drainage water shall flow away from the property in such a way that it does not cause problems to the waste water and storm water systems.
+0,0,0,0,0,1,0,1,1,Seats must be fixed to a base if the floor of the seating area is sloped or if there are level differences between the floors of the respective rows of seats.
+0,0,0,0,0,1,0,1,0,The specification of comfort cooling systems should be based on a heat gain calculation for the dwelling.
+0,0,1,0,0,0,0,1,1,"Where sanitary facilities are wheelchair accessible, WC pans should be a minimum of 400mm high."
+0,0,0,0,0,1,0,0,1,"All cable routes should be laid as straight as possible and with suitable access points, so that cables can be pulled through in future."
+0,0,0,0,0,1,0,1,1,Cavity walls: the inner block leaf mortar joint should be fully filled and pointed within the cavity.
+0,0,0,0,1,1,0,1,1,"In an open garage of no more than five storeys, the maximum area may be used as the surface area of the storeys, even though the driveways between the various storeys are combined."
+0,0,0,0,0,1,0,0,1,Mechanical ventilation systems must be commissioned in accordance with an approved procedure.
+0,0,0,0,0,1,0,0,1,"Where permanent or removable seating is provided as part of the design, allowance should be made for disabled people to have a choice of seating location at spectator events."
+0,0,0,0,0,1,0,1,1,"Humus soil, organic substances decomposing or rotting from moisture or building waste must not be left under new buildings, in their crawl spaces and in their gravel backfills functioning as a drainage layer."
+0,0,0,0,0,1,0,0,1,"On variable volume systems, variable speed glandless circulators should be used."
+0,0,0,0,0,1,0,1,1,The shutoff valves shall be located: 1) at each house; 2) at each apartment; 3) in vertical service pipes; 4) on both sides of devices installed in the service pipes; 5) before a device or fixture that is connected to the connector pipe; 6) on both sides of the water meters.
+0,0,1,0,0,1,0,1,1,"If a gas-fired combination boiler is installed in an existing dwelling, at least one of the following energy efficiency measures, appropriate to the system, should be installed."
+0,0,0,0,0,1,0,0,0,"The ventilation system shall produce an adequate outdoor air flow to the building and extract from indoor air substances that are harmful to health, excessive humidity, odours with adverse effects on comfort and indoor air impurities arising from humans, construction products and activities."
+0,0,0,0,1,1,0,1,1,"If the protective part of the barrier contains only vertical structures, a cube with edges of no more than 100 millimetres may pass through its openings."
+0,0,0,0,0,1,0,0,0,The barrier must not feature horizontal structures or patterns that make it possible to climb.
+0,0,0,0,0,1,0,0,0,The oil and grease separators shall be equipped with a filling alarm.
+0,1,0,0,0,1,0,0,0,"Level differences of over 500 millimetres must be equipped with an appropriate safety barrier, railing or handrail."
+0,1,0,0,0,0,0,1,1,"Both:the area of rooflights exceeds 20 of the area of the roof, and the design solar load exceeds 25W/m2."
+0,0,0,0,0,1,0,1,0,The frequency of measurements should be sufficient to ensure that changes in the use of the room or space throughout the day are represented in the readings.
+0,1,0,0,0,1,0,1,1,"If the dwelling has more than one exposed facade, the area of background ventilators on each facade should be similar, to allow cross-ventilation."
+0,0,0,0,0,1,0,0,0,Heat pumps should be selected to meet the full space heating requirement at the design condition chosen for heat loss calculations.
+0,0,0,0,0,1,0,1,1,Doors must be capable of opening outwards - in wheelchair adaptable bathrooms the door may open inwards providing that the door can be easily rehung to open outwards (e.g. door stops are planted and easily moved).
+0,0,0,0,0,1,0,1,1,"All access routes to principal, or alternative accessible, entrances should be surfaced so that people are able to travel along them easily, without excessive effort and without the risk of tripping or falling."
+0,0,0,0,0,1,1,1,1,"There are no limits on the design of display windows and similar glazing, but for new buildings their impact must be taken into account in the calculation of primary energy and CO2 emissions."
+0,0,0,0,0,1,0,0,0,Lifting devices should be positioned with the end opposite to the entry point located against a wall at every floor level.
+0,0,0,0,0,1,0,0,1,"Both before and after a newly constructed building is built, a notice must be given to the building control body of the calculations."
+0,0,0,0,0,1,0,0,0,The results should be recorded and given to the building owner.
+0,0,0,0,0,1,0,0,1,Any looped cords must be fitted with child safety devices.
+0,0,1,0,0,1,0,0,1,"In general, the findings indicate that there should be at least the same number of WCs (for women) as urinals (for men) and for some building types, e.g. large retail buildings, at least twice as many."
+0,0,0,0,0,1,0,0,1,Any unavoidable gaps between boards should be infilled using compressible tape (e.g. for boards within roof rafters) or low expansion foam (e.g. for boards within wall cavities).
+0,0,0,0,0,1,0,0,1,The facilities suitable for persons with mobility and functional impairment shall be marked with the International Symbol of Access.
+0,0,0,0,0,1,0,0,1,"Areas that are not enclosed, such as open floors, covered ways and balconies, should be excluded."
+0,0,0,0,0,1,0,0,1,"When the lift serves more than three storeys, it provides visual and audible indicators to identify the floor reached."
+0,0,0,0,0,1,0,0,1,A new building must be built to a minimum standard of total energy performance.
+0,0,0,0,1,1,0,1,1,"In connection with repair and alteration work, the heat emitters connected to the domestic hot water ring duct may be replaced so that the heat emission capacity of the heat emitters to be installed does not exceed 200 Watts per room."
+0,0,0,0,0,1,0,0,0,Consideration should be given to providing an area next to certain seats for an assistance dog to rest.
+0,0,1,0,0,1,0,1,1,"The handle to at least one window in the principal living area is 700-1000mm above floor level, unless fitted with a remote opening device that is within this height range."
+0,0,0,0,0,1,0,0,1,"For variable refrigerant flow (VRF) systems, any calculations must include indoor and outdoor conditions, the power input from controls, and indoor units."
+0,0,0,0,0,1,0,0,0,That background ventilators allow fresh air into the building and should be left open.
+0,0,0,0,0,1,0,0,1,"Where it can be held open, steps should be taken to avoid people being harmed by walking into the door."
+0,0,0,0,0,1,0,0,0,Variable volume control systems should be used to reduce the volume of water and the pressure difference required from the pumps under part load.
+0,0,0,0,0,1,0,0,0,"People with visual impairment should be in no doubt as to the location of glass doors, especially when they are within a glazed screen."
+0,0,0,0,0,1,0,0,0,"The provision made must be sufficient to (a) meet the needs of occupants with differing needs, including some older or disabled people; and (b) to allow adaptation of the dwelling to meet the changing needs of occupants over time."
+0,0,0,0,0,1,0,1,1,Background ventilators should meet the performance standards for both of the following: a. air flow from outside to inside the dwelling; b. air flow from inside the dwelling to outside.
+0,0,0,0,0,1,0,0,1,"The same approved calculation tool must be used to calculate the target primary energy rate, the target emission rate, the building primary energy rate and the building emission rate."
+0,0,0,0,0,1,0,0,0,"To provide easy access between rooms on the entrance storey, a stepped change of level within the entrance storey should be avoided where possible."
+0,0,0,0,0,1,0,1,1,The lift shall provide access to the entrance level and each level with entry to a dwelling or a space serving the use of the building.
+0,0,0,0,0,1,0,0,1,"To correctly assess whether an element meets the limiting U-value, the U-value must be calculated for the element in the appropriate plane either horizontal or vertical."
+0,1,0,0,1,1,0,1,1,Skirtings totalling up to 50mm total thickness and shallow projecting ducts or casings above 1800mm may be discounted when measuring clear width.
+0,0,0,0,0,1,0,1,0,"All walls, ducts and boxings to every WC/cloakroom, bath and shower room are strong enough to support grab rails, seats and other adaptations that could impose a load of 1.5kN/m2."
+0,0,0,0,0,1,0,0,0,Fixings: care should be taken to ensure that fixings do not damage the airtightness barrier.
+0,0,0,0,0,1,0,0,1,"For large or complex projects, a commissioning manager should be appointed."
+0,0,0,0,0,1,0,0,1,"For new and existing buildings other than dwellings, information should be provided in a new or existing building log book."
+0,0,0,0,0,1,0,1,1,A unit that contains both living accommodation and space for commercial purposes (e.g. for a workshop or office) should be treated as a dwelling if the commercial part can be reverted to domestic use.
+0,0,1,0,1,0,0,1,0,"The riser of the indoor steps of dwelling units and living quarters may be no more than 190 millimetres, and the tread must be no less than 250 millimetres."
+1,0,0,0,0,0,0,1,0,"When calculating the heat loss for a buildings design solution, the design value shall be used as the value of the air leakage rate figure for the building envelope."
+0,0,0,0,0,1,0,1,1,"The general ventilation rate for a new conservatory and, if necessary, adjoining rooms could be achieved using background ventilators."
+1,0,1,0,0,0,0,1,1,"in an evacuation area where the maximum number of occupants is 60, the second exit may be no less than 900 millimetres in width."
+0,0,0,0,0,1,0,0,1,"If a load-bearing element is required to have a longer fire resistance time with respect to integrity E and insulation I than with respect to load-bearing capacity R, the longer fire resistance time shall also be applied to the load-bearing capacity."
+0,0,0,0,0,1,0,0,0,Units should be draught-proofed.
+0,0,0,0,0,1,0,0,1,"For example, when a door is open, people with impaired sight should be able to identify the door opening within the wall, as well as the leading edge of the door."
+0,0,0,0,0,1,0,0,1,"Both before and after a newly constructed dwelling is built, a notice must be given to the building control body of the calculations."
+0,0,0,0,0,1,0,0,0,Water must not drift into or migrate as a capillary flow from the wet rooms to the surrounding structures and rooms.
+0,0,0,0,0,1,0,0,0,WC doors must be capable of opening outwards.
+0,0,0,0,0,1,0,0,1,"Where closing devices are needed for fire control, electrically powered hold-open devices or swing-free closing devices should be used as appropriate."
+0,1,0,0,0,1,0,0,1,Gasfired boilers and multi-stage oilfired boilers with an output of more than 500kW should have fully modulating burner controls.
+0,0,0,0,0,1,0,0,1,"When installing or renovating thermal elements, the element being installed should be draught-proofed and airleakage gaps should be filled."
+0,0,0,0,0,1,0,1,1,"If a water pump is used on a closed loop circuit and the motor is rated at more than 750W, then it should be fitted with or controlled by an appropriate variable speed controller on any variable volume system."
+0,0,0,0,0,1,0,0,0,The pumping station shall be water tight and resistant to earth pressure and it may not cause odour problem.
+0,0,0,0,0,1,0,0,1,"A unit that contains both living accommodation and space for commercial purposes (e.g. as aworkshop or office) should be treated as a residential building, as long as the commercial part canrevert to residential use."
+0,0,0,0,0,1,0,0,1,"The main doors for entering a dwelling (usually the front doorset) should be fitted with a multipoint locking system that meets the requirements of: PAS 3621 (key locking on both sides), or PAS 8621 (non-key locking on the internal face), or PAS 10621 (non-key locking on the internal face, but with an external locking override facility)."
+1,0,0,0,0,1,0,1,1,NOTE: Linear interpolation should be used to determine efficiencies between manufacturers declared efficiencies at 30 and 100 load.
+0,0,0,0,0,1,0,0,0,The water system shall be leakproof.
+0,0,0,0,0,1,0,0,1,"Glazing, with which people are likely to come into contact whilst moving in or about the building shall: (a) if broken on impact, break in a way which is unlikely to cause injury; or (b) resist impact without breaking; or (c) be shielded or protected from impact."
+1,0,0,0,0,0,1,1,1,"In rooms with no fixed seats or furnishings, the number of persons shall be calculated to be two persons per square metre."
+0,0,0,0,0,1,0,1,1,"Loft hatches: where the roof is insulated at ceiling level, hatches should be suitably designed and installed to ensure optimum airtightness."
+0,0,0,0,0,1,0,0,0,landing call buttons are located between 900mm and 1100mm from the floor of the landing and at least 500mm from any return wall.
+0,0,0,0,0,1,0,0,1,Consumer units should be mounted so that the switches are between 1350mm and 1450mm above floor level.
+0,0,0,0,0,1,0,0,0,"Where it is not reasonable to achieve a step-free approach route to the principal private entrance, a step-free approach route should be provided to a suitable alternative private entrance instead."
+0,0,0,0,0,1,0,1,1,"Large roof surfaces must be divided into parts of no more than 2,400 square metres."
+0,0,1,0,0,1,0,1,1,The natural or mechanical ventilation system of a building shall be strong and its air-tightness shall be at least class B.
+0,0,0,0,0,1,0,0,0,Provision shall be made for powered doors and gates to be opened in the event of a power failure.
+0,0,0,0,0,1,0,1,1,Fans used for general air distribution that are rated at more than 1100W should be fitted with variable speed drives.
+0,1,0,0,0,0,0,0,1,"If luminous efficacy is greater than 75 light source lumens per circuit-watt, manual control is acceptable."
+0,0,1,0,0,1,0,1,1,"Where a driveway forms all, or part of, the approach route, an additional allowance of at least 900mm wide should be provided so that a wheelchair user can pass a parked car."
+0,0,0,0,0,1,0,0,1,"The approach route should be safe and convenient for everyone, be at the shallowest gradient that can reasonably be achieved, and be stepfree, irrespective of the storey on which the dwelling is located."
+0,0,0,0,0,1,0,1,0,"If insulating material is inserted into a cavity in a cavity wall, reasonable precautions shall be taken to prevent the subsequent permeation of any toxic fumes from that material into any part of the building occupied by people."
+0,0,0,0,0,1,0,0,0,"Lift door systems should be designed to allow adequate time for people, and any assistance dogs, to enter or leave the lift without coming into contact with closing doors."
+0,0,0,0,0,1,0,1,1,"Where building work is carried out in a kitchen or bathroom, any existing fans (including cooker hoods, where they extract to the outside) should be retained or replaced."
+1,0,0,0,0,0,0,1,0,The normal relationship between the dimensions of the rise and going is: twice the rise plus the going (2R G) equals between 550mm and 700mm.
+0,0,0,0,0,1,0,1,1,Masonry construction: external or cavity wall insulation should extend below the damp-proof course (where applicable) and be at least the equivalent of one full block height (215mm) below the underside of the floor structure/slab and beyond the depth of the floor insulation.
+0,0,0,0,0,1,0,1,1,"If fans and background ventilators are fitted in the same room, they should be at least 500mm apart."
+0,0,0,0,0,1,0,0,0,The crawl space must be ventilated.
+0,0,0,0,0,1,0,0,1,Any flexible ducts should be installed so that the full internal diameter is maintained and flow resistance is minimised.
+0,0,0,0,0,1,0,1,1,"For new dwellings, the commissioning plan should be given to the building control body with the design stage dwelling primary energy rate, dwelling emission rate and dwelling fabric energy efficiency rate calculations."
+0,0,0,0,0,1,0,1,1,The energy efficiency of historic and traditional buildings should be improved only if doing so will not cause long-term deterioration of the buildings fabric or fittings.
+0,0,0,0,0,1,0,0,1,"Any walls, doors and windows should be insulated and draught-proofed to at least the same extent as in the existing building."
+0,0,1,0,0,1,0,0,1,NOTE: A floor level with a gradient of 1:20 or steeper should be designed as a ramp.
+0,0,0,0,0,1,0,0,1,On-site electricity generation systems must be commissioned to ensure that they produce as much electricity as is reasonable in the circumstances.
+0,0,0,0,0,1,0,0,1,Account should be taken of outside noise when considering whether openable windows are appropriate for purge ventilation.
+1,0,0,0,0,1,0,0,0,"There should be a supply rate, in the absence of tobacco smoke or other excessive pollutants, of 10 litres per second per person."
+0,0,0,0,0,1,0,0,0,The warning should be placed sufficiently in advance of the hazard to allow time to stop and not be so narrow that it might be missed in a single stride.
+0,0,0,0,0,1,0,0,0,The load shall be stated on this sign in kg/m2.
+0,0,0,0,0,1,0,0,0,lifting platform controls are located between 800mm and 1100mm from the floor of the lifting platform and at least 400mm from any return wall.
+0,0,0,0,0,1,0,1,0,Their glazing must be made of safety glass.
+0,0,0,1,0,1,0,1,1,Hinged or pivot windows with an opening angle of less than 15 degrees are not suitable for purge ventilation.
+0,0,0,0,0,1,0,0,1,Attics and uppermost floor voids shall be divided into 400 m2 parts.
+0,0,0,0,0,1,0,0,1,"For sliding doors and gates, provide both of the following: (i) a stop or other effective means to prevent them coming off the end of the track; (ii) a retaining rail to prevent doors and gates falling if the suspension system fails or the rollers leave the track."
+0,0,0,0,0,1,0,0,1,"Where appropriate, these should be automated (with manual override) so that energy savings are maximised."
+0,1,0,0,1,0,0,0,1,"the vertical travel distance is: a. not more than 2m, where there is no liftway enclosure and no floor penetration; b. more than 2m, where there is a liftway enclosure."
+0,0,0,0,0,1,0,1,1,Hot water pipework should be insulated in all areas inside and outside the building unless it can be demonstrated that the heat is always useful.
+1,0,0,0,0,1,0,1,0,"Extract air of categories 2, 3 and 4 shall not be used as recirculation air."
+0,0,0,0,1,0,0,1,1,An upstand built on site should not exceed a U-value of 0.35W/(m2K).
+0,0,0,0,0,1,0,0,0,What constitutes a substantial proportion should be assessed on a case-by-case basis by the building control body.
+0,0,1,0,0,0,0,1,1,"The landing in front of the outside door shall be at least 1,500 millimetres wide and at least 1,500 millimetres long."
+0,1,1,0,0,0,0,1,0,"Where illuminance on surfaces is greater than 200 lux, a difference in light reflectance value should be a minimum of 20 points."
+1,0,0,0,0,1,0,0,1,"Where necessary, two handrails, one above the other, must be installed in order to take into account children and users of wheelchairs."
+0,0,1,0,0,1,0,0,1,"Gangways should not be less than 1100mm wide unless used by not more than 50 persons, in which case gangways should be a minimum of 900mm."
+0,0,0,0,0,1,0,1,1,Extract ventilation may be by natural means or by mechanical means (e.g. by an extract fan or acentral system).
+0,0,0,0,0,1,0,1,0,A stack vent located in cold premises shall be thermally insulated.
+0,0,0,0,0,1,0,1,1,"For existing dwellings, when installing a complete new or replacement system (e.g. replacing a heating system including the heating appliance, pipework and heat emitters), the energy performance of the whole system should be assessed."
+0,0,0,0,0,0,0,1,1,Consideration should be given to providing a low level urinal for children in male washrooms.
+0,0,0,0,0,1,0,1,1,"The results of all pressure tests on buildings, including any test failures, should be reported to the building control body."
+0,0,0,0,0,1,0,0,0,Drawings should be reviewed by the designer and installer and should include specifications for key materials.
+0,0,0,0,0,1,0,0,1,Signs indicating the location of a lifting device accessible by mobility-impaired people should be clearly visible from the building entrance.
+0,0,0,0,0,1,0,0,0,The storm water system shall be cleansable via manholes and fittings.
+0,0,0,0,0,1,0,0,0,The water system shall withstand internal excess pressure of at least 1 000 kilopascals.
+0,0,0,0,0,1,0,1,1,"The presence of doors, whether open or closed, should be apparent to visually impaired people through the careful choice of colour and material for the door and its surroundings."
+0,0,0,0,0,1,0,0,0,The insulation should be reasonably continuous across newly built elements.
+0,0,1,0,0,0,0,1,1,Solid walls constructed of coursed brickwork or blockwork should be at least as thick as 1/16 of the storey height.
+0,0,0,0,0,1,0,1,0,The termination points of cable duct should be sited where access to maintain in future is unrestricted.
+0,0,0,0,0,1,0,1,1,Consideration should be given to the power requirements of essential (e.g. life safety) systems.
+0,0,0,0,0,1,0,1,1,"For heating systems in new dwellings, or when a heat generator such as a boiler is replaced in an existing dwelling, each room should be provided with thermostatic room controls."
+1,0,0,0,0,0,0,1,1,"Between the locking points for the mortice lock and surface-mounted rim lock, the distance should be 400-600mm."
+0,0,0,0,0,1,0,0,0,Designs should clearly indicate means to limit disruption to the insulation.
+0,0,0,0,0,1,0,0,1,Ventilation systems that provide supply and extract ventilation should be fitted with a heat recovery system where technically feasible.
+0,0,0,0,0,1,0,1,1,"WC compartment doors, and doors to wheelchair-accessible unisex toilets, changing rooms or shower rooms have an emergency release mechanism so that they are capable of being opened outwards, from the outside , in case of emergency."
+0,1,0,0,0,1,0,1,1,The area of windows and roof windows (but excluding display windows) within the area served exceeds 40 of the facade area.
+0,0,0,0,0,1,0,0,1,The annual energy savings should be estimated using the National Calculation Methodology Modelling Guide.
+0,0,0,0,0,1,0,0,1,"Additionally, insulated plaster-board should be used in reveals to abut jambs and should be considered within reveal soffits."
+0,0,0,0,1,0,0,1,0,the rated speed of the platform does not exceed 0.15m/s.
+1,0,0,0,0,0,0,0,1,"Where there is full-height structural guarding, if you provide a second (lower) handrail, the vertical height from the pitch line of the steps (or the surface of the ramp) to the top of the second (lower) handrail should be 600mm."
+1,0,0,0,0,0,0,1,1,Each letter should be 25mm high.
+1,0,1,0,0,0,0,1,0,"The total number of ventilators installed in a dwellings habitable rooms and kitchens should be no fewer than five, except in one bedroom properties, where there should be no fewer than four."
+0,0,1,0,0,1,0,0,1,"After rebating, frame components should retain at least 32mm of timber."
+0,0,0,0,0,1,0,0,1,Facilitating future connection to any local district heat networks should be considered (e.g. providing capped off connections in pipework to allow later connection to a local district heat network).
+0,0,0,0,0,1,0,0,1,A building must be provided with a fire wall if it is situated adjacent to a neighbouring building or so close to a neighbouring building that the spread of fire is evident.
+0,0,1,0,0,1,0,0,0,At least 30% of the ties shall be located in the immediate vicinity of the grid lines of the columns and the walls.
+0,0,0,0,0,1,0,0,1,A new district heat network should be taken as meaning any other district heat network.
+0,0,0,0,0,1,0,1,1,The efficiency of the secondary heating appliance with its appropriate fuel should be used in the calculation of the dwelling primary energy rate and dwelling emission rate.
+0,0,0,0,0,1,0,1,1,"The electrical energy consumption of a mechanical ventilation system shall be calculated on the basis of air flows, specific fan powers and operating times for all air handling units and powered roof ventilators in the building."
+0,0,0,0,0,1,0,1,1,A copy of the completed commissioning sheet should be given to the owner of the building.
+1,0,0,0,0,0,0,0,1,The full area under a stair that forms part of the storage provision should be counted as 1m2.
+0,0,0,0,1,0,0,1,1,The area of openings in the newly created dwelling should not be more than 25 of the total floor area.
+0,0,0,0,0,1,0,0,1,"In order to help people with visual impairment to appreciate the size of a space they have entered, or to find their way around, there should be a visual contrast between the wall and the ceiling, and between the wall and the floor."
+0,0,0,0,0,1,0,1,1,"For mixed-use buildings which have parking spaces within a covered car park, any requirements to install electric vehicle charge points or cable routes must first be applied to those parking spaces outside the covered car park."
+0,0,0,0,0,1,0,1,1,"For absorption chillers used in conjunction with onsite CHP or a district heat network or community heating system, the CO2 emissions and primary energy should be calculated in the same way as when using CHP for heating."
+0,0,0,0,0,1,0,0,0,"Water must not freeze in the systems pipes, channels or devices."
+0,0,0,0,1,0,0,1,0,These fittings should not exceed a centre pane U-value of 1.2W/(m2K).
+0,0,1,0,1,0,0,1,0,The approach route is a minimum of 900mm wide with a maximum cross fall of 1 in 40.
+0,0,0,0,0,1,0,0,1,"When installing controlled fittings, the controlled fitting should be well fitted and reasonably draught-proof."
+0,0,0,0,0,1,0,0,0,"The compartment should be fitted with support rails, and include a minimum activity space to accommodate people who use crutches, or otherwise have impaired leg movements."
+0,0,0,0,1,1,0,1,0,The water heater is close to the draw-off points and has a storage capacity no greater than 100 litres.
+0,0,0,0,0,1,0,0,1,Wheelchair users and ambulant disabled people should be able to wash or bathe either independently or with assistance from others.
+0,0,0,0,0,1,0,0,0,Supply temperature control should be provided via a variable set point with outdoor temperature compensation.
+0,0,0,0,0,1,0,1,0,The roof insulation should be installed when the eaves are still accessible.
+0,0,0,0,0,1,0,0,0,Cooling pipework should be insulated along its whole length.
+0,0,0,0,0,1,0,0,0,Heat pumps should be located and installed subject to the manufacturers guidance.
+0,0,0,0,1,1,0,1,1,"If the height of the building does not exceed 28 metres, access to the attic fire compartments from the outside shall be required."
+0,0,0,0,0,1,0,1,1,A building that contains both living accommodation and space for commercial purposes (e.g. for a workshop or office) should be treated as a dwelling if the commercial part can be reverted to domestic use.
+0,0,0,0,0,1,0,0,1,"The relationship between the kitchen, dining and living areas should be convenient and step-free."
+0,0,0,0,0,1,0,0,0,"For an electrically operated appliance, an integral remote or thermostatic control should be provided."
+0,0,0,0,0,1,0,0,0,All people should be able to use presentation facilities.
+0,0,0,0,0,1,0,0,0,The basement should be treated separately as a single-storey dwelling above ground level.
+0,0,0,0,0,1,0,0,1,That background ventilators allow fresh air into the home and should be left open.
+0,0,0,0,0,1,0,1,1,The water vapour resistance and air tightness of external walls and their various layers as well as the structures attached to the external wall and joints to the external wall must prevent the accumulation of moisture content of wall structures from internal water vapour diffusion or convection that is harmful from the viewpoint of moisture performance of structures.
+0,0,0,0,0,1,0,1,1,Intermediate floors: floor-to-wall junctions should be detailed to ensure that insulation in the external wall is continuous.
+0,0,1,0,0,0,0,0,0,The load capacity is at least 400kg.
+0,0,0,0,1,0,0,1,0,The structure of the control appliance of the plumbing fixture shall be such that its surface temperature does not arise above 40 degrees Celsius.
+0,0,0,0,0,1,0,0,0,Rigid connectors and jubilee clips should be used for flexible ducting to ensure a good seal.
+0,0,0,0,0,1,0,0,1,"When installing windows, roof windows, rooflights or doors (all of which are controlled fittings), the controlled fitting should be well fitted and reasonably draught-proof."
+0,0,0,0,0,1,0,0,1,The building fabric should be constructed so that the insulation is reasonably continuous across newly built elements.
+0,0,0,0,0,1,0,0,1,"People with mobility impairments who arrive as passengers should be able to alight from a vehicle close to the principal entrance, or alternative accessible entrance, of the building in a way that is convenient for entry into the building."
+0,0,0,0,0,1,0,0,1,"In exceptional circumstances in an existing building, a wheelchair platform stairlift may be considered, provided its installation does not conflict with requirements for means of escape."
+0,0,0,0,1,0,0,1,1,"In rooms used for sleeping or rest, the one-hour A-weighted equivalent continuous sound level of impulsive, narrow-band or low-frequency noise may not exceed 25 decibels."
+0,0,1,0,0,0,0,1,1,"The outdoor air flow of a dwelling unit, however, shall be designed to be a minimum of 18 dm3/s."
+0,0,0,0,0,1,0,0,1,NOTE: Any method to reduce overheating risk in residential buildings must comply with all other parts of the Building Regulations.
+0,0,0,0,0,1,0,0,0,"The approach route should be level, gently sloping, or, where necessary, ramped."
+0,0,0,0,1,1,0,0,0,A cube of no more than 100 millimetres may pass between the stair steps.
+0,0,0,0,0,1,0,1,1,"All public areas, including lavatory accommodation, public telephones and external terraces should be accessible."
+0,0,0,0,0,1,0,0,0,Intermittent extract fans should be fitted in all wet rooms.
+0,0,1,0,0,0,0,1,1,The depth of the insulation plus any required air gap should be at least to the depth of the rafters.
+0,0,0,0,0,1,0,1,1,"For recessed meter boxes on the cold side of the construction, insulation should be installed behind the enclosure."
+0,0,0,0,0,1,0,1,1,"If the indoor access route leading to an evacuation area in a non-residential building is via the indoor stairs in the area, these stairs must be wide enough that they can be used to transport an immobile individual on a stretcher."
+0,0,0,0,1,0,0,0,1,"The dwelling primary energy rate, dwelling emission rate and dwelling fabric energy efficiency rate, all calculated using the measured air permeability, must not be higher than the target primary energy rate, target emission rate and target fabric energy efficiency rate, respectively."
+0,0,0,0,0,1,0,0,0,The loading area must be safe and appropriate.
+0,0,0,0,0,1,0,0,1,A suitable chemical inhibitor should be added to the primary heating circuit to protect against scale and corrosion.
+0,0,0,0,0,1,0,1,1,"NOTE: For example, if the total system output is made up of three equally sized boilers, at 15% of system output the lead boiler will be operating at 45% of its rated output with the other two boilers switched off."
+0,0,1,0,0,0,0,1,1,The opening of a horizontal hatch must be at least 600 x 600 millimetres.
+0,0,0,0,0,1,0,0,1,"If renewable technology such as a wind turbine or photovoltaic array is replaced, the new system should have an electrical output that is at least the same as that of the original installation."
+0,0,0,0,0,1,0,0,0,"In addition, the entrance must be protected against snow loads with a covering."
+0,0,1,0,0,1,0,1,1,"If the internal ties must be centred on the supporting line, the minimum value of the tie force, 70 kN, will also be applied to internal ties."
+1,0,0,0,0,0,0,1,1,"For buildings other than dwellings and for common access areas in buildings that contain flats, Provide all means of escape routes with a minimum clear headroom of 2m, except in doorways."
+0,0,0,0,0,1,0,1,1,"If the building is connected to a heating system where heat is conveyed via heat pipes external to the building from a shared heat exchanger or heat generation unit to several buildings, the heat loss from those pipes shall be divided between the buildings in proportion to their areas."
+0,0,0,0,0,1,0,0,1,"Sufficient information should be provided to ensure that people can operate, maintain or alter an electrical installation with reasonable safety."
+0,0,0,0,0,1,0,0,1,"The apartment-specific water meters shall be located in a place where they are easy to install, read and service."
+0,0,0,0,1,0,0,1,0,"The area of windows, roof windows, rooflights and doors should not exceed 25 of the total floor area of the dwelling."
+0,0,0,0,0,1,0,0,1,"NOTE: If an exposed facade is close to an area of sustained and loud noise (e.g. a main road), then a noise attenuating background ventilator should be fitted."
+0,1,0,0,0,1,0,1,0,The water heater is situated centrally with a distribution system to supply water to the drawoff points and has a capacity greater than 300 litres.
+0,0,0,0,0,1,0,0,0,"A copy should be submitted to the building control body as evidence that the system has been correctly installed, inspected and commissioned."
+0,0,1,0,0,0,0,1,1,"In spaces intended for more than 60 persons, the width of the access route must be at least 1,200 millimetres."
+1,0,0,1,0,0,0,1,1,"If the planned time of use of a modular or portable building in a single location is less than two years, the only practical heating technology may be electric resistance heating."
+0,0,0,0,0,1,0,1,0,The air in a building shall flow from spaces of higher indoor air purity to spaces of lower indoor air purity.
+0,0,0,0,0,1,0,0,1,Fire must not spread in a roof or in its underlay in a way that causes a hazard.
+0,0,0,0,0,0,0,1,1,It should be recognised that there is the danger where adjacent spaces each have an induction loop system that the signals may overlap.
+0,0,0,0,0,1,0,1,1,"replacing a heating system including the heating appliance, pipework and heat emitters), the energy performance of the whole system should be assessed, and the results documented and handed over to the building owner with the manufacturers supporting literature."
+0,1,0,0,0,1,0,1,1,"In the absence of relevant harmonised European Standards, products with a travel exceeding 3m must have a product certificate issued by a Notified Body."
+0,0,0,0,0,1,0,1,1,There should be no visible mould on the inner surfaces of external walls of a properly heated building with typical moisture generation.
+0,1,0,0,0,1,0,1,1,Modular and portable buildings with a planned service life of more than two years at a single location should be shown to comply with the energy efficiency requirements.
+1,0,0,0,0,0,0,1,1,"A non-residential building shall, considering the intended use and functional units of the building and distances in the building, have an adequate number of appropriately located toilet facilities which are suitable for users of wheelchairs and walking frames with wheels."
+0,0,0,0,0,1,0,1,0,"All users of facilities should be able to locate suitable seating and move safely and easily to and from the seating area and ancillary accommodation, such as lavatories, dining rooms and bedroom suites."
+0,0,0,0,0,1,0,0,1,The presence of the door should be apparent not only when it is shut but also when it is open.
+0,0,0,0,0,1,0,1,0,"Windows and doors: to ensure continuity of the air barrier, window and door units should connect to the primary air barrier and window and door frames should be taped to surrounding structural openings, using air sealing tape."
+0,0,0,0,0,1,0,1,1,The relevant parts of Part 2 and 3 should be signed by a person who is competent to design the residential building.
+0,0,0,0,0,1,0,1,1,"Consideration should be given to the provision of a second handrail on stairs in a wide range of building types, and particularly in schools, for use by children and people of short stature."
+0,0,0,0,0,1,0,0,1,"Whatever lifting device is chosen, internal stairs should always be provided as an alternative means of vertical access, and designed to suit ambulant disabled people and those with impaired sight."
+0,0,0,0,0,1,0,1,1,The heat pump along with its accompanying pipework should be flushed and purged as a separate system while isolated from the ground array system.
+0,0,0,0,0,1,0,1,1,"in clothes shops, the dimensions and fittings recommended for an individual changing cubicle in a sports building should be provided."
+0,0,0,0,0,1,0,1,0,The structures of the wet rooms must be rigid enough that the thermal and moisture movements do no damage the wet room waterproofing or surface structures.
+0,0,0,0,0,1,0,0,0,The materials and fittings shall be compatible.
+0,0,0,0,0,1,0,0,1,Automatic control of input charge should be provided.
+0,0,0,0,0,1,0,0,1,"When installing or renovating thermal elements, the element being installed should be draught-proofed, and air-leakage gaps should be filled."
+0,0,0,0,0,1,0,0,1,"If there are associated parking spaces where there is not a requirement to install electric vehicle charge points, cable routes must be installed in all remaining associated parking spaces."
+0,0,1,0,0,0,0,1,1,"Where pipework is above ground, the performance of the pipe insulation should be at least as high as the insulating performance of pipework in the buried part of the system."
+0,0,0,0,0,1,0,1,1,The size of a fire compartment must be limited so that a fire igniting in the compartment does not cause unreasonably vast damages (compartmentation by area).
+0,0,1,0,0,0,0,1,0,The depth of standing rows must be at least half a metre.
+0,0,0,0,1,0,0,1,1,Window handles on windows that open outwards are not more than 650mm from the inside face of the wall when the window is at its maximum openable angle.
+0,0,0,0,0,1,0,1,1,"For existing dwellings, when carrying out work on an existing system, such as installing or replacing components (e.g. replacing a boiler but retaining the pipework and heat emitters), the energy performance of the new components should be assessed."
+0,0,0,0,0,1,0,0,1,The space between the air barrier and the insulation layer should be filled with solid material.
+0,0,0,0,0,1,0,0,0,"Corridors and passageways should be wide enough to allow people with buggies, people carrying cases or people on crutches to pass others on the access route."
+0,0,0,0,0,1,0,0,1,Insulated cavity closers should be used for all construction types.
+0,1,0,0,0,1,0,1,0,The side edges of stairs and landings must be fitted with a raised camber to prevent slipping over the edge if a cube measuring more than 50 millimetres in width is able to pass through the opening between the plane level and the handrail or wall.
+0,0,0,0,0,1,0,1,1,"The doors of exits, and of areas leading to them, must be easy to open in an emergency."
+0,0,0,0,0,1,0,0,1,"Any damage, such as tears, should be repaired before boarding."
+0,0,0,0,0,1,0,0,1,"When a dwelling undergoes a major renovation, the technical, environmental and economic feasibility of installing high-efficiency alternative systems should be considered."
+0,0,0,0,0,1,0,1,0,"Systems should not be significantly oversized in most circumstances, the cooling appliance should not be sized for more than 120 of the design cooling load."
+0,0,1,0,0,1,0,1,0,"In addition, on both sides of the toilet seat there shall be a free space of at least 800 millimetres."
+0,1,0,0,0,1,0,1,1,"For ducted systems that are served by fans with a design flow rate greater than 1m3/s, ductwork leakage tests should be carried out."
+0,1,0,0,0,1,0,1,0,"Storage premises with a fire load exceeding 1,200 MJ/m2 are not permitted within the building."
+0,0,0,0,0,1,0,1,1,"In a mechanical ventilation system, the air handling units and chambers shall be able to withstand the loads caused by fan pressure while the shutoff dampers are closed."
+0,0,0,0,0,1,0,1,1,"Doors to the principal, or alternative accessible, entrance should be accessible to all, particularly wheelchair users and people with limited physical dexterity."
+0,0,0,0,0,1,0,1,1,"A building shall, if its size, number of storeys or an intended purpose of a premises within the building so requires, be divided into fire compartments in order to restrict the spread of fire and smoke, to provide safe evacuation and to facilitate rescue and extinguishing measures."
+0,0,0,0,0,1,0,1,1,The use of boards with lapped or tongue and groove edges should be considered.
+0,0,0,0,0,1,0,0,1,Extinguishing routes to basement storeys shall be arranged so that basement storeys can be reached from the ground level without a need to pass through the exits of the storeys.
+0,0,0,0,0,1,0,1,1,"If thermal energy is supplied from a district heat network, a CO2 emission factor and primary energy factor for the heat delivered to the dwelling by the district heat network should be calculated."
+0,0,0,0,0,1,0,0,1,Requirements for accessibility should be balanced against preserving historic buildings or environments.
+0,0,0,0,0,1,0,1,1,"For mechanical ventilation systems, fan units should be appropriately sized so that fans operating in normal background ventilation mode are not overly noisy."
+0,0,0,0,0,1,0,1,1,"The results of all pressure tests on dwellings, including any test failures, should be reported to the building control body."
+0,0,0,0,0,1,0,0,1,The fan should be set at a speed that will approximately achieve the desired continuous flow rate.
+0,0,0,0,1,0,0,1,1,"Generally, a thermal element once upgraded should not have a U-value greater than 0.7W/(m2K)."
+1,1,0,0,0,1,0,1,1,"Where a building undergoing major renovation, which is not a residential building or a mixeduse building, will have more than 10 parking spaces after the major renovation is completed (a) one of those parking spaces must have access to one electric vehicle charge point; and (b) cable routes for electric vehicle charge points must be installed in a minimum of one fifth of the total number of remaining parking spaces."
+0,0,0,0,0,1,0,1,0,"All walls, ducts and boxings to the WC/cloakroom, bathroom and shower room should be strong enough to support grab rails, seats and other adaptations that could impose a load of up to 1.5kN/m2."
+0,0,0,0,1,0,0,1,1,The cost of installing electric vehicle charge points and cable routes is not more than 7% of the total capital cost of the major renovation.
+0,0,1,0,0,1,0,1,1,The doorset should be manufactured from solid or laminated timber with a minimum density of 600kg/m3.
+0,0,0,0,0,1,0,0,1,The annual energy savings should be estimated using the Standard Assessment Procedure.
+0,1,0,0,0,1,0,1,0,"If the building has a floor area greater than 150m2, heating should be split into different heating zones and each zone should have separate controls for timing and temperature demand."
+1,0,0,0,0,0,0,0,1,The default condition should be off.
+0,0,1,0,0,0,0,1,1,"When replacing an existing system, the installed generation capacity of the new system should be no less than that of the existing system, except where a smaller system can be demonstrated to be more appropriate or effective (e.g. replacing an existing system with one which is better matched to the dwelling's energy demand)."
+0,0,0,0,0,1,0,0,1,Systems should be designed so that they can be commissioned to suitable ventilation rates so that spaces are not significantly over-ventilated.
+0,0,0,0,0,1,0,1,0,The access route in the seating area or standing auditorium must be directly accessible from the end of each row.
+0,0,0,0,0,1,0,1,1,The actual equivalent area and location of installed background ventilators should be recorded.
+0,0,0,0,0,1,0,1,1,"If the domestic hot water cylinder is located inside the building envelope, 50 of the calculated domestic hot water cylinder heat loss shall be added to the thermal load of the spaces of the building."
+1,0,0,1,0,0,0,0,0,"If efficiencies at below 30% are required and unavailable, the boiler efficiency may be taken as equal to that at 30% load."
+0,0,0,0,0,1,0,1,1,"If the total flow rate cannot be achieved through all the terminals, then the fan speed should be increased."
+1,0,0,0,1,1,0,1,1,"Extract air from toilets, washrooms and cleaning spaces may be conducted to vertical ducts for extract air categories 1 and 2 if the total extract air flow from these spaces does not exceed 10 of the total air flow in the vertical duct."
+0,0,0,0,0,1,0,1,1,"Entrances and passageways to playgrounds and recreation areas used in the wintertime, as well as street areas surrounding the building and other public areas, must be protected from snow and ice falling from the roof of the building using snow barriers, taking into account the pitch of the roof."
+0,0,1,0,0,1,0,0,1,"Where a kitchen and living room accommodation are not separate rooms (i.e. open plan), no fewer than three ventilators of the same equivalent area as for other habitable rooms should be provided within the open-plan space."
+0,0,0,0,0,1,0,1,0,Products to be used in the water system shall be suitable for conveying household water.
+0,0,0,0,0,1,0,0,0,"How the measurements can help you take action CO2 measurements should be used as a broad guide to ventilation within a space, rather than treated as safe thresholds."
+0,0,0,0,0,1,0,0,1,Continuously running fans should be set up to operate without occupant intervention but may have manual or automatic controls for selecting the high rate of operation.
+0,0,0,0,0,1,0,1,0,"Roofs: insulation should be installed tight to the structure, without air gaps, and should extend to the wall insulation."
+0,1,0,0,0,1,0,1,1,"Where a new building contains more than one dwelling, a common access point for a gigabit-capable public electronic communications network is required as a part of the buildings gigabit-ready physical infrastructure."
+0,0,1,0,0,1,0,1,0,"The handle to at least one window in the principal living area is located between 450mm and 1200mm above floor level, unless the window is fitted with a remote opening device that is within this height range."
+0,0,0,0,1,0,0,1,1,Special safety features are not necessary if the ladder is not more than 6m long.
+0,0,0,0,0,1,0,1,0,Taps and WC cubicle doors should be operable by people with limited strength or manual dexterity and doors to cubicles should be capable of being opened if a person has collapsed against them while inside the cubicle.
+0,0,0,0,0,1,0,0,1,Programmable room thermostats with an override feature should be provided for all direct electric zones of the electric underfloor heating system.
+0,0,0,0,0,1,0,1,1,"There must be safe and easily accessible, uninterrupted access routes to any chimneys, ventilation equipment and other building equipment and structural elements that are located on the roof of the building and that must be accessed regularly."
+0,0,0,0,0,1,0,0,1,A dynamic calculation tool shall be used for the calculation of the room temperature for the summer season.
+0,0,0,0,0,1,0,0,1,A water point shall incorporate a drainage point that is connected to the sewer via a drainage fixture.
+0,0,0,0,0,1,0,0,1,"Any manual high rate controls should be provided locally to the spaces being served, e.g. bathrooms and kitchens."
+0,0,1,0,0,1,0,1,0,The water temperature of the water in the hot water system shall be at least 55 degrees Celsius and available from the hot water plumbing fixture within 20 seconds.
+0,0,0,0,0,1,0,0,0,"Snow or rain-water shall not be allowed to ingress the ventilation system via externally mounted air transfer devices in quantities causing damage to the system, lowering air quality or impairing the functioning of the system."
+0,0,0,0,0,1,0,0,1,"People with hearing impairments should be able to participate fully in conferences, committee meetings and study groups."
+0,0,0,0,0,1,0,1,0,"The driveway and parking area at a plot or building site must be separated from pedestrian, play and recreation areas."
+0,0,0,0,0,1,1,1,1,"In a room with no openable window, an intermittent extract fan should be provided with controls which continue to operate the fan for at least 15 minutes after the room is vacated."
+0,0,0,0,0,1,0,0,1,Adequate space should be available for access to maintain ventilation equipment.
+0,0,0,0,0,1,0,1,1,Ground floors and external walls: the wall-to-floor junctions should be detailed to achieve continuity of insulation.
+0,0,0,0,0,1,0,0,0,The sign should be sited where a person installing an electric vehicle charge point in future will see it.
+0,0,0,0,0,1,0,1,0,"The rate of heat release from the appliance should be adjustable, using an adjustable damper or other thermostatically controlled method."
+1,0,1,0,0,1,0,0,1,At least one in every five remaining parking spaces must be provided with cable routes.
+0,0,0,0,0,1,0,0,1,"Any floors, walls and doors that have been installed to allow the potential liftway to be used as storage or for other purposes could be easily removed without structural alteration."
+0,0,0,0,0,1,0,1,1,"Door furniture on manually operated non-powered doors should be easy to operate by people with limited manual dexterity, and be readily apparent against the background of the door."
+0,0,0,0,0,1,0,1,1,"Since doors are potential barriers, their use should be avoided whenever appropriate."
+0,0,0,0,0,1,0,0,1,"Additionally, a sign identifying the floor reached should be provided on each landing in a location that can be easily seen from the lifting device and is designed so that it contrasts visually with its surrounding."
+0,0,0,0,1,1,0,1,1,Air flows in the continuous working area of a parking garage for motor vehicles shall be designed so that the instantaneous carbon monoxide concentration does not exceed 7 mg/m3 (6 ppm).
+0,0,0,0,0,1,0,0,0,"The approach route should be safe and convenient for everyone, including older and disabled people and some wheelchair users."
+0,0,0,0,0,1,0,0,1,Controls should be provided for ventilators so that the ventilation in each room can be adjusted.
+0,0,0,0,0,1,0,0,1,Edge columns and walls shall be tied to every floor and roof.
+0,0,1,0,0,0,0,1,1,"If parking spaces are provided for a building, an adequate number of them, but at least one, shall be intended for the use of a person with mobility and functional impairment."
+0,0,0,0,0,1,0,0,0,Monitors should therefore be positioned at least 500mm away from room occupants.
+0,0,0,0,0,1,0,1,0,The protective part of the barrier must extend to a height of at least 0.7 metres from the surface of the landing or step.
+0,0,0,0,0,1,0,1,1,For continuing horizontal structures the loaded area shall be calculated span by span.
+0,0,0,0,0,1,0,0,1,"Where a separate-sex toilet washroom can be accessed by wheelchair users, it should be possible for them to use both a urinal, where appropriate, and a washbasin at a lower height than is provided for other users."
+0,0,1,0,0,1,0,1,1,"If site constraints necessitate an approach of 1:20 or steeper, an approach incorporating ramped access should be provided."
+0,0,0,0,0,1,0,1,0,Leakage from a pressure sewer located in a groundwater zone shall be detectable.
+0,0,0,0,0,1,0,0,0,The service should be appropriate to the requirements of the space.
+0,0,1,0,0,1,0,0,1,Cable routes must still be provided for a minimum of one in five parking spaces.
+0,0,0,0,0,1,0,1,0,"Any sound system in an auditorium, a restaurant, a conference facility, a facility for festive occasions, a teaching facility or other similar assembly facility or a public service facility shall have an induction loop or a similar sound transmission system."
+0,0,0,0,0,1,0,0,1,Under-floor heating systems intended for intermittent or cyclical operation and/or installed over unheated rooms should be separated from the structural floor by a layer of insulation with a thermal resistance of at least 1.25(m2K)/W.
+0,0,0,0,0,1,0,0,1,Buildings located near to significant local pollution sources should be designed to minimise the intake of external air pollutants.
+1,0,0,0,0,1,0,0,1,"NOTE: For grid-supplied electricity, a CO2 emission factor of 0.136kgCO2/kWh and primary energy factor of 1.501kWhPE/kWh should be used."
+0,0,0,0,0,1,0,1,1,The spread of fire in voids of wall-type building elements must be restricted at least by storey.
+0,0,0,0,0,1,0,1,0,The vehicle traffic area of a building and its courtyard must be safe and appropriate.
+0,0,0,0,0,1,0,0,1,"In the construction of a new building as well as in repair and alteration work corresponding to the construction of a new building, the premises to be fitted with a floor drain shall be: 1. showers and bathrooms as well as wash rooms in connection with saunas; 2. laundry room; 3. heat distribution room; 4. ventilation unit room; 5. toilet facility intended for public use; 6. technical utility room with a possibility to water damage; 7. car wash facility; 8. special facilities cleansed by water rinsing."
+0,0,0,0,0,1,0,0,1,"Manual controls, where provided, should be within reasonable reach of the occupants."
+0,0,0,0,0,1,0,0,1,Boards should be fitted to the structure to avoid any gaps between board edges and between the board facings.
+0,0,0,0,0,0,1,0,1,A district heat network that is being connected to a new building should not have a CO2 emission factor for delivered heat to the building which is greater than 0.350kgCO2/kWh.
+0,0,0,0,0,1,0,0,0,The building should be constructed to meet requirement O1 using passive means as far as reasonably practicable.
+0,0,0,0,0,0,1,1,1,"An area with a potentially flammable or explosive atmosphere must not be located in a building where there are dwellings, accommodation premises, institutions or assembly and business premises."
+0,0,0,0,0,1,0,0,0,District heat networks and community heating systems should be designed to accommodate heat meter(s) for each dwelling.
+0,0,0,0,0,1,0,1,1,"Activation (e.g. motion sensors and push buttons), safety features and the time-lapse allowed for entry and exit through powered door systems should be carefully considered to suit the needs of people who cannot react quickly."
+0,0,1,0,0,0,0,1,1,"The clear width of the door and opening leading to room spaces of a non-residential building as well as to residential rooms of a residential building, necessary spaces serving residence and spaces serving the use of the building shall be at least 800 millimetres."
+0,0,0,0,0,1,0,0,0,Purge ventilation may be provided by natural means (e.g. an openable window) ormechanical means (e.g. a fan).
+0,0,0,0,0,1,0,1,1,"If a drainage point is located below the height of backwater, the waste water must be pumped."
+0,0,1,0,0,0,0,1,0,NOTE 2: Double doors effectively provide nibs where each leaf is at least 300mm wide.
+0,0,0,0,0,1,0,0,0,"Handrails should be set at heights that are convenient for all users of the building and should extend safely beyond the top and bottom of a flight of steps, or a ramp, to give both stability and warning of the presence of a change in level."
+0,0,0,0,0,1,0,0,0,controls should be inspected to ensure that the following have been achieved.
+0,0,0,0,0,1,0,0,1,"All floor areas, even when located at different levels, should be accessible."
+0,0,0,0,0,1,0,1,1,"The dwelling is wheelchair adaptable such that key parts of the accommodation, including sanitary facilities and kitchens, could be easily altered to meet the needs of a wheelchair user or, where required by a local planning authority, the dwelling is wheelchair accessible."
+0,0,0,0,0,1,0,1,0,Extract ventilators in sanitary accommodation should be capable of continuous operation if required.
+0,0,0,0,0,1,0,0,1,It should be possible for information about the building to be easily obtained from a reception point or gathered from notice boards and signs.
+0,0,0,0,0,1,0,0,1,Any combined facility should be divided into distinct wet and dry areas.
+0,0,0,0,0,1,0,1,1,"For example, glare and reflections from shiny surfaces, and large repeating patterns, should be avoided in spaces where visual acuity is critical as they will hamper communication for people with impaired vision, and those who lip read or use sign language."
+0,0,0,0,0,1,0,1,1,Windows and doors: should be installed in such a way that the thermal integrity of the insulated plane is maintained.
+0,0,0,0,0,1,0,0,0,It must be possible for fire and service rescue equipment to have sufficiently close access to the building (emergency access road).
+1,0,1,0,0,0,0,1,0,The width of access routes in assembly areas with a maximum capacity of 60 persons must be at least 900 millimetres.
+0,0,0,0,0,1,0,0,1,"The flooring and wall covering must provide waterproofing, or separate waterproofing must be installed under the flooring and behind the wall covering."
+1,0,0,0,0,1,0,0,0,One electric vehicle charge point must be installed.
+0,0,0,1,0,1,0,1,1,Control should be maximised and heat gain to uninsulated pipes should only be permitted where the proportion of the cooling load relating to distribution pipework is less than 1 of the total load.
+0,0,0,0,0,1,0,0,1,"Ventilation systems that, under normal operation, recirculate air between more than one space, room or zone should also be able to operate in a mode that reduces the risk of the transmission of airborne infection."
+0,0,1,0,0,0,0,1,1,The value of the consequential improvement works should not be less than 10 of the value of the principal works.
+1,0,1,0,0,0,0,1,0,"If the dwelling only has one habitable room, a minimum ventilation rate of 13l/s should be used."
+0,0,0,0,0,1,0,0,1,The penetrating services should be sealed to the air barrier using proprietary grommets or collars with air-sealing tape or sealant.
+0,0,0,0,0,1,0,1,1,Where a system for onsite electricity generation is installed (a) reasonable provision must be made to ensure that (i) the system and its electrical output are appropriately sized for the site and available infrastructure; (ii) the system has effective controls; and (b) it must be commissioned by testing and adjusting as necessary to ensure that it produces the maximum electricity that is reasonable in the circumstances.
+1,0,0,0,0,0,0,1,1,The air extract rate should be 20 litres per second per machine during use.
+0,0,0,0,0,1,0,1,1,The correct operation of each control function should be tested where it is practical.
+0,0,0,0,0,1,0,0,1,"Instead, the dwelling primary energy rate, dwelling emission rate and dwelling fabric energy efficiency rate should be calculated as if the area covered by the pool were replaced with the equivalent area of floor with the same U-value as the pool surround."
+0,0,0,0,1,1,1,1,0,Where the parking is within the private curtilage of the dwelling (but not within a carport or garage) at least one space is a standard parking bay that can be widened to 3.3m.
+0,0,0,0,0,1,0,1,1,"In glazed balconies, the spread of fire from one balcony to another and to an adjacent fire compartment must be restricted."
+0,0,0,0,0,1,0,0,1,Accessible entrances should be clearly sign-posted and easily recognisable.
+0,0,0,0,0,1,0,1,0,"U-values for rooflights or rooflight-and-kerb assemblies should be based on the developed surface area of the rooflight (U_d values), which is often greater than the area of the roof opening."
+0,0,0,0,0,1,0,0,0,Combustion appliances must operate safely whether or not fans are running.
+0,0,0,0,0,1,0,0,0,Systems should be commissioned to optimise the use of energy for pumping.
+0,0,0,0,0,1,0,0,1,"The building shall be constructed so that the combined dead,imposed and wind loads are sustained and transmitted by it to the ground: (a) safely; and (b) without causing such deflection or deformation of any part of the building, or such movement of the ground, as will impair the stability of any part of another building."
+0,0,0,0,0,1,0,1,1,Ladders and other structural elements at emergency exits and service routes must be designed and constructed so that they can also be used in an emergency situation.
+1,1,0,0,0,0,0,1,1,"The fire compartmenting requirement for the balcony slab of a glazed balcony of a building exceeding two storeys is EI 30; however, minor sealing parts and penetrations may be class E 15."
+0,0,0,0,0,1,0,1,0,"Wet room waterproofing must form a whole which is impermeable on all waterproofed surfaces as well as on their seams, penetrations and joints."
+0,0,0,0,0,1,0,1,1,"If there are not enough associated parking spaces outside of the covered car park to meet the requirement to install electric vehicle charge points, then cable routes should be installed for associated parking spaces within the covered car park."
+0,0,0,0,1,0,0,1,1,"However, a horizontal gap in a protective part must be no higher than ten millimetres."
+0,0,0,0,0,0,0,1,1,"It would be beneficial if entrance doors to wheelchair-accessible bedrooms were powered opening, as this could avoid the need for the 300mm access space adjacent to the leading edge of the door."
+0,0,0,0,1,0,0,1,1,"For sizes of cylinder not listed, the heat loss from the cylinder should not exceed (16.66 8.33 V0.4)/(1000 24), where V is the volume in litres."
+0,1,0,0,0,1,0,1,1,"In public outdoor and indoor spaces, and in business and service premises, a handrail must continue at least 300 millimetres past the start and end points of the structure, and in the case of stairs or ramps that have a width exceeding 2.4 metres and are located in assembly areas, it must also be placed so as to divide the passageway into parts no wider than the abovementioned width."
+0,0,0,0,0,1,0,1,1,"In a natural ventilation system, the ventilation valves shall be easy to close."
+0,0,0,0,0,1,0,1,0,"U-values for rooflights or rooflight-and-kerb assemblies should be based on the developed surface area of the rooflight (U-values), which is often greater than the area of the roof opening."
+1,0,0,1,0,0,0,1,1,"If the free gap between facing walls of adjacent glazed balconies or the distance of the wall to the window of an adjacent fire compartment is less than 2 metres, the wall in question must be class EI 15."
+0,0,0,0,1,1,0,1,1,The air flows shall be designed so that the average carbon monoxide concentration in a parking garage for motor vehicles during the hour of use assessed as the most critical does not exceed 35 mg/m3 (30 ppm).
+0,0,0,0,0,1,0,0,0,Ventilation ductwork should be made and assembled so as to be reasonably airtight.
+0,0,0,0,0,1,0,0,1,Main distribution routes should be through vertical risers to minimise heat gains into common spaces.
+0,0,1,1,0,0,0,1,1,"The height of a barrier in a dwellings indoor areas may, however, be at least 0.9 metres if the drop is less than three metres."
+1,0,0,0,0,1,0,1,0,The resilient layer should be to the full height of the door and 600mm either side of the doorset.
+1,0,1,0,0,0,0,1,1,This grippable handrail is 850-1000mm above the pitch line of the flight and extends at least 300mm beyond the top and bottom nosings.
+0,0,0,0,0,1,0,0,1,Mechanical supply terminals should be located and directed to avoid draughts.
+0,1,0,0,0,0,1,1,1,"Where the cost of installing only cable routes is more than 7% of the total cost of the major renovation, there is no requirement to install either electric vehicle charge points or cable routes."
+0,0,0,0,1,1,0,0,0,No more than two drainage wells may be connected to a floor drain and they may be located at a maximum distance of three meters from the floor drain.
+0,0,0,0,0,1,0,0,0,"System controls should be wired so that when there is no demand for space heating or hot water, the heating appliance, if appropriate, and pump are switched off."
+0,0,0,0,0,1,0,1,1,"If the dwelling already has mechanical ventilation, the centralised system could be extended into the additional room."
+0,0,0,0,0,1,0,1,1,Structures with surfaces exposed to moisture must be resistant to the effects of water.
+0,0,1,0,0,1,0,1,1,"The resilient layer should be timber sheathing at least 9mm thick, expanded metal or a similar resilient material."
+0,0,1,0,0,0,0,1,1,"However, when the snow load can occur, the minimum value of the load s should be at least 0.5 kN/m2."
+0,0,1,0,0,1,0,1,1,"A dwelling that is intended for service housing or supported housing of a person with mobility and functional impairment shall, irrespective of the number of storeys in the building, have a turning space with a diameter of at least 1,500 millimetres in the hallway and kitchen."
+0,0,0,0,1,1,0,1,1,A building with dwellings or accommodation or patient rooms shall be designed and implemented so that the reverberation time of the staircase and exit route is no more than 1.3 seconds.
+0,0,0,0,0,1,0,0,1,The sign should be suitably weatherproof for its location.
+0,1,0,0,0,0,0,1,1,The total number of associated parking spaces which have access to either: a. cable routes; b. an electric vehicle charge point should be the greater of the following: a. the number of dwellings in the residential building; b. the number of associated parking spaces.
+0,0,0,0,0,1,0,0,0,"Wheelchair users should be able to manoeuvre around and use the facilities in the room, and operate switches and controls."
+0,0,0,0,0,1,0,0,1,"The non-primary doors for entering a dwelling (for example, back door or garage inter-connecting doors) should be fitted with a multipoint locking system that meets the requirements of: PAS 3621 (key locking on both sides), or PAS 8621 (non-key locking on the internal face), or PAS 10621 (non-key locking on the internal face, but with an external locking override facility)."
+1,0,0,0,0,1,0,0,1,"In large building complexes, such as retail parks and large sports centres, there should be one wheelchair-accessible unisex toilet capable of including an adult changing table."
+0,0,1,0,0,1,0,1,1,"Where communal parking is provided to blocks of flats, at least one standard parking bay is provided close to the communal entrance of each core of the block (or to the lift core where the parking bay is internal)."
+0,0,0,0,0,1,0,1,0,The breaking of a glass structure or other light-permeable structure of a building must not cause a danger of falling or a danger of injury from fragments falling onto persons below.
+0,0,0,0,0,1,0,0,0,The pumping station shall be equipped with a malfunction detector.
+0,0,1,0,0,1,0,1,1,"Where the gradient of the approach, whether over its whole length or in part, is 1:20 or steeper, that part of the approach should be designed as ramped access."
+0,0,0,0,0,1,0,0,0,"An entrance door should be included, which should be shut all the time."
+1,0,1,0,1,0,0,1,0,"in residential buildings of not more than two storeys, one exit of no less than 900 millimetres in width is permitted."
+0,0,0,0,0,1,0,1,0,Barriers on loading docks must not impede loading and unloading.
+0,0,0,0,0,1,0,1,1,"Where sanitary facilities are wheelchair accessible, basins and sinks should be wall hung (typically with their rim 770-850mm above finished floor level) and the clear zone beneath basins, services and pedestals is maximised to enable wheelchair users to approach."
+0,0,0,0,0,1,0,1,1,There must be access to each fire compartment of an attic for firefighting operations.
+0,0,0,0,0,1,0,0,0,The provision made must be sufficient to (a) allow simple adaptation of the dwelling to meet the needs of occupants who use wheelchairs; or (b) meet the needs of occupants who use wheelchairs.
+0,0,1,0,0,1,0,1,1,"For wet heating systems in new dwellings with a floor area of 150m2 or greater, a minimum of two independently controlled heating circuits should be provided."
+0,0,0,0,0,1,0,1,0,Duct connections should be both mechanically secured and adequately sealed to prevent leaks.
+0,0,1,0,0,1,1,0,1,"If a residential block of flats does not have a lift, the stairs between floor levels must have natural light and at least one intermediate landing."
+0,0,0,0,0,1,0,1,0,The integrity of the water system shall be ensured with pressure testing using water.
+0,0,0,0,0,1,0,0,1,"In principle, suitable sanitary accommodation should be available to everybody, including sanitary accommodation designed for wheelchair users, ambulant disabled people, people of either sex with babies and small children or people encumbered by luggage."
+0,0,0,0,0,1,0,0,0,Rigid ducts should be used wherever possible.
+0,0,0,0,0,1,0,0,1,Extensive voids must be partitioned in order to restrict the spread of fire.
+0,0,0,0,0,1,0,0,1,The effective rated output should be assessed based on the final installed capacity of the heating or air-conditioning system.
+0,0,0,0,0,1,0,1,1,"For common leaf lintels, the base plate should not be continuous and the lintel core should be insulated."
+0,0,0,0,0,1,0,1,1,"NOTE: When a single U-value is calculated for a product range of doors, the configuration of the door chosen for the calculation should be the worst performing in the product range."
+0,1,0,0,0,1,0,1,1,"A building shall be provided with a permanently installed dry riser that is suitable for its purpose for transporting water for fire extinguishing: 1) in the premises above the entry level of the building, when the distance of the uppermost floor level from the entry level exceeds 24 metres; 2) in the premises below the entry level of the building, when the distance of the basement storey floor from the entry level exceeds 14 metres."
+0,0,0,0,0,1,0,1,0,"Walls: insulation should be fitted without any air gaps and tight to the structure, cavity closers, lintels and cavity trays."
+0,0,0,0,0,1,0,0,1,Fixed or linked seats must be arranged as rows of seating with an access route on the side of the rows.
+0,0,0,0,0,1,0,1,0,"During this process, the heat pump (along with its accompanying pipework) should be isolated from the ground heat exchanger such that damage to the internal heat exchanger inside the heat pump is avoided."
+1,0,0,0,0,1,0,1,0,All three parts of the compliance checklist should be completed.
+0,0,0,0,0,1,0,1,1,"Where on-site electricity generation and storage is installed, such as photovoltaic panels or battery storage, systems should be an appropriate size for the site, available infrastructure and on-site energy demand."
+0,0,1,0,0,0,0,0,1,"The distance between a door that opens onto a landing and the upper edge of the ramp or flight of stairs must be no less than 400 millimetres on the side wall and no less than 1,500 millimetres on the end wall."
+0,0,0,0,0,1,0,0,1,"If an exposed facade is close to an area of sustained and loud noise (e.g. a main road), then a noise-attenuating background ventilator should be fitted."
+0,0,1,0,0,1,0,1,1,The system can be overridden by a door reactivating device that relies on appropriate electronic methods (but not a door edge pressure system); provided that the lift door remains fully open for at least three seconds.
+0,0,0,0,0,1,0,1,1,External walls and their various layers must form a whole that prevents water from harmfully penetrating into the structures.
+0,0,0,0,0,1,0,1,0,"Spaces of a non-residential building and common spaces of a residential building as well as the fixtures, fittings and fixed equipment in them shall be suitable for persons with mobility and functional impairment."
+0,0,0,0,0,1,0,1,1,Independent temperature control of the hot water circuit should be implemented with a cylinder thermostat and a timing device.
+0,0,0,0,0,1,0,1,0,Ground arrays including header pipes and manifolds should be flushed as one system to remove all debris and purged to remove all air.
+0,0,0,0,0,1,0,1,1,NOTE: Ventilation through infiltration should be considered to be part of the ventilation provision of a dwelling.
+0,0,0,0,0,1,0,0,1,Mechanical ventilation systems must be commissioned to provide adequate ventilation.
+0,1,1,0,0,1,0,1,0,"Where the work concerns a building containing more than one dwelling, the work must be carried out so as to ensure that the building is equipped in addition with a common access point for gigabit-capable public electronic communications networks."
+0,0,0,0,0,1,0,0,1,NOTE: Ventilation through infiltration should be considered to be part of the ventilation provision of a building.
+0,0,0,0,0,1,0,0,1,A dwelling that is only a basement should be treated as a single-storey dwelling above ground level.
+0,0,0,0,0,1,0,0,0,"U-values should be assessed for the whole thermal element (e.g. in the caseof a window, the combined performance of the glazing and the frame)."
+0,0,0,0,0,1,0,1,1,"When calculating the energy consumption of a buildings cooling system, the energy consumption of cooling energy production and the electrical energy consumption of auxiliary units shall be taken into account where the use of the systems is required for indoor temperature control."
+0,0,0,0,0,1,0,0,1,"At night, windows, patio doors and balcony doors should be modelled as closed."
+0,0,0,0,0,1,0,1,0,The fan speed should be set to achieve the desired continuous flow rate.
+0,1,0,0,0,1,0,1,0,"In buildings with a total useful floor area greater than 1000m2, automatic meter reading and data collection facilities should be installed."
+0,0,0,0,0,1,0,0,1,"Reasonable provision shall be made for the conservation of fuel and power in buildings by: (a) limiting heat gains and losses (i) through thermal elements and other parts of the building fabric; and (ii) from pipes, ducts and vessels used for space heating, space cooling and hot water services; (b) providing fixed building services which (i) are energy efficient to a reasonable standard; (ii) have effective controls; and (iii) are commissioned by testing and adjusting as necessary to ensure they use no more fuel and power than is reasonable in the circumstances."
+0,0,0,0,0,1,0,0,0,"Unit length should be measured through midline of the worktop, not the front or rear edge."
+1,0,0,0,0,0,0,1,0,"When calculating the reference heat loss of a building, the value of 2.0 m3/(h m2) shall be used as the reference value for the air leakage rate figure for the building envelope."
+0,0,0,0,0,1,0,0,1,Routes intended for vehicle traffic must be located in a way that does not restrict pedestrian routes or the space required for opening doors and gates.
+0,0,1,0,0,1,0,0,0,The design solar load should be reduced by at least 20%.
+0,0,0,0,1,0,0,1,0,"However, if the elevation difference is no more than 1,000 millimetres, the ramp may not have a gradient of more than eight per cent."
+0,0,0,0,0,1,0,0,1,"Where membranes are penetrated, careful detailing should be used to achieve a robust and durable seal at these penetrations."
+0,0,1,0,0,1,0,1,0,"The morticed bolts should have a minimum projection of 20mm, should be at least 100mm from the top and bottom corners of the door, and should avoid any door construction joints."
+0,0,0,0,0,1,0,0,0,The separator devices shall be located so that they can be serviced and emptied easily and without causing problems.
+0,0,0,0,1,1,0,1,1,The cold water pipe shall be designed and installed so that the temperature in the cold water system may not exceed 20 degrees Celsius.
+0,0,0,0,0,1,0,0,0,The photographs should be made available to the energy assessor and the building control body.
+0,0,0,0,0,1,0,0,1,"The information should be provided in a clear manner, for a non-technical audience."
+0,0,0,1,0,1,0,1,1,"At gables and party walls, insulation should extend to the wall; if the space between the wall and joist is less than 100mm, perimeter insulation may be required."
+0,0,0,0,0,1,0,1,0,"In refreshment facilities, bars and counters (or sections of them) should be at a level suitable for wheelchair users."
+0,0,0,0,0,1,0,0,1,"If the building is heated through a district heat network or community heating system, the effective rated output should be based on the capacity of the equipment installed in the building, making reasonable assumptions for the operation of the district heat network or community heating system, including flow temperatures."
+0,0,0,0,0,1,0,1,0,The buildings surfaces and lighting must be such that they achieve the contrasts in brightness needed for observation.
+0,0,1,0,0,1,0,1,1,"A dwelling that is intended for sheltered housing or supported housing of a person with mobility or functional impairment shall have at least one toilet and washing facility which has a free space with a diameter of at least 1,500 millimetres."
+0,0,0,0,0,1,0,1,0,The inaccuracies of the crane wheels should be determined together with the crane supplier.
+0,1,0,0,0,1,0,0,1,"A guardrail must be used at points with a level difference of over 0.7 metres, if these can be accessed by children."
+0,0,0,0,0,1,0,0,1,"Refreshment facilities, such as restaurants and bars, should be designed so that they can be reached and used by all people independently or with companions."
+0,0,0,0,0,1,0,0,0,"Consideration should be given to installing a fold-down table, e.g. for baby changing."
+0,0,0,0,0,1,0,0,1,"Drawings: all relevant drawings should be provided to clearly identify the position, continuity and extent of the air barrier."
+0,0,1,0,0,0,0,1,0,The design temperature difference for the community heating primary circuit should be a minimum of 20C.
+0,0,0,0,0,1,0,1,1,"NOTE: The surface area of the whole building must be included when assessing whether the works constitute a major renovation, even if the building is mixed use."
+0,0,0,0,0,1,0,0,1,"Where it is not feasible to install a space heating system that can operate at this temperature (e.g. where there is insufficient space for larger radiators, or the existing distribution system is provided with higher temperature heat from a low carbon district heat network), the space heating system should be designed to the lowest design temperature possible that will still meet the heating needs of the building."
+1,0,0,0,0,1,0,1,1,"If performance requires thicker glass to be used, an equivalent window unit with standard thickness (6mm) glazing should be shown to meet the required standard."
+0,0,0,0,0,1,0,0,1,"Fully insulated and continuous cavity closers should be used, installed tight to the insulation and cavity apertures."
+0,0,0,0,0,1,0,0,1,Complex details should be avoided wherever possible.
+0,0,0,0,0,1,0,0,1,Wheelchair accessible dwellings must also provide both a level access shower and a bath.
+1,0,0,0,0,1,0,1,1,"When a warning sign is not posted, the areas shall be designed to an axle load Qk and also to an axle group load equal to 190 kN."
+0,0,1,0,0,1,0,0,1,"For mobility-impaired people, a going of at least 300mm is preferred."
+0,0,0,0,0,1,0,0,0,Grommets or flexible collars should be used around incoming services and sealed to the air barrier with air-sealing tape or sealant.
+1,1,0,0,0,1,0,1,1,Where a new building which is not a residential building or a mixed-use building has more than 10 parking spaces (a) one of those parking spaces must have access to one electric vehicle charge point; and (b) cable routes for electric vehicle charge points must be installed in a minimum of one fifth of the total number of remaining parking spaces.
+0,0,0,0,0,1,0,1,1,The whole building ventilation rate should be met.
+0,0,0,0,0,1,0,0,0,"U-values should be assessed for the whole fabric element (e.g. in the case of a window, the combined performance of the glazing and the frame)."
+0,0,0,0,0,1,0,0,1,"In hard water areas, suitable measures should be taken to treat the feed water to water heaters and the hot water circuit of combination boilers to reduce limescale accumulation."
+0,0,0,0,0,1,0,0,1,"Where relevant work is undertaken on a mixed-use building, it should be determined which parking spaces are associated parking spaces for the use of occupants of the dwellings, and which parking spaces are for use by users of the non-residential function of the building."
+0,0,0,0,0,1,0,0,1,"Before a new heating appliance is installed, all central heating and primary hot water circuits should be thoroughly cleaned and flushed out."
+0,0,0,0,0,1,0,0,1,"Each office should have the means to provide purge ventilation, to reduce pollutants before the office space is occupied or after activities such as painting."
+0,0,0,0,0,1,0,1,1,"Where a gas combination boiler is used, the boiler type should be selected to modulate down to the typical heating load of the dwelling."
+0,0,0,0,0,1,0,1,1,"For mechanical ventilation systems, fan units should be appropriately sized so that fans operating in normal background ventilation mode are not overly noisy, taking into consideration the use and likely background level of noise from other sources."
+0,0,0,0,0,1,0,0,1,"In general, accessible bedrooms should be no less advantageously situated than other bedrooms."
+0,0,0,0,0,1,0,1,0,The slope of the wet room floor must allow water to flow into the floor drain.
+0,0,0,0,0,1,0,0,0,Handrails should be spaced away from the wall and rigidly supported in a way that avoids impeding finger grip.
+0,1,0,0,0,1,0,1,1,"If the cross-sectional area of a mechanical ventilation systems air duct is designed to be greater than 0.06 m2, the outdoor air and exhaust air ducts shall be fitted with shutoff dampers that close automatically when the system shuts down."
+0,0,0,0,0,1,0,0,0,"For example, the shutters should be used in the day and the windows opened only when it is cooler outside."
+0,0,0,0,0,1,0,1,1,"Mechanical ventilation systems, including both continuous and intermittent mechanical ventilation, should be designed and installed to minimise noise."
+0,0,0,0,0,1,0,1,1,The air flow rate of all mechanical ventilation fans should be tested.
+0,0,0,0,0,1,0,1,1,"Any restrictors placed on windows used as emergency exits must, however, be easily releasable by an adult."
+0,0,0,0,0,1,0,1,1,"The ventilation openings or slots leading to the ventilation space or gap of a structure equipped with a ventilation space or gap must be positioned so that the ventilation space or gap is fully usable as a ventilation air flow path and that the ventilation space or gap is free of enclosed, non-ventilated areas."
+0,0,1,0,0,0,0,1,0,The cooker hood should span at least the full width of the cooker.
+0,0,0,0,0,1,0,1,1,"For roofs insulated at ceiling level, the long-term protection of the insulation layer should be considered: boarded areas should be provided above the insulation to give access for maintenance."
+1,0,0,0,0,1,0,0,0,One electric vehicle charge point must be provided for the building.
+0,0,0,0,1,0,0,1,1,The dwelling fabric energy efficiency rate must not exceed the individual dwellings target fabric energy efficiency rate.
+0,0,0,0,0,1,0,0,0,A system for purge ventilation should be provided in each habitable room.
+0,0,0,0,0,1,0,0,1,Where a system for on-site electricity generation is installed (a) reasonable provision must be made to ensure that (i) the system and its electrical output are appropriately sized for the site and available infrastructure; (ii) the system has effective controls; and (b) it must be commissioned by testing and adjusting as necessary to ensure that it produces the maximum electricity that is reasonable in the circumstances.
+1,0,0,0,0,0,0,1,1,A temperature of 21 C shall be used as the design value for room temperature during the heating season.
+0,0,0,0,0,1,0,0,0,The fire compartment shall be partitioned by accommodation room.
+0,0,0,0,0,1,0,0,1,"Whenever the building is moved to a new location, in which its intended time of use is less than two years, these calculations can be provided as evidence that the energy efficiency requirements are met."
+0,1,0,0,0,1,0,1,1,"For a building that contains more than one dwelling for example a block of flats or a terrace of houses an average target primary energy rate, target emission rate and target fabric energy efficiency rate may be calculated as an alternative to individual target rates for each dwelling."
+0,0,0,0,0,1,0,0,0,The lighting must not cause glare that endangers safety.
+0,0,1,0,0,1,0,1,0,All cavity walls should have leaves at least 90mm thick and cavities at least 50mm wide.
+0,0,0,0,0,1,0,0,0,"The building control body should be notified that the analysis of high-efficiency alternative systems has been undertaken, that it is documented and is available to be verified."
+0,0,0,0,0,1,0,0,0,Waterproofing or water pressure barrier must be located on the outer surface of the exterior wall structure against the ground or inside the exterior thermal insulation facing the ground.
+0,0,0,0,0,1,0,1,1,"in an existing building, for the principal or main staff entrance or entrances to be accessible, an alternative accessible entrance should be provided."
+0,0,0,0,0,1,0,0,0,The crawl space must be accessible for inspections and maintenance of the equipment and systems located there.
+0,0,0,0,0,1,0,0,1,"A wide range of people, including accompanied wheelchair users, should be able to access and use the lift."
+0,1,0,0,0,1,0,1,0,"If the area of windows, roof windows, rooflights and doors exceeds 25 of the total floor area of the dwelling, compensating measures should be taken to improve the energy efficiency of the dwelling."
+0,0,0,0,0,1,0,1,1,"Where access to the dwelling can be gained via an interconnecting doorset from the garage, then either the garage doorset (pedestrian and vehicular) or the interconnecting doorset should be a secure doorset."
+0,0,0,0,0,1,0,1,1,"Changing places toilets, facilities designed for individuals with complex and multiple impairments who may require the assistance of up to two assistants, should be provided in addition to any wheelchair-accessible accommodation in separate-sex toilet washrooms, wheelchair-accessible unisex toileting facilities and baby changing facilities."
+0,0,0,0,0,1,0,0,1,The effective g-value should be no worse than 0.3.
+0,0,1,0,0,0,0,0,1,"The free height from the ground or from the surface of a driveway or walkway of the lower edge of a structural element, device or equipment protruding from the building, such as a balcony, bay window, sign, lighting device or awning, must be at least 2.2 metres, unless the area is protected so as to prevent the danger of collision."
+0,0,0,0,0,1,0,1,1,Exits of parts of the building separated by a fire wall must be constructed separately so that in the event of a fire there is no need to use any door that may be in the fire wall.
+0,0,0,0,0,1,0,0,0,The water system shall be designed so as to prevent detrimental cross-flow of water from the hot water pipe to the cold water pipe or vice versa.
+0,0,0,0,0,1,0,0,1,The three-part form should be completed for each installation address.
+0,1,0,0,0,1,0,1,1,"Any abrupt level differences of over 0.7 metres and any precipices located in the vicinity of common play and recreation areas associated with buildings with more than two dwellings must be indicated by appropriate barriers or suitable planted areas, or outfitted with a base that cushions any fall."
+0,0,0,0,0,1,0,0,1,Voids between insulation at the top of the external wall and the cavity wall/timber frame insulation should be fully filled with insulation.
+0,0,0,0,0,1,0,0,0,Display lighting should be controlled on dedicated circuits that can be switched separately from those for lighting provided for general illuminance.
+0,0,0,0,0,1,0,0,0,Guarding should be sized to prevent the passage of a 100mm sphere.
+0,0,1,0,0,0,0,1,1,"The free opening of the vertical hatch or window of an emergency exit must be at least 600 millimetres in height and 500 millimetres in width; however, the sum of these must be at least 1,500 millimetres."
+0,0,1,0,1,1,0,1,1,"Parapets in categories A to E and panel parts of walls acting as parapets, as well as their fasteners, shall be designed to the concentrated load Qk = 0.3 kN acting on a random spot."
+0,0,0,0,0,1,0,1,1,Air flow rates for mechanical ventilation in new dwellings must be measured.
+0,1,0,0,0,1,0,1,1,"If there are more than 60 chairs in a space, they must be linked to one another in at least four groups, unless the chairs are placed around tables."
+0,0,0,0,0,1,0,1,1,Vertical service pipes shall be equipped with mechanical or structural leak detectors at each floor if the service pipes are not visible.
+0,0,0,0,0,1,0,1,1,"The area of sloping surfaces such as staircases, galleries, raked auditoria and tiered terraces should be taken as their area on plan."
+0,0,0,0,0,1,0,0,1,The sewerage system shall be equipped with cleanouts that are easy to handle and lockable in both horizontal and vertical sewers.
+0,0,0,0,0,1,0,0,1,"Doors, gates and boom barriers must operate safely and in such a way that they do not cause a danger of an accident."
+0,0,0,0,0,1,0,1,0,the location of the electric vehicle charge point or future connection location should be suitable for use by electric vehicles with charging inlets in different places.
+0,1,1,0,0,0,0,1,0,The total number of ventilators installed in the dwellings habitable rooms and kitchens should be at least the following: Five ventilators if the dwelling has more than one bedroom.
+0,0,0,0,0,1,0,1,1,The outputs of any renewable systems should be separately monitored.
+0,0,0,0,0,1,0,1,1,"In an existing system, when a boiler or hot water storage vessel is replaced, any accessible pipes in the dwelling should be insulated."
+0,0,0,0,0,1,0,0,1,Uplighters mounted at low or floor level can disorientate some visually impaired people and should be avoided.
+0,1,0,0,0,1,0,1,0,Heating systems for screed floors that are greater than 65mm thick should automatically reduce the room temperature at night or when the room is unoccupied.
+0,0,0,0,0,1,0,0,1,The use of visually and acoustically reflective wall surfaces should be minimised within the lifting platform to prevent discomfort for people with visual and hearing impairment.
+0,0,0,0,0,1,0,0,1,A new dwelling must be built to a minimum standard of total energy performance.
+0,0,0,0,0,1,0,1,0,The surface of stairs the must not be slippery.
+0,0,0,0,0,1,0,1,1,"It should be noted that double buggies are wider than wheelchairs and that, where relevant to the building type, this should be borne in mind when determining an appropriate effective clear width for an entrance door."
+0,0,0,0,0,1,0,0,1,To reduce the risks to the health of persons in buildings formaldehyde fumes given off by urea formaldehyde foams should not penetrate to the occupied parts of buildings to an extent which would give rise to an irritant concentration.
+0,0,0,0,0,0,0,1,1,Sewers shall be connected to a stack vent that extends above the roofing of a building.
+0,0,0,0,0,1,0,1,0,"On stairs and ramps, a handrail must be installed for the entire length and on both sides of the structure."
+0,0,0,0,0,1,0,0,0,"The target primary energy rate and target emission rate must be calculated using one of the calculation tools in the approved methodology, used in line with the version policy as stated in the methodology."
+0,0,0,0,0,1,0,0,0,Capacities should be derived from the combined total of a buildings publicly accessible facilities.
+0,0,0,0,0,1,0,0,1,Sufficient information about the overheating mitigation strategy and its maintenance requirements must be given to owners so that it can be used effectively.
+0,0,0,0,0,1,0,1,1,"Appliances capable of burning both biomass fuel and fossil fuel the CO2 emission factor and primary energy factor for dua-lfuel appliances should be used, except where the building is in a smoke control area, when the anthracite figure should be used."
+1,0,0,0,0,0,0,0,0,Air permeability should be in m3/(hm2) at 50Pa.
+0,0,0,0,0,1,0,0,1,"Reasonable provision should be made for people to (a) gain access to; and (b) use, the dwelling and its facilities."
+0,0,0,0,0,1,0,0,1,"Instantaneous or snapshot CO2 readings can be misleading, so several measurements should be taken throughout the day."
+0,0,0,0,0,1,0,0,0,The building envelope should be insulated to a degree that is reasonable in the particular case.
+0,0,0,0,0,1,0,0,1,"The approach route should be safe and convenient, adopt the shallowest gradient that can reasonably be achieved and be step-free, irrespective of the storey on which the dwelling is located."
+0,0,0,0,0,1,0,0,0,Turning circle should be clear of top step of any adjacent flight of steps.
+0,0,0,0,0,1,0,0,1,"The building should be designed, within the overall constraints of space, so that the difference in level between the entrance storey and the site entry point is minimised."
+0,0,0,0,0,1,0,0,1,Remedial work should be carried out to achieve satisfactory performance in retests.
+0,0,0,0,0,1,0,0,1,Fixed building services must be commissioned to ensure that they use no more fuel and power than is reasonable in the circumstances.
+0,0,0,0,0,1,0,1,1,Partitioning doors in accommodation premises shall be equipped with closing devices.
+0,0,0,0,0,1,0,1,1,"The building primary energy rate and building emission rate submission should be accompanied by a report, signed by a suitably qualified person, detailing how the CO2 emission factors and primary energy factors have been derived."
+0,0,0,0,0,1,0,1,0,"The buildings enclosure together with its construction layers and joints must form a whole, preventing the transfer of water across the surface of the enclosure into the construction by wind, slanting rain and wind pressure."
+0,0,0,0,0,1,0,0,0,A commissioning notice must be given to the building control body.
+0,0,0,0,0,1,0,0,1,"In exit passageways and fire-compartmented elevator shafts, means must be arranged for both smoke extraction and flow of replacement air."
+0,0,0,0,0,1,0,0,1,Each column and wall shall be supplied with continuous vertical ties from the foundations to the roof level.
+0,0,0,0,0,1,0,1,1,"For district cooling schemes, the CO2 and primary energy content of the cooling energy supplied should be calculated."
+0,0,0,0,0,1,0,0,1,"If necessary, fire compartments shall be partitioned in order to restrict the spread of fire and smoke, to provide safe evacuation and to facilitate rescue and extinguishing measures."
+1,0,1,0,0,1,0,0,1,"The wall ties should have a horizontal spacing of 900mm and a vertical spacing of 450mm, or alternatively should be spaced such that the number of wall ties per square metre is not less than 2.5 ties/m2."
+0,0,0,0,0,1,0,0,0,Drawings should be provided for junctions.
+0,0,0,0,0,1,0,1,1,"Where necessary, flexible ducts may be used for final connections, but their lengths should be kept to a minimum."
+0,0,0,0,0,1,0,0,1,"Where onsite electricity generation and storage is installed, such as photovoltaic panels or battery storage, systems should be an appropriate size for the site, available infrastructure and onsite energy demand."
+0,0,0,0,0,1,0,0,1,All space alongside the cable duct should be backfilled in a way that avoids damage to the duct.
+0,0,0,0,0,1,0,1,1,"If the circulation piping is located inside the building envelopes insulation, 25 of the calculated domestic hot water circulation heat loss shall be added to the thermal load of the spaces of the building."
+0,0,0,0,0,1,0,0,1,"The various enduse categories, such as heating, lighting and cooling, should be submetered in such a way that at least 90 of the annual energy consumption of each fuel can be assigned to an enduse."
+0,0,0,0,0,1,0,0,1,NOTE: A system for purge ventilation should be provided in each habitable room to demonstrate compliance with Part F of the Building Regulations.
+0,0,0,0,0,1,0,0,1,Non-condensing boilers should be fitted with a flue condensing kit where feasible and where the boiler is likely to be able to operate in condensing mode (e.g. variable temperature circuits).
+0,0,0,0,0,1,0,0,0,An air pressure test should be carried out on every dwelling.
+0,0,0,0,1,0,0,1,1,No individual flight has a rise of more than 1800mm between landings.
+1,0,1,0,0,1,0,0,1,A minimum of one in five of the remaining parking spaces must have access to cable routes.
+0,0,0,0,1,1,0,1,1,The sink is not more than 150mm deep with insulation to the underside to prevent scalding of a wheelchair users legs.
+0,0,0,0,0,1,0,0,1,"Any walls, doors and windows should be insulated and draught-proofed to at least the same extent as in the existing dwelling."
+0,0,0,0,1,0,0,0,1,"The building primary energy rate and building emission rate calculated using the measured air permeability must not be higher than the target primary energy rate and target emission rate, respectively."
+0,0,0,0,0,1,0,0,1,Other ventilation systems may be acceptable if they can be shown to meet an equal level of performance.
+0,0,0,0,0,1,0,0,1,"Foundations: wherever possible, blocks below the damp-proof course should be the same as those specified in the design for the above-ground main wall element (in masonry construction)."
+0,0,0,0,0,1,0,1,0,The lobby should be large enough and of a shape to allow a wheelchair user or a person pushing a pram to move clear of one door before opening the second door.
+0,0,0,0,0,1,0,1,0,"For roof-lights, U-values should be calculated based on a horizontal position."
+0,0,0,0,0,1,0,0,0,The gradient is as shallow as the site permits.
+0,0,0,0,0,1,0,1,0,"In all cases, roof insulation should be continuous with wall insulation."
+0,0,1,0,0,1,0,1,1,Any connection of two or more air handling units to the same duct or chamber shall be designed so that the pressures of the rooms or the directions of air flow between the rooms and in the ductworks do not change when the air flows of the units are being controlled.
+0,0,0,0,0,1,0,0,0,The test data should be certified by a notified body.
+0,0,0,0,0,1,0,1,1,"For systems that have the ability to use free cooling or heat recovery, the SEER should be derived for the specific application, including free cooling or heat recovery elements."
+0,0,0,0,0,1,0,0,1,"Each residential unit, shared communal room and common space should be categorised separately."
+0,0,1,0,1,0,0,1,0,"In the entrance halls and other indoor areas of administrative, service and business premises and in assembly areas, the riser of the steps must be no more than 160 millimetres and the tread must be no less than 300 millimetres."
+0,0,0,0,0,1,0,0,0,The system should be specified and installed according to the manufacturers instructions to ensure the overall performance of the system meets a reasonable standard.
+0,0,0,0,0,1,0,0,0,The total supply air flow should be distributed proportionately to the volume of each habitable room.
+0,0,0,0,0,1,0,0,1,A notice of the measured air flow rates must be given to the building control body.
+0,0,1,0,0,1,0,1,1,"If the internal ties must be centred on the supporting line, the minimum value of the tie force, 10 kN, will also be applied to internal ties."
+0,0,0,0,0,1,0,1,1,"Floors and foundations: insulation should be installed tight to the structure, without air gaps between insulation panels and at edges."
+0,0,0,0,0,1,0,0,1,"When a building undergoes a major renovation, the technical, environmental and economic feasibility of installing high-efficiency alternative systems should be considered."
+1,1,0,0,0,0,0,1,1,"In a tier that is uninterrupted by cross-gangways, and where the pitch exceeds 25, use a maximum number of steps of 40."
+0,0,0,0,0,1,0,0,1,"Where a building automation and control system is installed, its control capabilities should be appropriate for the building, its expected usage and the building services specification."
+0,0,0,0,0,1,0,0,0,People should be able to appreciate easily where to place their feet by highlighting nosings and avoiding open rises.
+0,0,0,0,0,1,0,0,0,"Equipment should be designed, specified and installed with the aim of maximising its efficiency as installed."
+0,0,1,0,0,1,0,1,1,"For a heat exchanger between a solar primary and secondary system, a minimum of 0.1m2 or equivalent of heat exchanger area should be provided for every 1m2 of the net absorber area of the solar collector."
+0,0,0,0,0,1,0,0,0,"Background ventilators should be at least 1700mm above floor level, to reduce cold draughts, but still be easy for the occupant to reach."
+0,0,0,0,0,1,0,0,1,"In hard water areas, suitable measures should be taken to treat the feed water to water heaters and the hot water circuit of combination boilers to reduce lime-scale accumulation."
+0,0,0,0,0,1,1,0,1,"If the basement has no bedrooms, it should be treated as having one bedroom when calculating the ventilation required for the purposes of meeting the ventilation standards."
+0,0,0,0,0,1,0,0,1,"Geo-location should be enabled to confirm the location, date and time of each image."
+1,0,0,0,0,1,0,0,1,One photograph per detail should be recorded.
+0,0,0,0,0,1,0,0,1,"If sand, sludge, grease, petrol, oil or other detrimental physical or chemical substances may end up in the sewerage system or network or in the environment, the sewerage system shall be equipped with a separator or treatment device."
+0,0,0,0,0,1,0,0,1,There must be an automatic fire-extinguishing system that is suitable for its purpose and connected to the emergency centre.
+1,0,0,0,0,1,0,1,0,extract air of category 4 shall be conducted to the outdoors through individual extract air ducts.
+0,0,0,0,0,1,0,0,0,Ventilation intakes should be located away from the direct impact of the sources of local pollution.
+0,0,0,0,0,1,0,0,1,A step-free approach route should be provided to all private entrances.
+0,0,0,0,0,1,0,1,1,"Manual controls for powered entrance doors should be clearly distinguishable against the background and not located so that a person, having used the control, needs to move to avoid contact with the door as it opens."
+0,0,0,0,0,1,0,0,0,Manual reset should be possible if there is an over-temperature trip.
+0,0,0,0,0,1,0,0,1,"The same approved calculation tool must be used to calculate the target primary energy rate, target emission rate and target fabric energy efficiency rate and the dwelling primary energy rate, dwelling emission rate and dwelling fabric energy efficiency rate."
+0,0,0,0,0,1,0,0,1,"Incoming services: ducts, and cables wherever possible, should be grouped to minimise how often the air barrier is penetrated, while ensuring sufficient space to allow adequate screed flow between ducts."
+0,0,0,0,0,1,0,0,0,A conservatory or porch must have thermal separation from the existing dwelling.
+0,0,0,0,0,1,0,1,1,The flooring functioning as waterproofing or waterproofing located underneath the flooring in wet rooms must have a watertight connection with the waterproofing of the wall.
+1,0,0,0,1,0,0,1,1,The total height of the barrier must be one metre if the drop is no more than six metres.
+0,0,0,0,0,1,0,0,1,"A natural ventilation system, a mechanical extract ventilation system or a mechanical supply and extract ventilation system shall not be designed to be combined in such a way that the directions of air flow between the rooms and in the ductworks may change when the air flows are being controlled."
+0,0,0,0,0,1,0,0,1,The joint between waterproofing and the floor drain must be tight.
+1,0,0,0,0,1,0,1,0,All three parts of the installation and commissioning checklist should be completed.
+0,0,0,0,0,1,0,0,1,"The input charge for electric storage heaters should be adjusted automatically, based on the internal air temperature."
+0,0,0,0,0,1,0,0,0,"A target primary energy rate, target emission rate, building primary energy rate and the building emission rate should be calculated for non-exempt buildings with low energy demand."
+0,0,0,0,1,0,0,1,1,The dwelling emission rate must not exceed the individual dwellings target emission rate.
+0,0,0,0,0,1,0,0,1,"Vertical, horizontal and slinky ground arrays in particular should be flushed in both directions."
+0,0,0,0,0,1,0,0,1,An existing district heat network that is being connected to a new dwelling should not have a CO2 emission factor for delivered heat to the dwelling which is greater than 0.350kgCO2/kWh.
+0,0,0,0,0,1,0,0,1,Single glazing should be supplemented with low-emissivity secondary glazing.
+0,1,0,0,1,1,0,1,0,"In buildings more than 9 metres and at most 28 metres in height, the attic and roof must be accessible via the interior and exterior of the building; in buildings more than 28 metres in height, these must be accessible via the interior."
+0,0,0,0,0,1,0,1,1,"For heat pump installations in which there are other heat sources available to the same building, each of these heat sources should be appropriately incorporated into a singular control system."
+0,0,0,0,0,1,0,0,0,The insulant should be chosen to achieve the lowest practicable U-value.
+0,0,0,0,0,1,0,0,0,Drains shall convey foundation drainage water via drainage wells to a collection well.
+0,0,1,0,0,0,0,1,1,"In a new building, the crawl space height must be 0.8 metres on average at the minimum."
+0,0,0,0,0,1,0,0,0,"Stairs, ladders and ramps shall be so designed, constructed and installed as to be safe for people moving between different levels in or about the building."
+0,0,0,0,0,1,0,1,1,"For heating and cooling systems in a new non-domestic building, or when a heat generator such as a boiler is replaced in an existing non-domestic building, each room should be provided with thermostatic room controls."
+0,0,0,0,0,1,0,0,1,Any future connection locations should be clearly identified and labelled.
+0,0,0,0,1,0,0,1,0,The slope of the floor surface in the seating area and access route may not exceed 8 per cent (1:12.5).
+0,0,0,0,0,1,0,0,1,All evacuation areas must be designed in such a way that it is possible to transport an immobile individual on a stretcher via the exit route.
+0,0,0,0,0,1,0,0,1,System controls should be wired so that when there is no demand for space heating or hot water the heating appliance and pump are switched off.
+0,1,0,0,0,1,0,1,0,"A roof with a pitch greater than 1:8 must be constructed making appropriate use of walkways, roof ladders, safety ladders, roof stairs, roof treads and foot rails."
+0,0,0,0,0,1,0,0,0,The handrail must continue onto the intermediate landing without interruption.
+0,0,0,0,0,1,0,0,1,"NOTE: The network distribution point could be in a cabinet, a box mounted on a wall or on a telegraph pole."
+1,1,0,0,0,0,0,1,1,"If the air flows of extract air categories 1 and 2 are combined into the same duct and category 2 air flow accounts for more than 10 of the combined air flow, the combined air flow is classified under category 2."
+0,0,0,0,0,1,0,0,1,"If waste water cannot be conveyed from the drainage points of a building with gravity unloading via a gradient sewer, the waste water shall be pumped."
+1,0,0,0,0,1,0,1,0,"extract air of category 3 shall be conducted through individual ducts, or common ducts serving spaces of the same type as regards level of air purity, to the outdoors, into a collection duct installed above the spaces it serves or into an extract air chamber."
+0,0,0,0,0,1,0,0,1,Moisture-resistant insulation should be fitted below damp-proof course level and extend to the foundation block/structure.
+0,0,0,0,0,1,0,1,1,All users including wheelchair users should be able to reach and use the controls that summon and direct the lifting platform.
+0,0,0,0,0,1,0,0,0,The pumping station shall be located in a place where it can be easily inspected and serviced.
+0,0,0,0,0,1,0,0,1,The stairs between floor levels must be covered.
+0,0,0,0,0,1,0,0,0,"Staircases must be safe, sufficiently spacious and suitable for their purpose."
+0,0,0,0,0,1,0,0,0,A handrail must be designed and shaped so that it allows a firm grip.
+0,0,0,0,0,1,0,1,0,"U-values for rooflights or rooflight-and-kerb assemblies should be based on the outer developed surface area, which is often greater than the area of the roof opening."
+0,1,0,0,0,1,0,1,1,"When an existing building with a total useful floor area of over 1000m2 is being extended or the habitable area is being increased, consequential improvements should be installed."
+0,0,0,0,1,0,0,1,1,"After a period of non-use of at least eight hours, the water temperature may not exceed 24 degrees Celsius."
+0,0,0,0,0,1,0,1,1,Mechanical ventilation with heat recovery systems should be designed to avoid the moist air from the wet rooms recirculating to the habitable rooms.
+0,0,0,0,0,1,0,0,1,"A sewer installed in the ground shall withstand the load imposed by soil, soil corrosion as well as subsidence of soil."
+0,0,1,0,0,0,0,1,0,Length of landings to be at least equal to the width of the ramp.
+1,0,0,0,1,0,0,1,1,"The reference value for a building's total combined window area is 15 of the sum total of the floor plate areas of the buildings storeys that are fully or in part above the ground but, however, at most 50 of the building's facade area."
+0,0,0,0,0,1,0,0,1,Good acoustic design should be employed to achieve an acoustic environment that is neither too reverberant nor too absorbent so that announcements and conversations can be heard clearly.
+0,0,0,0,0,1,0,1,1,All users including wheelchair users should be able to reach and use the controls that summon and direct the lifting device.
+0,0,0,0,1,0,0,1,1,The riser of the steps in an exit may be no more than 180 millimetres.
+0,0,0,0,0,1,0,1,0,"If work is carried out on a system that includes a boiler, a boiler interlock should be installed."
+0,0,0,0,0,1,0,1,1,"Once open, all doors to accessible entrances should be wide enough to allow unrestricted passage for a variety of users, including wheelchair users, people carrying luggage, people with assistance dogs, and parents with pushchairs and small children."
+0,0,0,0,0,1,0,0,0,Ventilation should be controllable.
+0,1,0,0,0,1,0,1,1,"If the cost of installing the required electric vehicle charge point and cable routes for electric vehicle charge points exceeds 7% of the total cost of the major renovation (a) such a building is exempt from the requirement to install the electric vehicle charge point; and (b) cable routes for electric vehicle charge points must be installed in a minimum of one fifth of the total number of parking spaces, except where the cost of that installation exceeds 7% of the total cost of the major renovation."
+0,0,0,0,0,1,0,1,0,"The supports and fastening points of water pipes shall be such that neither heat expansion nor forces generated by water flow cause the pipes to shift, loosen, break or make disturbing noises."
+0,0,0,0,0,1,0,1,0,"For windows and roof windows, U-values should be calculated based on a vertical position."
+0,0,0,0,0,1,0,0,1,"For emergency repairs, if it is not possible to notify the building control body in advance, the building control body should be notified as soon as possible."
+0,0,0,0,0,1,0,0,1,Joints between vertical and horizontal structures shall always be designed without a reduction factor.
+0,0,0,0,0,1,0,0,0,Any radiator or towel rail should be clear of all access zones.
+0,0,0,0,0,1,0,1,1,Reasonable provision must be made to resist unauthorised access to (a) any dwelling; and (b) any part of a building from which access can be gained to a flat within the building.
+0,0,0,0,0,1,0,1,1,"Where a service building has a reception or sales counter, there should be convenient access to it and part of it should be at a level suitable for a wheelchair user or a seated person."
+0,0,0,0,0,1,0,0,0,Wheelchair users should be able to reach all the facilities available within the building.
+0,0,0,0,0,1,0,0,1,Insulating materials which give off formaldehyde fumes (either when used or later in normal use) may be used to insulate the cavity in a cavity wall where there is a continuous barrier which will minimise as far as practicable the passage of fumes to the occupiable parts.
+0,0,0,0,0,1,0,0,0,Lighting should be designed based on CIBSEs SLL Lighting Handbook or an equivalent design guide.
+0,0,0,0,0,1,0,0,1,"A safe and marked access route must be reserved for pedestrians in connection with vehicle traffic and goods transport routes, doors and gates in the yards of buildings other than single-family houses, if pedestrian traffic through them is necessary."
+0,0,0,0,0,1,0,0,1,"In cases where the Energy Related Products Regulations and the Building Regulations both apply, both standards should be met."
+0,0,1,0,0,1,0,1,0,A landing measuring at least 800 millimetres in length must be reserved in front of and behind a door located in an exit route.
+0,0,0,0,0,1,0,0,1,"Artificial lighting should be designed to give good colour rendering of all surfaces, without creating glare or pools of bright light and strong shadows."
+0,0,0,0,0,1,0,0,1,Water pipes and sewers installed in the ground shall be identifiable and they shall be located separate from one another.
+0,0,1,0,1,0,0,1,1,"The tread of steps in covered or heated outdoor staircases must be no less than 300 millimetres, and the riser may be no more than 160 millimetres."
+0,0,0,0,0,0,0,1,1,An exit enclosure has doors that open separately into each adjoining fire compartment without a need to open the doors at the same time.
+0,0,1,0,0,0,0,0,0,The tread must be no less than 270 millimetres.
+0,0,0,0,0,1,0,0,1,"In a mechanical system, there shall be a clearly labelled stop switch, which shall be located in an easily accessible place."
+0,0,1,0,0,0,0,0,1,The outdoor air flow used in the calculations for buildings other than those in intended use categories 1 and 2 outside the occupancy period shall be at least 0.15 dm3/s per m2.
+0,0,0,0,0,1,0,1,1,"A glass structure or other light-permeable structure, along with its mountings, must withstand the load to which it is normally subject, unless the structure is protected by a fixed collision barrier."
+0,0,0,0,0,1,0,1,0,"Whichever approach is adopted, the agreed level of provision should be clearly recorded."
+0,0,0,0,0,1,0,1,1,"The main doors for entering a dwelling (usually the front door) should have a door viewer unless other means exist to see callers, such as clear glass within the door or a window next to the doorset."
+0,0,0,0,0,1,0,0,0,The waste water pumping station shall be ventilated.
+0,0,1,0,1,0,0,1,1,"The rise of the indoor steps of other spaces intended for everyday use may be no more than 180 millimetres, and the tread must be no less than 270 millimetres."
+0,0,0,0,0,1,0,1,1,"Where any of the parking spaces for new buildings other than residential or mixed-use buildings are in a covered car park, the requirement to install an electric vehicle charge point should be met by installing a charge point in a parking space that is not within a covered car park."
+0,0,0,0,0,1,0,0,0,"Provision shall be made to prevent people moving in or about the building from colliding with open windows, skylights or ventilators."
+0,0,0,0,0,1,0,1,1,"For fixed terminals with automatic flow adjustment at the fan unit, the fan speed should be set to achieve the desired continuous flow rate."
+0,0,0,0,0,1,0,0,1,"If an exhaust air terminal is located on a facade that is exposed to the prevailing wind, measures should be taken to minimise likely wind effects."
+0,0,0,0,0,1,0,0,1,The flushing shall be carried out with household water to remove any dirt and debris from the pipe network.
+0,0,0,0,0,1,0,0,0,Taps should be lever operated and capable of easy operation.
+0,0,0,0,0,1,0,1,1,"During the design period of occupancy, a building's room temperature shall be comfortable and not adversely affected by air velocity, thermal radiation, temperature fluctuation, temperature differences or surface temperatures."
+0,0,0,0,0,1,0,0,1,"Generally, gradients within the approach should be as gentle as possible."
+0,0,0,0,0,1,0,1,1,The index terminal flow rate should be set with the terminal fully open and all other terminals should be adjusted to achieve the required flows at each terminal.
+0,0,0,0,0,1,0,0,0,Beading should be mechanically fixed and glued in position.
+0,0,0,0,0,1,0,0,1,"An ambulant disabled person should be able to move within, and between, storeys."
+0,0,0,0,0,1,0,0,0,The panel should be securely held in place.
+0,0,0,0,0,1,0,0,1,The cleanouts shall be located so that the entire pipeline may be cleansed.
+0,0,0,0,0,0,1,1,1,Extinguishing routes of basement storeys must not be connected to fire and smoke-proof exits.
+0,0,0,0,1,1,0,1,1,The fire performance of the external wall structure of a building no more than 56 metres in height may also be demonstrated by a fullscale test.
+0,0,0,0,0,1,0,0,0,Water must be able to drain off the roof without causing damage to the building.
+1,0,0,0,0,0,0,1,1,"If the parasitic energy use is unknown, an allowance of 0.3W/m2 should be made for any control system."
+0,0,0,0,0,1,0,0,1,Water pipes that are located in cold premises shall be thermally insulated.
+0,0,0,0,0,1,0,0,1,"Where used, passive stack ventilation terminals should be located in the ceiling."
+0,0,0,0,0,1,0,0,1,"Constructions behind surfaces exposed to running water, repetitious splash water or water condensation must be waterproofed."
+0,0,0,0,0,1,0,1,1,The water system shall incorporate: 1) a pressure gauge; 2) thermometers in the water pipe of mixed domestic hot water from the water heater and in the domestic hot water ring duct to measure the temperature of return water; 3) throttling valves.
+1,0,0,0,0,0,0,0,1,There shall be adequate means of ventilation provided for people in the building.
+1,0,0,0,0,1,0,0,0,One bedroom should be close to an accessible bathroom suitable for a wheelchair user.
+0,0,0,0,0,1,0,0,1,All other bedrooms should be accessible to a wheelchair user.
+0,0,0,0,1,0,0,1,1,Individual flights are: for gradients up to 1:15 not more than 10m long; for gradients up to 1:12 not more than 5m long.
+0,0,0,0,0,1,0,0,1,NOTE: Rooms that are designed to contain printers and photocopiers in substantial use (more than 30 minutes per hour) should not be designed to be occupied.
+1,0,0,0,0,0,0,1,0,The fire resistance time requirement for balconies is half that of the load-bearing structures of the storey.
+0,0,1,0,0,0,0,1,1,"For dwellings, for external tapered steps and stairs that are part of the building the going of each step should be a minimum of 280mm."
+0,0,0,0,0,1,0,0,0,"All users should be able to locate a control, know which setting it is on and use it without inadvertently changing its setting."
+0,0,0,0,0,1,0,0,0,"Photographs should be taken at appropriate construction stages for each detail when completed, but prior to closingup works."
+0,0,0,0,0,1,0,0,1,Consideration should be given to installing a chemical sanitary waste disposal unit in wheelchair-accessible WC accommodation.
+0,0,0,0,0,1,0,0,1,"Where vehicle barriers are necessary, sufficient space (for example 500mm) should be allowed around the future connection location."
+0,0,0,0,0,1,0,0,1,"All technically, functionally and economically feasible measures to improve the fabric of the building served by the service should be implemented."
+0,0,0,0,0,1,0,0,0,"Ventilation shall provide healthy, safe and comfortable indoor air quality in occupiable spaces."
+0,0,0,0,0,1,0,1,1,"If the index terminal has to be set to a significantly closed position to achieve the required air flow rate, then the fan speed should be reduced and the terminals rebalanced."
+0,0,0,0,0,1,0,0,1,Ground floors and those in contact with the outside of the dwelling should be insulated to limit heat losses to not more than 10W/m2.
+0,0,0,0,1,0,0,1,0,The temperature of the water available from the hot water system may not exceed 65 degrees Celsius.
+0,1,0,0,0,1,0,1,0,"If the number of occupants exceeds 120, the total minimum width of the exits shall be calculated by increasing the original 1,200 millimetres by 400 millimetres for each additional group of 60 people."
+0,0,0,0,0,1,0,0,0,The toilet seat shall be placed between 200 and 300 millimetres from the rear wall.
+0,0,0,0,0,1,0,0,0,An energy declaration shall be drawn up when designing a building.
+0,0,0,0,0,1,0,0,1,"If people need to obtain tickets for pay and display parking, the ticket dispensing machines should be located in a way that allows a person in a wheelchair, or a person of short stature, to gain access close to the machine and reach the payment and ticket dispensing functions."
+0,0,0,0,0,1,0,0,0,Mortar snots should be removed to ensure a tight fit with the structure and cavities cleared of all debris.
+0,0,0,0,0,1,0,1,1,"For continuous mechanical ventilation systems, such as continuous mechanical extract ventilation or mechanical ventilation with heat recovery, the system should be balanced to achieve design air flow rates at each room terminal."
+0,0,0,0,0,1,0,0,0,Waste water shall be conveyed to the sewer of the water supply plant or for purification property-specifically or to a cesspit.
+0,0,0,0,0,1,0,1,0,The air flow resistance of all components should be considered when specifying ventilation systems.
+0,0,0,0,0,1,0,1,1,"Wall insulation should be installed to the top of the wall plate; in some places, such as the eaves, this may be above the cavity closure or barrier."
+0,0,0,0,0,1,0,0,1,To reduce the risks to the health of persons in buildings formaldehyde fumes given off by urea formaldehyde foams should not penetrate to occupied parts of buildings to an extent which would give rise to an irritant concentration.
+0,0,0,0,0,1,0,1,1,"Internal building services: where services penetrate the air barrier, holes should be as small as possible and should be core drilled to limit damage."
+0,0,0,0,0,1,0,1,1,The part of the dwelling above ground level should be considered separately.
+0,0,1,0,0,0,0,1,1,There is a minimum of 400mm of worktop to at least one side of the oven and fridge or fridge freezer where this is taller than the worktop height (or to one side of a pair of tall appliances where they are located together at the end of a run).
+0,0,0,0,0,1,0,1,1,"In dwellings and other premises that are used by children, restrictors must be installed on windows and other openings where there may be a danger of falling, and these must be such that they limit the easy opening of the window to 100 millimetres."
+0,0,1,0,0,0,0,1,0,Any panel within the doorset should be at least 15mm thick.
+1,0,0,0,0,0,0,1,0,"In reference heat loss calculations, the value used as the annual efficiency of heat recovery from ventilation extract air of the buildings ventilation system shall be 55."
+0,1,0,0,0,0,0,0,1,The internal temperature exceeds 23C at 11pm.
+0,0,1,0,0,1,0,1,1,"Where one or more parking spaces are within a covered car park, the requirement to install electric vehicle charge points should be met by installing charge points in parking spaces that are not within a covered car park."
+0,0,0,0,1,0,0,1,1,The dwelling primary energy rate must not exceed the individual dwellings target primary energy rate.
+0,0,0,0,1,1,0,1,0,A cube with edges of no more than 200 millimetres may pass between the upper edge of the barrier and the protective part.
+0,0,0,0,0,1,0,0,1,"Thermal bridging, including at the party wall, should be reasonably limited."
+0,0,0,0,0,1,0,1,1,The impact of the ground and crawl space on heat loss shall be taken into account in heat loss calculations.
+0,0,0,0,0,1,0,0,0,"Instead, the building primary energy rate and building emission rate should be calculated as if the area covered by the pool were replaced with the equivalent area of floor with the same U-value as the pool surround."
+0,0,0,0,0,1,0,0,1,"If a fire door is kept open in normal use, it shall be equipped with devices that will close the door in the event of fire."
+0,0,0,0,0,1,0,0,1,A passenger lift is the most suitable means of vertical access and should be provided wherever possible.
+0,0,0,0,0,1,0,1,1,"The landings in the indoor and outdoor areas of a building must be safe, sufficiently spacious and suitable for their purpose."
+0,0,0,0,0,1,0,0,1,"System controls should be wired so that when there is no demand for space heating, the heating appliance and pump are switched off."
+0,0,0,0,0,1,0,0,0,The roof structures and joints must be properly inclined and sealed for water drainage.
+0,0,0,0,0,1,0,0,0,all dimensions are minimum except where noted.
+0,0,0,0,0,1,0,0,1,"Provision shall be made to prevent any door or gate: (a) which slides or opens upwards, from falling onto any person; and (b) which is powered, from trapping any person."
+0,0,0,0,1,1,0,1,0,A cube with edges of no more than 50 millimetres may pass between the lower edge of a barriers protective part and the landing or the upper surface or edge of a step.
+0,0,0,0,0,1,0,0,0,Frames should be mechanically fixed to the structure of the building in accordance with the manufacturers installation instructions.
+0,0,0,0,0,1,0,0,1,"Where controls are external to the heater, the system should be provided with a time switch/programmer and room thermostat, or programmable room thermostat."
+0,0,1,0,0,0,0,1,0,Every flight has a minimum clear width of 900mm.
+0,0,0,0,0,1,0,0,1,The building control body should be provided with a report that demonstrates that the residential building passes CIBSEs TM59 assessment of overheating.
+0,0,0,0,0,1,0,1,0,"The heat loss from the floor should be calculated using the sum of the thermal resistance of the floor finish and the underlying heated layer, multiplied by 10."
+0,0,0,0,0,1,0,1,0,The net heating energy demand for ventilation shall be calculated on the basis of the heating of air after heat recovery to supply air temperature and any heating before heat recovery.
+0,0,0,0,0,1,0,1,0,"For space heating systems, temperature control should be installed for the heating appliance."
+0,0,0,0,0,1,0,1,0,"The water meter of a property shall be located in a place where it is easy to install, read and service and where it cannot freeze."
+0,0,0,0,0,1,0,0,0,"Air pressure tests should be performed following the guidance in the approved airtightness testing methodology, CIBSEs TM23."
+0,0,0,0,0,1,0,1,0,A handrail and its ending must be shaped safely and must continue past the start and end points of the structure.
+0,0,0,0,0,1,0,0,1,"Where controls are integrated in the heater, the system should be provided with a time switch/programmer and room temperature sensor linked to heater firing and fan speed control."
+0,0,0,0,0,1,0,0,1,"Where the dwelling is defined as wheelchair adaptable, it should be easy to install a lift."
+0,0,0,0,0,1,0,0,0,"Dwellings, accommodation premises, institutions, day-care institutions, day-care centres and other early childhood education premises and schools must be provided with an appropriate system that gives a warning at an early stage of a beginning fire."
+0,0,0,0,0,1,0,0,1,"People should be able to see other people approaching from the opposite direction, thereby allowing sufficient reaction time for both parties to avoid a collision."
+0,0,0,0,1,0,0,1,1,No individual flight has a rise between landings of more than 1800mm.
+0,0,0,0,0,1,0,1,1,The index terminal flow rate should be set with the terminal fully open and all other terminals should be adjusted to achieve the required flow rates at each terminal.
+0,0,0,0,0,1,0,0,1,"Windows, glass walls and glass doors into which there is a danger of collision must be marked in such a way that they can be easily noticed."
+0,1,0,0,0,1,0,1,1,"In the case of the storey-level door of a dwelling, or if the number of people evacuating through the door exceeds 60, doors must open in the direction of the exit."
+0,0,0,0,0,1,0,1,1,"If the circulation piping is located inside the building envelope, 50 of the calculated domestic hot water circulation heat loss shall be added to the thermal load of the spaces of the building."
+0,0,0,0,0,1,0,1,0,"For rooflights, U-values should be calculated based on a horizontal position."
+0,0,0,0,0,1,0,0,0,"Any justification and strategy should be in line with the approved airtightness testing methodology, CIBSEs TM23."
+0,0,0,0,0,1,0,0,1,The annual percentage of heat supplied from each heat source should be the same for each newly connected dwelling.
+0,0,0,0,0,1,0,1,1,"If other performance (e.g. wind load, safety, security or acoustic attenuation) requires thicker glass to be used, an equivalent window unit with standard thickness glazing should be shown to meet the required standard."
+0,0,0,0,0,1,0,0,1,"The building fabric should be constructed so that thermal bridging, including at the party wall, is reasonably limited."
+0,1,0,0,0,1,0,1,1,"If a new building has a space heating or airconditioning system with an effective rated output greater than 180kW, a building automation and control system should be installed."
+0,0,0,0,0,1,0,0,1,"The use of recirculation, transfer or secondary air shall not cause any harmful spread of impurities, in particular odours."
+0,0,0,0,0,1,0,0,1,"To correctly assess whether an element meets the limiting U-value, the U-value must be calculated for the element in the appropriate plane - either horizontal or vertical."
+0,0,1,0,0,0,0,1,0,"Door rails, stiles and muntins should be at least 44mm thick."
+0,0,0,0,0,1,0,0,0,"Where a lift is provided, it should be suitable for a wheelchair user."
+0,0,0,0,0,1,0,1,1,"The building emission rate and building primary energy rate submission should be accompanied by a report, signed by a suitably qualified person, detailing how the combined emission factor has been derived."
+0,0,1,0,0,0,0,1,1,Every single bedroom has a minimum floor area of 8.5m2 and is at least 2.4m wide.
+0,0,0,0,0,1,0,1,1,The selection of relevant critical situations for design should be made reflecting the conditions that can reasonably be foreseen during future use.
+0,1,0,0,0,1,0,1,0,A building with a height exceeding 9 metres must be equipped with anchoring structures for safety lines.
+0,0,0,0,0,1,0,1,1,"Ramps, steps, thresholds and differences in levels in passageways must be clearly indicated using lighting and surface brightness contrasts or warning signs."
+0,0,0,0,0,1,0,1,1,"In order to enhance the efficiency of firefighting and rescue operations, means of smoke extraction shall be designed and constructed in the building so that smoke can be extracted from the different premises in the building."
+0,0,0,0,1,0,0,1,1,The number of appliances should not exceed one per 100m2 of dwelling floor area.
+0,0,0,0,0,1,0,0,0,A driveway must not intersect a walkway leading to a play area.
+0,0,1,0,0,0,0,1,1,"For large roofs, where the smaller horizontal dimension of the roof is 50 m or more, and the topography is windswept, the value of the exposure coefficient shall be at least 1."
+0,0,0,0,0,1,0,1,1,The structure of the exterior wall against the ground must be waterproofed or isolated against water pressure or a structurally managed water removal system allowing the cellar wall to dry in an outward direction must be used to prevent moisture from the surrounding ground and storm water from penetrating the wall structure.
+0,0,0,0,1,0,0,1,1,The heating plant emission rate of the micro combined heat and power system (microCHP) should be no greater than the emission rate of a regular boiler using the same fuel as the microCHP.
+0,0,0,0,0,1,0,1,0,"If air barriers or vapour barriers have been used in the structure, the seams, edges and penetrations must be tight."
+0,0,1,0,0,0,0,1,1,"If a lift or other device for moving between levels is installed in the exit of an existing building, the dwellings exit may be no less than 850 millimetres wide."
+0,0,0,0,0,1,0,0,0,Cable routes should be provided from a metered electricity supply point to the future connection location.
+0,0,1,0,1,0,0,1,1,"The tread of steps in uncovered or unheated outdoor staircases must be no less than 390 millimetres, and the riser may be no more than 130 millimetres."
+0,0,0,0,0,1,0,1,1,"A space alongside the leading edge of a door should be provided to enable a wheelchair user to reach and grip the door handle, then open the door without releasing hold on the handle and without the footrest colliding with the return wall."
+0,0,0,0,0,1,0,0,1,Moisture from the foundation wall and the base floors concrete slab must not transfer harmfully to the wooden sole plates or upper wall and floor structures.
+0,0,0,0,0,1,0,0,0,Test data must be from a minimum of five in-situ measurements of the same module types and link details as used in the actual building.
+0,0,0,0,0,1,0,1,1,Biomass heating supplemented by an alternative appliance (e.g. gas) - the CO2 emission factor and primary energy factor should be based on a weighted average for the two fuels.
+0,0,0,0,0,1,0,0,1,Multiple cooling units should be provided with controls that ensure that the combined plant operates in its most efficient modes.
+0,0,0,0,0,1,0,0,1,On-site electricity generation should be provided with automated controls that support the design of the system and the intended use.
+0,0,0,0,0,1,0,0,1,"Where sheathing board forms the air barrier, airsealing tape should be applied at junctions and edges."
+0,0,1,0,0,0,0,1,1,The seasonal energy efficiency ratio of an air conditioner working in cooling mode should be a minimum of 4.0.
+0,0,0,0,0,1,0,1,1,Only the proportion of openings which can be opened with a very low risk of occupants falling from height should be considered to form part of the overheating mitigation strategy.
+0,0,0,0,0,1,0,1,0,"Reasonable provision shall be made in the design and installation of electrical installations in order to protect persons operating, maintaining or altering the installations from fire or injury."

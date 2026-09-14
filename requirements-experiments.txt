@@ -1,0 +1,5 @@
+# Additional dependencies for experiments/ only - not needed to run the platform.
+-r requirements.txt
+datasets>=2.14
+pandas>=2.0
+statsmodels>=0.14

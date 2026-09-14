@@ -4,10 +4,8 @@ __pycache__/
 env311/
 venv/
 .DS_Store
-results/
+/results/
 logs/
 *.egg-info/
 .pytest_cache/
-experiments/
-requirements-experiments.txt
 .vscode/
