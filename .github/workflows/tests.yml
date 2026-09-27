@@ -1,0 +1,51 @@
+# Runs the backend smoke tests on GitHub's runners, which have far more memory
+# than a laptop needs to spare for a 2 GB dependency tree.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+
+      # CPU-only PyTorch. The default Linux wheel declares the CUDA toolkit as
+      # an unconditional dependency, which adds several gigabytes the runner
+      # cannot use. Installing it first satisfies the requirement that
+      # transformers[torch] would otherwise resolve to the GPU build.
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements-dev.txt
+
+      - name: Download NLTK data
+        run: |
+          python -m nltk.downloader -q \
+            punkt punkt_tab \
+            averaged_perceptron_tagger averaged_perceptron_tagger_eng \
+            maxent_ne_chunker maxent_ne_chunker_tab \
+            words
+
+      - name: Run smoke tests
+        run: pytest -q
+
+      # The spaCy transformer is already installed as a dependency, so the
+      # slow test costs only its run time, not another download.
+      - name: Run the named entity recognition test
+        run: pytest -q -m slow
