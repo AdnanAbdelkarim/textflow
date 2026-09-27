@@ -51,10 +51,21 @@ jobs:
             maxent_ne_chunker maxent_ne_chunker_tab \
             words
 
+      # pytest's own exit code is unreliable here: torch's native runtime
+      # aborts during interpreter shutdown and the shell sees 134 regardless
+      # of the result. The suite records its real status in .pytest-status.
       - name: Run smoke tests
-        run: pytest -q
+        run: |
+          pytest -q || true
+          status=$(cat .pytest-status)
+          echo "pytest exit status: $status"
+          exit "$status"
 
       # The spaCy transformer is already installed as a dependency, so the
       # slow test costs only its run time, not another download.
       - name: Run the named entity recognition test
-        run: pytest -q -m slow
+        run: |
+          pytest -q -m slow || true
+          status=$(cat .pytest-status)
+          echo "pytest exit status: $status"
+          exit "$status"

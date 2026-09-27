@@ -3,6 +3,7 @@
 Importing the application pulls in torch and transformers, which is slow, so
 the app is built once per test session and shared through Flask's test client.
 """
+import pathlib
 import random
 
 import pytest
@@ -65,3 +66,14 @@ def multilabel_rows():
 @pytest.fixture(scope="session")
 def texts(rows):
     return [r["text"] for r in rows]
+
+
+def pytest_sessionfinish(session, exitstatus):
+    """Record the real outcome before the interpreter shuts down.
+
+    Torch's native runtime aborts during shutdown ("terminate called without
+    an active exception"), which replaces pytest's exit code with 134 whatever
+    the tests did. CI reads this file instead, so a genuine failure still fails
+    the build and a clean run is not reported as a crash.
+    """
+    pathlib.Path(".pytest-status").write_text(str(int(exitstatus)))

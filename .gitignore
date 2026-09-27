@@ -9,3 +9,4 @@ logs/
 *.egg-info/
 .pytest_cache/
 .vscode/
+.pytest-status
