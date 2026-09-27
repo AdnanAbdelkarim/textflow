@@ -62,6 +62,20 @@ def tokenize(text, include_stopwords=False):
     return [t for t in lowered if t not in _STOPWORDS_FROZEN]
 
 
+def _row_text(row):
+    """Return the text of a row, which may be a plain string or a record.
+
+    The corpus is held as row objects once a labeled dataset is uploaded, so a
+    caller can pass either shape. The other endpoints normalize this the same
+    way before tokenizing.
+    """
+    if isinstance(row, str):
+        return row
+    if isinstance(row, dict):
+        return str(row.get("text") or row.get("Message") or "")
+    return str(row or "")
+
+
 def tokenize_rows(rows, include_stopwords=False):
     """
     Tokenize a list of rows into a flat list of tokens.
@@ -71,7 +85,7 @@ def tokenize_rows(rows, include_stopwords=False):
     """
     toks_all = []
     for line in rows:
-        toks = tokenize(line, include_stopwords)
+        toks = tokenize(_row_text(line), include_stopwords)
         if len(toks) > MAX_TOKENS_PER_LINE:
             toks = toks[:MAX_TOKENS_PER_LINE]
         toks_all.extend(toks)

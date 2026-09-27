@@ -13,6 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
+    env:
+      # Torch's OpenMP runtime aborts while the interpreter shuts down, which
+      # replaced pytest's exit code with 134 and made a normal test failure
+      # look like a crash. Single-threaded avoids the teardown race; nothing
+      # here is compute-bound enough to miss the threads.
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+
     steps:
       - uses: actions/checkout@v4
 
