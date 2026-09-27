@@ -14,6 +14,20 @@ pytest -q -m ""           # everything
 The application is imported once per session, which pulls in torch and spaCy
 and takes a minute or two on a cold cache. The tests themselves are fast.
 
+## Browser tests
+
 File parsing for CSV, TXT, DOCX, PDF and XLSX runs in the browser through
-PapaParse, pdf.js and Mammoth, so it is not reachable from these tests and is
-not covered here.
+PapaParse, pdf.js, Mammoth and SheetJS, so it cannot be reached from the API
+tests. `tests/e2e` starts the application, drives Chromium against it, and
+uploads one generated file per format. They are excluded from the default run
+because they need a browser:
+
+```bash
+pip install -r requirements-dev.txt
+python -m playwright install chromium
+pytest -q tests/e2e
+```
+
+The sample files are written at test time by openpyxl, python-docx and
+reportlab rather than committed, so each parser meets a file a real writer
+produced.

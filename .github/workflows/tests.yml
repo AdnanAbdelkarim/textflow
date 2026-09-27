@@ -69,3 +69,49 @@ jobs:
           status=$(cat .pytest-status)
           echo "pytest exit status: $status"
           exit "$status"
+
+  # File parsing for CSV, TXT, DOCX, PDF and XLSX happens in the browser, so it
+  # is unreachable from the API tests and needs a real one.
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements-dev.txt
+
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Download NLTK data
+        run: |
+          python -m nltk.downloader -q \
+            punkt punkt_tab \
+            averaged_perceptron_tagger averaged_perceptron_tagger_eng \
+            maxent_ne_chunker maxent_ne_chunker_tab \
+            words
+
+      - name: Run the upload format tests
+        run: |
+          pytest -q tests/e2e -p no:cacheprovider || true
+          status=$(cat .pytest-status)
+          echo "pytest exit status: $status"
+          exit "$status"
