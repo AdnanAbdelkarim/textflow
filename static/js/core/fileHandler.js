@@ -145,7 +145,7 @@
         else if (ext === 'docx') _handleDOCX(file, textArea, updateLocalWordCount);
         else if (ext === 'pdf')  _handlePDF(file, textArea, updateLocalWordCount);
         else if (ext === 'csv')  _handleCSV(file);
-        else if (ext === 'xlsx') _handleXLSX(file, textArea, updateLocalWordCount);
+        else if (ext === 'xlsx') _handleXLSX(file);
         else alert('Unsupported file format. Please upload a .txt, .docx, .pdf, .csv, or .xlsx file.');
       }
     }
@@ -459,7 +459,11 @@
     }
   
     function _handleCSV(file) {
-      file.text().then(csvText => {
+      file.text().then(csvText => _parseCSVText(csvText));
+    }
+
+    function _parseCSVText(csvText) {
+      return Promise.resolve().then(() => {
         // Only store raw CSV for labeled datasets - Preprocessing and
         // Predictive (the only consumers of uploadedCSV) are blocked for
         // unlabeled data. Storing large CSVs unconditionally causes
@@ -765,53 +769,35 @@
       window.location.href = '/overview';
     }
   
-    function _handleXLSX(file, textArea, updateLocalWordCount) {
+    function _handleXLSX(file) {
+      // A spreadsheet is a table with a header row, so it is converted to CSV
+      // and handed to the CSV path. That path already detects the text and
+      // label columns, encodes class names, stores the corpus and moves the
+      // user on to the Overview tab. Parsing the sheet separately meant XLSX
+      // uploads stopped at the Input tab with none of that done.
       const reader = new FileReader();
       reader.onload = function (e) {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
+        if (typeof XLSX === 'undefined') {
+          alert('The spreadsheet reader failed to load. Check your connection '
+                + 'and reload the page, or save the file as .csv.');
+          return;
+        }
+        const workbook = XLSX.read(new Uint8Array(e.target.result), { type: 'array' });
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
-        const parsed = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-
-        const dataRows = parsed.filter((row, i) => i > 0 && row[0]);
-
-        if (dataRows.length === 0) {
+        if (!sheet) {
+          alert('This workbook has no sheets.');
+          return;
+        }
+        const csvText = XLSX.utils.sheet_to_csv(sheet);
+        if (!csvText.trim()) {
           alert('File is empty or has no readable rows.');
           return;
         }
-
-        // A sheet only counts as labeled if a second column has a value
-        // on at least half its rows - avoids misclassifying an unlabeled
-        // sheet that happens to have one stray value in column B.
-        const rowsWithSecondCol = dataRows.filter(row => row[1] !== undefined && row[1] !== '').length;
-        const hasLabelColumn = (rowsWithSecondCol / dataRows.length) >= 0.5;
-
-        if (hasLabelColumn) {
-          const labeledData = dataRows
-            .filter(row => row[1] !== undefined)
-            .map(row => ({ text: row[0].toString().trim(), label: row[1].toString().trim() }));
-
-          const displayText = labeledData.map(entry => `[${entry.label}] ${entry.text}`).join('\n');
-          textArea.value = displayText;
-          sessionStorage.setItem('textData', JSON.stringify({ text: displayText }));
-          sessionStorage.setItem('detectedTextCol', 'text');
-          sessionStorage.setItem('detectedLabelCol', 'label');
-        } else {
-          // Unlabeled spreadsheet - keep the text, drop label bookkeeping
-          if (typeof window.clearLabeledSessionData === 'function') {
-            window.clearLabeledSessionData();
-          }
-          const displayText = dataRows.map(row => row[0].toString().trim()).join('\n');
-          textArea.value = displayText;
-          sessionStorage.setItem('textData', JSON.stringify({ text: displayText }));
-          sessionStorage.setItem('detectedTextCol', 'text');
-        }
-
-        updateLocalWordCount();
+        _parseCSVText(csvText);
       };
       reader.readAsArrayBuffer(file);
     }
-  
+
     // ============================================================
     // INTERNAL: session key cleanup
     // ============================================================

@@ -80,21 +80,38 @@ def base_url():
         proc.kill()
 
 
+def _corpus():
+    """Enough rows for the label column to look categorical.
+
+    The label detector requires a candidate column to hold at most a fifth as
+    many distinct values as there are rows, so that a free-text column in a
+    short file is not mistaken for a set of classes. Eight rows across four
+    classes fails that test, and so would no real dataset of that size, so the
+    sample is repeated up to a realistic length.
+    """
+    rows = []
+    for i in range(10):
+        for text, label in SAMPLE_ROWS:
+            rows.append((f"{text} ({i})" if i else text, label))
+    return rows
+
+
 @pytest.fixture(scope="session")
 def sample_files(tmp_path_factory):
     """Write one sample file per supported format and return their paths."""
     d = tmp_path_factory.mktemp("uploads")
     paths = {}
+    corpus = _corpus()
 
     # --- CSV, parsed by PapaParse ---
     csv = d / "corpus.csv"
     csv.write_text("text,label\n" + "\n".join(
-        f'"{t}",{l}' for t, l in SAMPLE_ROWS), encoding="utf8")
+        f'"{t}",{l}' for t, l in corpus), encoding="utf8")
     paths["csv"] = csv
 
     # --- TXT, read directly ---
     txt = d / "corpus.txt"
-    txt.write_text("\n".join(t for t, _ in SAMPLE_ROWS), encoding="utf8")
+    txt.write_text("\n".join(t for t, _ in corpus), encoding="utf8")
     paths["txt"] = txt
 
     # --- XLSX, parsed by SheetJS ---
@@ -102,7 +119,7 @@ def sample_files(tmp_path_factory):
     wb = Workbook()
     ws = wb.active
     ws.append(["text", "label"])
-    for t, l in SAMPLE_ROWS:
+    for t, l in corpus:
         ws.append([t, l])
     xlsx = d / "corpus.xlsx"
     wb.save(xlsx)
@@ -111,7 +128,7 @@ def sample_files(tmp_path_factory):
     # --- DOCX, parsed by Mammoth ---
     from docx import Document
     doc = Document()
-    for t, _ in SAMPLE_ROWS:
+    for t, _ in corpus:
         doc.add_paragraph(t)
     docx = d / "corpus.docx"
     doc.save(docx)
