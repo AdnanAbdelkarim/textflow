@@ -1,7 +1,8 @@
 # --- Web ---
 Flask>=2.2,<3.0
-flask-cors
 gunicorn>=21.2
+# TLS certificate bundle for the NLTK downloader on installs that ship none.
+certifi
 
 # --- Numerics / ML ---
 # numpy<2 and scipy<1.12 are required by gensim 4.3.x, which still uses the

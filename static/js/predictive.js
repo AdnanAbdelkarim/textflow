@@ -2059,3 +2059,44 @@ function toggleTransformerModels() {
     }
   }
 }
+
+  // ------------------------------------------------------------------
+  // Optional features
+  // ------------------------------------------------------------------
+
+  /**
+   * Hide BERT fine-tuning when the build does not include it.
+   *
+   * The hosted deployment omits the transformer stack to stay within the
+   * memory a free host provides. Offering the option there and failing once
+   * training starts would waste the user's time, so the column is replaced
+   * with a note pointing at the container that does support it.
+   */
+  async function applyBuildCapabilities() {
+    let caps;
+    try {
+      const response = await fetch('/api/capabilities');
+      caps = await response.json();
+    } catch (e) {
+      return;                       // leave the interface as authored
+    }
+    if (caps.transformers) return;
+
+    ['bertTinyModel', 'bertSmallModel', 'distilbertModel', 'bertModel']
+      .forEach(id => {
+        const box = document.getElementById(id);
+        if (box) { box.checked = false; box.disabled = true; }
+      });
+
+    const column = document.getElementById('bertTinyModel')?.closest('.model-column');
+    const list = column?.querySelector('.model-checkboxes');
+    if (!list) return;
+    list.style.opacity = '0.55';
+    const note = document.createElement('p');
+    note.style.cssText = 'margin-top:10px;font-size:13px;color:#6b7280;line-height:1.5;';
+    note.textContent = 'Transformer fine-tuning needs a GPU and is not part of '
+      + 'this online version. It is included in the downloadable container.';
+    list.parentNode.appendChild(note);
+  }
+
+  document.addEventListener('DOMContentLoaded', applyBuildCapabilities);

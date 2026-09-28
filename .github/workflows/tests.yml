@@ -115,3 +115,60 @@ jobs:
           status=$(cat .pytest-status)
           echo "pytest exit status: $status"
           exit "$status"
+
+  # Builds the image that gets hosted and checks it runs without the
+  # transformer stack, since that is the whole point of the slim profile.
+  slim-image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the slim image
+        run: docker build -f deploy/slim/Dockerfile -t textflow-slim .
+
+      - name: Report image size
+        run: |
+          docker image inspect textflow-slim \
+            --format 'image size: {{.Size}} bytes ({{len .RootFS.Layers}} layers)'
+
+      - name: Start it
+        run: |
+          docker run -d --name tf -p 8080:8080 textflow-slim
+          for i in $(seq 1 60); do
+            curl -fsS http://localhost:8080/healthz >/dev/null 2>&1 && break
+            sleep 2
+          done
+          curl -fsS http://localhost:8080/healthz
+
+      - name: The build must report no transformer support
+        run: |
+          caps=$(curl -fsS http://localhost:8080/api/capabilities)
+          echo "$caps"
+          echo "$caps" | grep -q '"transformers": *false'
+
+      - name: Every page must render
+        run: |
+          for path in / overview visualizations advanced preprocessing predictive; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "http://localhost:8080/$path")
+            echo "/$path -> $code"
+            [ "$code" = "200" ]
+          done
+
+      # The host this is destined for provides about a gigabyte, so the
+      # number matters more than the image size.
+      - name: Report memory in use
+        run: |
+          curl -fsS -X POST http://localhost:8080/api/predict \
+            -H 'Content-Type: application/json' \
+            -d '{"rows":[{"text":"market shares profit revenue quarter","label":"a"},
+                         {"text":"striker season coach tournament final","label":"b"},
+                         {"text":"profit revenue market quarter shares","label":"a"},
+                         {"text":"coach final striker season tournament","label":"b"}],
+                 "model":"lr","testSize":0.5}' >/dev/null
+          docker stats tf --no-stream --format 'memory: {{.MemUsage}}  ({{.MemPerc}} of host)'
+
+      - name: Container logs
+        if: always()
+        run: docker logs tf

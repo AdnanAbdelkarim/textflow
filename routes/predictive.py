@@ -456,6 +456,28 @@ def _build_text_dataset_class():
 
     return TextDataset
 
+def transformers_available():
+    """Whether the transformer stack is installed.
+
+    The slim deployment image omits torch, transformers and the spaCy
+    transformer model, which together are three quarters of the install. The
+    interface asks before offering BERT fine-tuning so that a build without
+    them presents an honest set of options rather than failing mid-training.
+    """
+    try:
+        import importlib.util
+        return all(importlib.util.find_spec(m) is not None
+                   for m in ("torch", "transformers"))
+    except Exception:
+        return False
+
+
+@pred_bp.route("/api/capabilities", methods=["GET"])
+def api_capabilities():
+    """Report which optional features this build supports."""
+    return jsonify({"transformers": transformers_available()})
+
+
 @pred_bp.route("/api/predict_transformer_stream", methods=["POST"])
 def api_predict_transformer_stream():
     """Stream transformer training progress via Server-Sent Events."""
@@ -466,6 +488,13 @@ def api_predict_transformer_stream():
     test_size = max(0.05, min(0.9, float(data.get("testSize", 0.3))))
     random_state = int(data.get("randomState", 42))
     
+    if not transformers_available():
+        return jsonify({
+            'error': 'This deployment does not include transformer fine-tuning. '
+                     'It is available in the downloadable container, which '
+                     'bundles PyTorch and the transformer models.'
+        }), 501
+
     def generate():
         try:
             from transformers import Trainer, TrainingArguments, TrainerCallback
