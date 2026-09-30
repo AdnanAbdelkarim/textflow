@@ -5701,7 +5701,7 @@ body {
    it, so a taller window shows the same information more legibly rather than
    the same information with a gap beneath it. */
 .overview-panel .panel-body { flex: 1 1 auto; display: flex; flex-direction: column; }
-.overview-panel .bar-list { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: space-evenly; }
+.overview-panel .bar-list { flex: 0 0 auto; display: flex; flex-direction: column; gap: 3px; }
 .overview-panel .bar-list li { padding: 0; }
 .overview-panel .panel-note { margin-top: auto; padding-top: var(--space-sm); }
 
@@ -5716,3 +5716,45 @@ body {
   .container, .overview-panels, .input-wrapper { flex: 0 0 auto; }
   .overview-panel, .preprocessing-controls > .control-section { height: auto; }
 }
+
+/* --- The documents themselves ----------------------------------------------
+   A corpus always has more rows than fit, so this panel fills the page's
+   remaining height with something a user actually wants: their own text,
+   which is also how they confirm the upload parsed correctly.
+   --------------------------------------------------------------------------- */
+
+.overview-panels { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.overview-panel--wide { grid-column: 1 / -1; }
+
+.sample-scroll {
+  flex: 1 1 auto;
+  min-height: 140px;
+  max-height: 34vh;
+  overflow: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.sample-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.sample-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--wash);
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  font-weight: 600;
+  color: #33383e;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+.sample-table td { padding: 5px 10px; border-bottom: 1px solid #f0f1ee; color: #33383e; }
+.sample-table tr:last-child td { border-bottom: none; }
+.sample-table .num { color: #7c848d; width: 3em; font-variant-numeric: tabular-nums; }
+.sample-table .lbl { width: 8em; color: #1f4e79; white-space: nowrap; }
+.sample-table td:last-child {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sample-table tbody tr:hover { background: var(--wash); }

@@ -162,6 +162,29 @@
       + `median ${median}, mean ${mean.toFixed(1)} words.`);
   }
 
+  // --- The documents themselves --------------------------------------------
+
+  function renderSample(container, data) {
+    // A user checking that their upload parsed correctly wants to see the
+    // text, not a count of it. This also gives the tab something that fills
+    // the height honestly, since a corpus always has more rows to show.
+    const rows = data.slice(0, 40);
+    const labelled = rows.some(r => r.label !== undefined && r.label !== null
+                                    && r.label !== '' && r.label !== '-1');
+    container.innerHTML = '<div class="sample-scroll"><table class="sample-table">'
+      + '<thead><tr><th class="num">#</th>'
+      + (labelled ? '<th class="lbl">Class</th>' : '')
+      + '<th>Text</th></tr></thead><tbody>'
+      + rows.map((r, i) => {
+          const text = String(r.text || '').trim();
+          return '<tr><td class="num">' + (i + 1) + '</td>'
+            + (labelled ? '<td class="lbl">' + escapeHTML(displayName(r.label)) + '</td>' : '')
+            + '<td title="' + escapeHTML(text) + '">' + escapeHTML(text) + '</td></tr>';
+        }).join('')
+      + '</tbody></table></div>'
+      + note(`Showing ${rows.length} of ${data.length.toLocaleString()} documents.`);
+  }
+
   // --- Entry point ---------------------------------------------------------
 
   function initializeOverviewPanels() {
@@ -169,7 +192,8 @@
     const panels = [
       ['classBalance', renderClassBalance],
       ['topTerms', renderTopTerms],
-      ['docLengths', renderDocLengths]
+      ['docLengths', renderDocLengths],
+      ['corpusSample', renderSample]
     ];
 
     panels.forEach(([id, render]) => {
