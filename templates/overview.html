@@ -29,7 +29,24 @@
     <div class="metric-card">Lexical Diversity (TTR)<br><span id="vocabStats">--</span></div>
   </div>
 
-  <div class="export-controls" style="margin-top: 40px; text-align: center;">
+  <div class="overview-panels">
+    <section class="overview-panel">
+      <h3>Class balance</h3>
+      <div id="classBalance" class="panel-body">Reading the dataset...</div>
+    </section>
+
+    <section class="overview-panel">
+      <h3>Most frequent terms</h3>
+      <div id="topTerms" class="panel-body">Counting terms...</div>
+    </section>
+
+    <section class="overview-panel">
+      <h3>Document length</h3>
+      <div id="docLengths" class="panel-body">Measuring documents...</div>
+    </section>
+  </div>
+
+  <div class="export-controls" style="text-align: center;">
     <button onclick="exportToCSV()" class="btn-blue">Export as CSV</button>
     <button onclick="window.print()" class="btn-blue">Print / Export as PDF</button>
   </div>
@@ -48,6 +65,7 @@
 
 <!-- Page initializer -->
 <script src="{{ url_for('static', filename='js/pages/overview.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/overviewPanels.js') }}"></script>
 
 <!-- Main script -->
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>

@@ -5483,3 +5483,76 @@ p { margin-bottom: var(--space-sm); }
   .preprocessing-controls { grid-template-columns: 1fr; }
   .checkbox-group { flex-direction: column; }
 }
+
+/* --- Overview corpus panels -------------------------------------------------
+   Three summaries sitting beside the aggregate figures: class balance, the
+   most frequent terms and the spread of document lengths. Bars are drawn in
+   CSS rather than through a charting library, since the page loads no chart
+   code otherwise and these are simple proportional comparisons.
+   --------------------------------------------------------------------------- */
+
+.overview-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: var(--space-md);
+  align-items: start;
+  margin: var(--space-md) 0;
+}
+
+.overview-panel {
+  background: #fff;
+  border: 1px solid var(--neutral-200, #e2e8f0);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.overview-panel h3 {
+  font-size: 0.95rem;
+  margin: 0 0 var(--space-sm);
+  color: var(--neutral-800, #1e293b);
+}
+
+.bar-list { list-style: none; margin: 0; padding: 0; }
+
+.bar-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 8.5em) 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 2px 0;
+  font-size: 13px;
+}
+
+.bar-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--neutral-700, #334155);
+}
+
+.bar-track {
+  background: var(--neutral-100, #f1f5f9);
+  border-radius: var(--radius-full);
+  height: 9px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--primary-blue, #0074cc);
+  border-radius: var(--radius-full);
+}
+
+.bar-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--neutral-600, #475569);
+  font-size: 12px;
+}
+
+.panel-note {
+  margin: var(--space-sm) 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--neutral-600, #64748b);
+}
