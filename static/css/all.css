@@ -5646,3 +5646,73 @@ select:focus, textarea:focus { border-color: #2d6ca8; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* --- Filling the viewport ---------------------------------------------------
+   Tightening the spacing stopped the pages scrolling, but it left the content
+   as a band across the top with the rest of the screen empty underneath. The
+   space was not being used, only moved. These rules give the page a full
+   height shell so the working area grows into whatever the window provides,
+   and the panels inside it stretch rather than sitting at their minimum.
+   --------------------------------------------------------------------------- */
+
+html { height: 100%; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky-header { flex: 0 0 auto; }
+.copyright { flex: 0 0 auto; margin-top: auto; }
+
+/* The page's working area takes the height that is left over. */
+.container,
+.overview-panels,
+.input-wrapper {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Inside that area, the panel holding the work expands. */
+.container > .preprocessing-controls,
+.container > .control-panel,
+.container > .visualization-container,
+.container > .advanced-container { flex: 1 1 auto; }
+
+/* Panels sitting side by side match heights instead of ragging. */
+.overview-panels,
+.preprocessing-controls { align-items: stretch; }
+
+.overview-panel,
+.preprocessing-controls > .control-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* A panel's list takes the panel's spare height and spreads its rows through
+   it, so a taller window shows the same information more legibly rather than
+   the same information with a gap beneath it. */
+.overview-panel .panel-body { flex: 1 1 auto; display: flex; flex-direction: column; }
+.overview-panel .bar-list { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: space-evenly; }
+.overview-panel .bar-list li { padding: 0; }
+.overview-panel .panel-note { margin-top: auto; padding-top: var(--space-sm); }
+
+.preprocessing-controls > .control-section .checkbox-group { flex: 1 1 auto; align-content: center; }
+
+/* Charts should use the height the window offers rather than a fixed box. */
+.visualization-container, .chart-host { display: flex; flex-direction: column; }
+#wordCloud, #networkContainer { flex: 1 1 auto; }
+
+@media (max-width: 760px) {
+  body { min-height: 0; }
+  .container, .overview-panels, .input-wrapper { flex: 0 0 auto; }
+  .overview-panel, .preprocessing-controls > .control-section { height: auto; }
+}

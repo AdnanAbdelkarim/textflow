@@ -15,8 +15,8 @@
 (function () {
   'use strict';
 
-  const MAX_TERMS = 12;
-  const LENGTH_BUCKETS = 8;
+  const MAX_TERMS = 18;
+  const LENGTH_BUCKETS = 12;
 
   function rows() {
     if (Array.isArray(window.lastCSVData) && window.lastCSVData.length) {
