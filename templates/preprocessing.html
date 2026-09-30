@@ -14,6 +14,7 @@
   <script src="{{ url_for('static', filename='js/core/state.js') }}"></script>
   <script src="{{ url_for('static', filename='js/core/sessionCache.js') }}"></script>
   <script src="{{ url_for('static', filename='js/preprocessing.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/preprocessingPreview.js') }}"></script>
   <style>
     .preproc-overlay{
         position:fixed;inset:0;
@@ -226,6 +227,14 @@
             <span id="vocabSize">Vocabulary size: calculating...</span>
             <span id="actualVectorSize">Actual vector size: -</span>
           </div>
+        </div>
+      </div>
+
+      <!-- Live preview of the configured pipeline -->
+      <div class="control-section control-section--wide" id="livePreviewSection">
+        <h3>Preview</h3>
+        <div id="livePreview" class="panel-body">
+          Choose a feature extraction method to see what it does to your text.
         </div>
       </div>
 

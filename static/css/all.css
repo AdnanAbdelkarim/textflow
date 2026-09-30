@@ -5758,3 +5758,54 @@ body {
   white-space: nowrap;
 }
 .sample-table tbody tr:hover { background: var(--wash); }
+
+/* --- Preprocessing preview --------------------------------------------------
+   The configuration panels are small; the feedback on what they do is what
+   deserves the page's remaining height.
+   --------------------------------------------------------------------------- */
+
+.control-section--wide { grid-column: 1 / -1; }
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(190px, 1fr) minmax(0, 1.2fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.preview-label {
+  display: block;
+  font-size: 11px;
+  color: #7c848d;
+  margin-bottom: 2px;
+}
+.preview-text p {
+  margin: 0 0 var(--space-sm);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #33383e;
+  background: var(--wash);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 7px 9px;
+}
+.preview-after { color: #1f4e79; }
+
+.preview-figures { display: flex; flex-direction: column; gap: var(--space-sm); }
+.preview-figures div {
+  background: var(--wash);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+.preview-figures strong {
+  display: block;
+  font-size: 1.15rem;
+  color: #1f4e79;
+  font-variant-numeric: tabular-nums;
+}
+.preview-figures span { font-size: 12px; color: #5a6169; }
+
+@media (max-width: 980px) {
+  .preview-grid { grid-template-columns: 1fr; }
+}
