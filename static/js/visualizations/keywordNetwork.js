@@ -162,7 +162,7 @@
       svg.setAttribute('viewBox', '0 0 1200 700');
       svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
       svg.style.display = 'block';
-      svg.style.border = '1px solid #e5e7eb';
+      svg.style.border = '1px solid #e3e5e2';
       svg.style.borderRadius = '8px';
       svg.style.background = '#ffffff';
   
@@ -276,7 +276,7 @@
   
       const circles = nodeGroups.append('circle')
         .attr('r', d => nodeR(d))
-        .attr('fill', '#3b82f6').attr('stroke', '#fff').attr('stroke-width', 2);
+        .attr('fill', '#2d6ca8').attr('stroke', '#fff').attr('stroke-width', 2);
   
       const labels = nodeGroups.append('text')
         .attr('text-anchor', 'middle').attr('dominant-baseline', 'central')
@@ -299,7 +299,7 @@
           });
         }
         circles
-          .attr('fill', d => connectedNodes.has(d.id) ? '#10b981' : '#3b82f6')
+          .attr('fill', d => connectedNodes.has(d.id) ? '#1e6b4f' : '#2d6ca8')
           .attr('opacity', d => !node || connectedNodes.has(d.id) ? 1 : 0.25);
         labels.attr('opacity', d => !node || connectedNodes.has(d.id) ? 1 : 0.25);
         link
@@ -307,7 +307,7 @@
             if (!node) return '#999';
             const s = d.source.id || d.source;
             const t = d.target.id || d.target;
-            return (connectedNodes.has(s) && connectedNodes.has(t)) ? '#10b981' : '#999';
+            return (connectedNodes.has(s) && connectedNodes.has(t)) ? '#1e6b4f' : '#999';
           })
           .attr('stroke-opacity', d => {
             if (!node) return 0.25;

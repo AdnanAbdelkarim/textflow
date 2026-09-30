@@ -75,22 +75,22 @@
         };
   
         const filterHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 12px; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 1px solid #bae6fd;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 12px; background: linear-gradient(135deg, #f0f9ff 0%, #edf3f8 100%); border-radius: 8px; border: 1px solid #8fb4d2;">
             <div style="display: flex; gap: 20px; font-size: 14px;">
-              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Positive:</strong> <span style="color: #16a34a; font-weight: 600;">${sentimentCounts.Positive}</span></span>
-              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Negative:</strong> <span style="color: #dc2626; font-weight: 600;">${sentimentCounts.Negative}</span></span>
-              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Neutral:</strong> <span style="color: #64748b; font-weight: 600;">${sentimentCounts.Neutral}</span></span>
+              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Positive:</strong> <span style="color: #1e6b4f; font-weight: 600;">${sentimentCounts.Positive}</span></span>
+              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Negative:</strong> <span style="color: #a32b22; font-weight: 600;">${sentimentCounts.Negative}</span></span>
+              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Neutral:</strong> <span style="color: #5a6169; font-weight: 600;">${sentimentCounts.Neutral}</span></span>
             </div>
             <div style="position: relative;">
               <select id="sentiment-filter" style="
                 padding: 8px 36px 8px 14px;
-                border: 2px solid #2563eb;
+                border: 2px solid #2d6ca8;
                 border-radius: 8px;
                 font-size: 14px;
                 font-weight: 600;
                 cursor: pointer;
-                background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
-                color: #1e40af;
+                background: linear-gradient(to bottom, #ffffff 0%, #fafaf8 100%);
+                color: #1b4470;
                 box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
                 appearance: none;
                 -webkit-appearance: none;
@@ -102,7 +102,7 @@
                 <option value="Negative">Negative Only</option>
                 <option value="Neutral">Neutral Only</option>
               </select>
-              <svg style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; width: 16px; height: 16px;" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24">
+              <svg style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; width: 16px; height: 16px;" fill="none" stroke="#2d6ca8" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M19 9l-7 7-7-7"/>
               </svg>
             </div>
@@ -128,9 +128,9 @@
             : `Sentence ${r.sentence_id} - ${r.sentiment}`;
   
           sentenceHTML += `
-            <details class="sentence-block sentiment-item" data-sentiment="${r.sentiment}" style="margin-bottom: 8px; border: 1px solid #e5e7eb; border-radius: 6px; padding: 8px; background: white;">
+            <details class="sentence-block sentiment-item" data-sentiment="${r.sentiment}" style="margin-bottom: 8px; border: 1px solid #e3e5e2; border-radius: 6px; padding: 8px; background: white;">
               <summary style="color:${r.color}; font-weight:bold; cursor: pointer; padding: 4px;">${summary}</summary>
-              <div style="margin-left: 1em; margin-top: 8px; padding: 8px; background: #f9fafb; border-radius: 4px;">
+              <div style="margin-left: 1em; margin-top: 8px; padding: 8px; background: #fafaf8; border-radius: 4px;">
                 <p style="margin: 0 0 8px 0; line-height: 1.6;">${displayText}</p>
                 <span style="color:${r.color}; font-size: 13px;"><em>Score:</em> <strong>${r.score}</strong></span>
               </div>
@@ -139,7 +139,7 @@
   
         container.innerHTML = `
           <details class="sentiment-section">
-            <summary style="font-weight:bold; color:#0074cc; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
+            <summary style="font-weight:bold; color:#1f4e79; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
               Sentiment Analysis - ${results.length} sentences analyzed
             </summary>
             <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 10px;">

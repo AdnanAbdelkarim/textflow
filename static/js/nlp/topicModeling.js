@@ -153,30 +153,30 @@
         });
   
         const filterHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 12px; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 1px solid #bae6fd;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 12px; background: linear-gradient(135deg, #f0f9ff 0%, #edf3f8 100%); border-radius: 8px; border: 1px solid #8fb4d2;">
             <div style="display: flex; gap: 20px; font-size: 14px;">
               <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-                <strong>Total Documents:</strong> <span style="color: #1e40af; font-weight: 600;">${mapping.length}</span>
+                <strong>Total Documents:</strong> <span style="color: #1b4470; font-weight: 600;">${mapping.length}</span>
               </span>
             </div>
             <div style="position: relative;">
-              <select id="topic-filter" style="padding: 8px 36px 8px 14px; border: 2px solid #2563eb; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%); color: #1e40af; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1); appearance: none; -webkit-appearance: none; -moz-appearance: none; min-width: 200px;">
+              <select id="topic-filter" style="padding: 8px 36px 8px 14px; border: 2px solid #2d6ca8; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; background: linear-gradient(to bottom, #ffffff 0%, #fafaf8 100%); color: #1b4470; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1); appearance: none; -webkit-appearance: none; -moz-appearance: none; min-width: 200px;">
                 <option value="all">All Topics</option>
                 ${uniqueTopics.map(topic =>
                   `<option value="${escapeHTML(topic)}">${escapeHTML(topic)} (${topicCounts[topic]})</option>`
                 ).join('')}
               </select>
-              <svg style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; width: 16px; height: 16px;" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24">
+              <svg style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; width: 16px; height: 16px;" fill="none" stroke="#2d6ca8" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M19 9l-7 7-7-7"/>
               </svg>
             </div>
           </div>`;
   
         docListHTML = `
-          <div class="doc-topic-list" style="margin-top: 1.5rem; border-top: 1px solid #e0e0e0; padding-top: 1rem;">
+          <div class="doc-topic-list" style="margin-top: 1.5rem; border-top: 1px solid #e3e5e2; padding-top: 1rem;">
             <h4 style="margin-bottom: 1rem; font-weight: 600; font-size: 1.1rem;">Document-Topic Mapping</h4>
             ${filterHTML}
-            <div style="max-height: 400px; overflow-y: auto; padding-right: 10px; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fafafa;">
+            <div style="max-height: 400px; overflow-y: auto; padding-right: 10px; border: 1px solid #e3e5e2; border-radius: 8px; padding: 15px; background: #fafafa;">
               <ul id="topic-mapping-list" style="list-style: none; padding: 0; margin: 0;">`;
   
         mapping.forEach(m => {
@@ -184,7 +184,7 @@
           const conf = Number.isFinite(Number(m.confidence)) ? Number(m.confidence).toFixed(1) : String(m.confidence || '');
           docListHTML += `
             <li class="topic-mapping-item" data-topic="${escapeHTML(label)}" style="padding: 10px 0; border-bottom: 1px solid #e8e8e8; display: flex; justify-content: space-between; align-items: center;">
-              <span><strong style="color: #1e40af;">Doc ${m.doc_id}</strong> -> ${escapeHTML(label)}</span>
+              <span><strong style="color: #1b4470;">Doc ${m.doc_id}</strong> -> ${escapeHTML(label)}</span>
               <span style="color: #666; font-size: 0.9rem; background: #e0e7ff; padding: 2px 8px; border-radius: 4px;">${conf}%</span>
             </li>`;
         });
@@ -194,7 +194,7 @@
   
       container.innerHTML = `
         <details class="topic-section">
-          <summary style="font-weight:bold; color:#0074cc; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
+          <summary style="font-weight:bold; color:#1f4e79; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
             Topic Modeling - ${grouped.length} topics identified
           </summary>
           <div style="max-height: 700px; overflow-y: auto; padding: 1.5rem; margin-top: 10px;">
@@ -243,12 +243,12 @@
       if (!relevantTopics.length) {
         container.innerHTML = `
           <details class="topic-section">
-            <summary style="font-weight: bold; font-size: 1.2em; cursor: pointer; padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; color: #1e40af;">
+            <summary style="font-weight: bold; font-size: 1.2em; cursor: pointer; padding: 12px; background: #fafaf8; border-radius: 8px; border: 1px solid #e3e5e2; color: #1b4470;">
               Topic Modeling - No topics identified
             </summary>
             <div style="padding: 1.5rem; margin-top: 10px;">
               <h3 style="margin-bottom: 1rem;">Topic Modeling</h3>
-              <p style="color:#666; font-size:15px; text-align:center; padding:40px; background:#f9fafb; border-radius:8px;">
+              <p style="color:#666; font-size:15px; text-align:center; padding:40px; background:#fafaf8; border-radius:8px;">
                 This document could not be mapped to any category.
               </p>
             </div>
@@ -267,7 +267,7 @@
   
       container.innerHTML = `
         <details class="topic-section">
-          <summary style="font-weight: bold; font-size: 1.2em; cursor: pointer; padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; color: #1e40af;">
+          <summary style="font-weight: bold; font-size: 1.2em; cursor: pointer; padding: 12px; background: #fafaf8; border-radius: 8px; border: 1px solid #e3e5e2; color: #1b4470;">
             Topic Modeling - ${relevantTopics.length} topics identified
           </summary>
           <div style="max-height: 700px; overflow-y: auto; padding: 1.5rem; margin-top: 10px;">

@@ -157,7 +157,7 @@
           const nerContainer = document.getElementById('nerResults');
           if (nerContainer && lines.length < window.lastCSVData.length) {
             const note = document.createElement('div');
-            note.style.cssText = 'font-size:11px;color:#9ca3af;margin-bottom:6px;';
+            note.style.cssText = 'font-size:11px;color:#7c848d;margin-bottom:6px;';
             note.textContent = `Analyzed ${lines.length} of ${window.lastCSVData.length} documents.`;
             nerContainer.prepend(note);
           }
@@ -260,12 +260,12 @@
   
         let tableHTML = `
           <details class="ner-block" open>
-            <summary style="font-weight:bold; color:#0074cc; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
+            <summary style="font-weight:bold; color:#1f4e79; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
               Named Entity Recognition${methodDisplay} - ${entities.length} entities found
             </summary>
             <div style="max-height: 400px; overflow-y: auto; overflow-x: hidden; margin-top: 15px; border: 1px solid #ddd; border-radius: 6px;">
               <table style="width: 100%; border-collapse: collapse; table-layout: fixed;">
-                <thead style="position: sticky; top: 0; background: #0074cc; z-index: 10;">
+                <thead style="position: sticky; top: 0; background: #1f4e79; z-index: 10;">
                   <tr>`;
   
         activeColumns.forEach(col => {
@@ -291,7 +291,7 @@
         if (tbody) {
           tbody.addEventListener('mouseover', (e) => {
             const tr = e.target.closest('tr');
-            if (tr && tbody.contains(tr)) tr.style.background = '#f5f5f5';
+            if (tr && tbody.contains(tr)) tr.style.background = '#f4f5f2';
           });
           tbody.addEventListener('mouseout', (e) => {
             const tr = e.target.closest('tr');
@@ -305,7 +305,7 @@
         // Real timeout (spaCy transformer is slow on large text)
         if (error.name === 'AbortError') {
           container.innerHTML = `
-            <i style="color:#92400e;">
+            <i style="color:#6e4512;">
               Named entity recognition timed out.<br>
               If the server has just started, the model may still be loading; wait a
               moment and open this tab again. Otherwise try a smaller sample, or

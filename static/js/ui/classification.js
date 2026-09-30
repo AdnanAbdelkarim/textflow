@@ -84,7 +84,7 @@
   
       container.innerHTML = `
         <details class="classification-section">
-          <summary style="font-weight:bold; color:#0074cc; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
+          <summary style="font-weight:bold; color:#1f4e79; font-size: 1.1em; cursor: pointer; padding: 10px; background: #f9f9f9; border-radius: 6px;">
             Classification - ${classCount} Class${classCount === 1 ? '' : 'es'} Detected
           </summary>
           <div style="max-height: 700px; overflow-y: auto; padding: 1.5rem; margin-top: 10px;">
@@ -137,7 +137,7 @@
     function _renderUnlabeledState(container) {
       container.innerHTML = `
         <details class="classification-section">
-          <summary style="font-weight: bold; font-size: 1.2em; cursor: pointer; padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; color: #1e40af;">
+          <summary style="font-weight: bold; font-size: 1.2em; cursor: pointer; padding: 12px; background: #fafaf8; border-radius: 8px; border: 1px solid #e3e5e2; color: #1b4470;">
             Classification - No Labels Detected
           </summary>
           <div style="max-height: 700px; overflow-y: auto; padding: 1.5rem; margin-top: 10px;">

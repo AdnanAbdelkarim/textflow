@@ -9,8 +9,8 @@
     'use strict';
   
     const COLORS = [
-      '#2563eb', '#7c3aed', '#db2777', '#dc2626', '#ea580c',
-      '#d97706', '#65a30d', '#059669', '#0891b2', '#4f46e5'
+      '#2d6ca8', '#7c3aed', '#db2777', '#a32b22', '#ea580c',
+      '#8a5a16', '#65a30d', '#1e6b4f', '#0891b2', '#1f4e79'
     ];
   
     /**
@@ -63,8 +63,8 @@
   
         legendItems.forEach((item, index) => {
           const isActive = index === hoveredIndex;
-          item.style.background = isActive ? '#e0e7ff' : '#f8fafc';
-          item.style.border = isActive ? '1px solid #3b82f6' : '1px solid transparent';
+          item.style.background = isActive ? '#e0e7ff' : '#fafaf8';
+          item.style.border = isActive ? '1px solid #2d6ca8' : '1px solid transparent';
         });
       };
   
@@ -74,7 +74,7 @@
           path.style.transform = 'scale(1)';
         });
         document.querySelectorAll('.legend-item').forEach(item => {
-          item.style.background = '#f8fafc';
+          item.style.background = '#fafaf8';
           item.style.border = '1px solid transparent';
         });
       };
@@ -95,7 +95,7 @@
             const globalIndex = i + localIndex;
             return `
               <div class="legend-item"
-                   style="display: flex; align-items: center; margin-bottom: 8px; padding: 6px 8px; border-radius: 6px; background: #f8fafc; transition: all 0.2s; cursor: pointer; border: 1px solid transparent;"
+                   style="display: flex; align-items: center; margin-bottom: 8px; padding: 6px 8px; border-radius: 6px; background: #fafaf8; transition: all 0.2s; cursor: pointer; border: 1px solid transparent;"
                    onmouseover="handleLegendHover(${globalIndex})"
                    onmouseout="handleLegendLeave()">
                 <div style="width: 16px; height: 16px; background-color: ${seg.color}; border-radius: 4px; margin-right: 10px; flex-shrink: 0; box-shadow: 0 1px 2px rgba(0,0,0,0.1);"></div>
@@ -131,7 +131,7 @@
             </svg>
           </div>
           <div style="flex: 1; min-width: 300px; max-width: 800px;">
-            <h4 style="margin-bottom: 1rem; font-size: 1.1rem; color: #1e293b;">Topics</h4>
+            <h4 style="margin-bottom: 1rem; font-size: 1.1rem; color: #1a1d21;">Topics</h4>
             <div style="display: flex; flex-wrap: wrap; gap: 1rem; max-height: 400px; overflow-y: auto; padding-right: 10px;">
               ${buildLegendColumns()}
             </div>

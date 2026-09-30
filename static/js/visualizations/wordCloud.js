@@ -75,8 +75,8 @@ console.log('wordCloud.js loaded');
         container.innerHTML = `
           <h5 style="margin-top:20px;text-align:center;">${displayTitle}</h5>
           <div style="text-align:center;padding:40px;color:#666;">
-            <div class="spinner" style="width:36px;height:36px;border:4px solid #f3f3f3;border-top:4px solid #4f46e5;border-radius:50%;margin:0 auto 16px;animation:spin 0.8s linear infinite;"></div>
-            <p style="font-size:13px;color:#6b7280;">Still rendering, almost done...</p>
+            <div class="spinner" style="width:36px;height:36px;border:4px solid #f3f3f3;border-top:4px solid #1f4e79;border-radius:50%;margin:0 auto 16px;animation:spin 0.8s linear infinite;"></div>
+            <p style="font-size:13px;color:#5a6169;">Still rendering, almost done...</p>
           </div>
         `;
         // Poll until render completes, then re-call (will hit SVG cache instantly)
@@ -392,7 +392,7 @@ console.log('wordCloud.js loaded');
           .style('display', 'block')
           .style('min-height', '600px')
           .style('background', isDark ? '#1a1a1a' : '#ffffff')
-          .style('border', '1px solid #e5e7eb')
+          .style('border', '1px solid #e3e5e2')
           .style('border-radius', '8px');
   
         const centerGroup = svg.append('g').attr('transform', `translate(${w / 2}, ${h / 2})`);
@@ -406,10 +406,10 @@ console.log('wordCloud.js loaded');
   
           if (placedCount < totalCount) {
             const missing = totalCount - placedCount;
-            feedbackDiv.style.cssText += 'color: #dc2626; font-size: 13px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px;';
+            feedbackDiv.style.cssText += 'color: #a32b22; font-size: 13px; background: #f9eeec; border: 1px solid #e0b3ad; border-radius: 6px;';
             feedbackDiv.innerHTML = `Showing ${placedCount} of ${totalCount} words (${percentage}%) - <strong>${missing} words couldn't fit</strong>. Try zooming out to see more words.`;
           } else {
-            feedbackDiv.style.cssText += 'color: #16a34a; font-size: 13px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px;';
+            feedbackDiv.style.cssText += 'color: #1e6b4f; font-size: 13px; background: #e4f0ea; border: 1px solid #9cc7b4; border-radius: 6px;';
             feedbackDiv.innerHTML = `Successfully showing <strong>all ${totalCount} words</strong> at ${Math.round(zoomLevel * 100)}% zoom`;
           }
   
@@ -469,18 +469,18 @@ console.log('wordCloud.js loaded');
       // Zoom controls - uses class-based selectors scoped to this container (F3)
       const controlsDiv = document.createElement('div');
       controlsDiv.className = 'zoom-controls';
-      controlsDiv.style.cssText = 'text-align: center; padding: 12px; margin-top: 15px; background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%); border-radius: 8px; border: 1px solid #bae6fd;';
+      controlsDiv.style.cssText = 'text-align: center; padding: 12px; margin-top: 15px; background: linear-gradient(135deg, #fafaf8 0%, #edf3f8 100%); border-radius: 8px; border: 1px solid #8fb4d2;';
       controlsDiv.innerHTML = `
         <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
-          <button class="zoom-out-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">- Zoom Out</button>
+          <button class="zoom-out-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #2d6ca8 0%, #2d6ca8 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">- Zoom Out</button>
           <div style="display: flex; align-items: center; gap: 10px; background: white; padding: 8px 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-            <span style="color: #64748b; font-weight: 600; font-size: 13px;">Zoom:</span>
-            <span class="zoom-display" style="font-weight: 700; font-size: 18px; color: #1e40af; min-width: 60px; display: inline-block; text-align: center;">100%</span>
+            <span style="color: #5a6169; font-weight: 600; font-size: 13px;">Zoom:</span>
+            <span class="zoom-display" style="font-weight: 700; font-size: 18px; color: #1b4470; min-width: 60px; display: inline-block; text-align: center;">100%</span>
           </div>
-          <button class="zoom-in-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">+ Zoom In</button>
-          <button class="zoom-reset-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #64748b 0%, #475569 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; box-shadow: 0 2px 4px rgba(100, 116, 139, 0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">↺ Reset</button>
+          <button class="zoom-in-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #2d6ca8 0%, #2d6ca8 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">+ Zoom In</button>
+          <button class="zoom-reset-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #5a6169 0%, #33383e 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; box-shadow: 0 2px 4px rgba(100, 116, 139, 0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">↺ Reset</button>
         </div>
-        <div style="margin-top: 10px; font-size: 12px; color: #64748b; font-style: italic;">
+        <div style="margin-top: 10px; font-size: 12px; color: #5a6169; font-style: italic;">
            Zoom Out = Smaller words, more fit in view • Zoom In = Larger words, fewer fit • Use mouse wheel to zoom
         </div>
       `;
@@ -624,16 +624,16 @@ console.log('wordCloud.js loaded');
       
               if (skipped > 0) {
                   infoBar.innerHTML = `
-                      <span style="font-weight: 600; color: #4f46e5;">${placed}</span> of top 
+                      <span style="font-weight: 600; color: #1f4e79;">${placed}</span> of top 
                       <span style="font-weight: 600;">${total}</span> words placed
-                      <span style="margin-left: 8px; color: #9ca3af;"> - </span>
+                      <span style="margin-left: 8px; color: #7c848d;"> - </span>
                       <span style="margin-left: 8px; font-size: 10px;">
                           ${skipped} larger words need more space
                       </span>
                   `;
               } else {
                   infoBar.innerHTML = `
-                      All <span style="font-weight: 600; color: #10b981;">${placed}</span> top words placed
+                      All <span style="font-weight: 600; color: #1e6b4f;">${placed}</span> top words placed
                   `;
               }
       
@@ -736,7 +736,7 @@ console.log('wordCloud.js loaded');
   
     function _updateSliderGradient(slider) {
       const progress = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-      slider.style.background = `linear-gradient(to right, #4f46e5 0%, #4f46e5 ${progress}%, #e5e7eb ${progress}%, #e5e7eb 100%)`;
+      slider.style.background = `linear-gradient(to right, #1f4e79 0%, #1f4e79 ${progress}%, #e3e5e2 ${progress}%, #e3e5e2 100%)`;
     }
   
     // ============================================================
@@ -827,17 +827,17 @@ console.log('wordCloud.js loaded');
       // Loading state with progress bar
       container.innerHTML = `
         <div class="wc-loading-state" style="text-align:center;padding:24px 40px;">
-          <div style="display:inline-block;width:32px;height:32px;border:3px solid #e5e7eb;
-                      border-top-color:#4f46e5;border-radius:50%;
+          <div style="display:inline-block;width:32px;height:32px;border:3px solid #e3e5e2;
+                      border-top-color:#1f4e79;border-radius:50%;
                       animation:spin 0.8s linear infinite;margin-bottom:12px;"></div>
-          <p style="font-size:13px;color:#6b7280;margin:0 0 10px;">
+          <p style="font-size:13px;color:#5a6169;margin:0 0 10px;">
             Analyzing <strong>${filtered.length}</strong> words (showing top 100)...
             ${zoomLevel !== 1.0 ? `at ${Math.round(zoomLevel * 100)}% zoom` : ''} -
             <span class="wc-elapsed">0s</span>
           </p>
-          <div style="background:#e5e7eb;border-radius:4px;height:6px;overflow:hidden;
+          <div style="background:#e3e5e2;border-radius:4px;height:6px;overflow:hidden;
                       max-width:260px;margin:0 auto;">
-            <div class="wc-d3-bar" style="background:linear-gradient(90deg,#4f46e5,#7c3aed);
+            <div class="wc-d3-bar" style="background:linear-gradient(90deg,#1f4e79,#7c3aed);
                                           height:100%;width:5%;border-radius:4px;
                                           transition:width 0.12s ease;"></div>
           </div>
@@ -894,16 +894,16 @@ console.log('wordCloud.js loaded');
           
               if (skipped > 0) {
                   infoBar.innerHTML = `
-                      <span style="font-weight: 600; color: #4f46e5;">${placed}</span> of top 
+                      <span style="font-weight: 600; color: #1f4e79;">${placed}</span> of top 
                       <span style="font-weight: 600;">${total}</span> words placed
-                      <span style="margin-left: 8px; color: #9ca3af;"> - </span>
+                      <span style="margin-left: 8px; color: #7c848d;"> - </span>
                       <span style="margin-left: 8px; font-size: 10px;">
                           ${skipped} larger words need more space
                       </span>
                   `;
               } else {
                   infoBar.innerHTML = `
-                      All <span style="font-weight: 600; color: #10b981;">${placed}</span> top words placed
+                      All <span style="font-weight: 600; color: #1e6b4f;">${placed}</span> top words placed
                   `;
               }
           
@@ -1242,31 +1242,31 @@ console.log('wordCloud.js loaded');
       controlsDiv.style.cssText = [
         'display:flex', 'justify-content:center', 'align-items:center',
         'gap:12px', 'padding:10px', 'margin-top:8px',
-        'background:linear-gradient(135deg,#f8fafc,#e0f2fe)',
-        'border-radius:8px', 'border:1px solid #bae6fd'
+        'background:linear-gradient(135deg,#fafaf8,#edf3f8)',
+        'border-radius:8px', 'border:1px solid #8fb4d2'
       ].join(';');
 
       const btnStyle = [
         'padding:7px 14px',
-        'background:linear-gradient(135deg,#3b82f6,#2563eb)',
+        'background:linear-gradient(135deg,#2d6ca8,#2d6ca8)',
         'color:white', 'border:none', 'border-radius:8px',
         'cursor:pointer', 'font-weight:600', 'font-size:12px',
         'box-shadow:0 2px 4px rgba(59,130,246,0.3)',
       ].join(';');
 
-      const resetStyle = btnStyle.replace(/#3b82f6,#2563eb/g, '#64748b,#475569')
+      const resetStyle = btnStyle.replace(/#2d6ca8,#2d6ca8/g, '#5a6169,#33383e')
                                 .replace(/rgba\(59,130,246,0\.3\)/g, 'rgba(100,116,139,0.3)');
 
       controlsDiv.innerHTML = `
         <button class="wc-zoom-out" style="${btnStyle}">- Zoom Out</button>
         <div style="background:white;padding:5px 12px;border-radius:8px;
                     box-shadow:0 1px 3px rgba(0,0,0,0.1);
-                    font-weight:700;font-size:15px;color:#1e40af;min-width:60px;text-align:center;">
+                    font-weight:700;font-size:15px;color:#1b4470;min-width:60px;text-align:center;">
           <span class="wc-zoom-display">100%</span>
         </div>
         <button class="wc-zoom-in" style="${btnStyle}">+ Zoom In</button>
         <button class="wc-zoom-reset" style="${resetStyle}">↺ Reset</button>
-        <span style="font-size:11px;color:#94a3b8;margin-left:4px;">Zoom out adds more words</span>
+        <span style="font-size:11px;color:#7c848d;margin-left:4px;">Zoom out adds more words</span>
       `;
       setTimeout(() => {
         const zd = controlsDiv.querySelector('.wc-zoom-display');

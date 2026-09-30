@@ -956,7 +956,7 @@ function renderUnifiedROCChart(canvas, models) {
           min: 0,
           max: 1,
           grid: {
-            color: '#e2e8f0',
+            color: '#e3e5e2',
             lineWidth: 1
           },
           ticks: {
@@ -981,7 +981,7 @@ function renderUnifiedROCChart(canvas, models) {
           min: 0,
           max: 1,
           grid: {
-            color: '#e2e8f0',
+            color: '#e3e5e2',
             lineWidth: 1
           },
           ticks: {
@@ -1155,7 +1155,7 @@ function renderIndividualROCChart(canvas, model) {
                   min: 0,
                   max: 1,
                   grid: {
-                      color: '#e2e8f0',
+                      color: '#e3e5e2',
                       lineWidth: 1
                   },
                   ticks: {
@@ -1180,7 +1180,7 @@ function renderIndividualROCChart(canvas, model) {
                   min: 0,
                   max: 1,
                   grid: {
-                      color: '#e2e8f0',
+                      color: '#e3e5e2',
                       lineWidth: 1
                   },
                   ticks: {
@@ -1421,7 +1421,7 @@ function highlightMatrixCell(table, clickedCell) {
   clickedCell.classList.add('highlighted');
   clickedCell.style.transform = 'scale(1.15)';
   clickedCell.style.zIndex = '20';
-  clickedCell.style.boxShadow = '0 0 0 3px #1976d2';
+  clickedCell.style.boxShadow = '0 0 0 3px #1f4e79';
   
   allCells.forEach(cell => {
     if (cell.dataset.row === row && cell !== clickedCell) {
@@ -1800,10 +1800,10 @@ function calculateAUC(result) {
 function getModelColor(model) {
   const colors = {
     // Traditional ML
-    nb: '#2563eb',      // Blue
-    gda: '#2563eb',     // Same blue for GDA (replacement for NB)
-    lr: '#10b981',      // Green
-    knn: '#f59e0b',     // Orange
+    nb: '#2d6ca8',      // Blue
+    gda: '#2d6ca8',     // Same blue for GDA (replacement for NB)
+    lr: '#1e6b4f',      // Green
+    knn: '#8a5a16',     // Orange
     svm: '#8b5cf6',     // Purple
     // Transformers
     'bert-tiny': '#ec4899',    // Pink
@@ -1811,7 +1811,7 @@ function getModelColor(model) {
     'distilbert': '#14b8a6',   // Teal
     'bert': '#f43f5e'          // Red
   };
-  return colors[model] || '#64748b';
+  return colors[model] || '#5a6169';
 }
 
 function getModelName(model) {
@@ -2093,7 +2093,7 @@ function toggleTransformerModels() {
     if (!list) return;
     list.style.opacity = '0.55';
     const note = document.createElement('p');
-    note.style.cssText = 'margin-top:10px;font-size:13px;color:#6b7280;line-height:1.5;';
+    note.style.cssText = 'margin-top:10px;font-size:13px;color:#5a6169;line-height:1.5;';
     note.textContent = 'Transformer fine-tuning needs a GPU and is not part of '
       + 'this online version. It is included in the downloadable container.';
     list.parentNode.appendChild(note);

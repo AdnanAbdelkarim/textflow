@@ -63,7 +63,7 @@
       <h3 style="margin-top:0;">N-gram Exploration</h3>
       <div class="ngram-controls"
            style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;
-                  margin-bottom:15px;padding:10px;background:#f5f5f5;border-radius:6px;">
+                  margin-bottom:15px;padding:10px;background:#f4f5f2;border-radius:6px;">
         <label style="display:flex;align-items:center;gap:6px;">
           <span style="font-weight:bold;color:#333;">N-gram order:</span>
           <select id="ngramOrder">
@@ -86,7 +86,7 @@
           <select id="ngramClass">${classOptions}</select>
         </label>` : ''}
         <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
-          <input type="checkbox" id="ngramStopwords" style="accent-color:#0074cc;">
+          <input type="checkbox" id="ngramStopwords" style="accent-color:#1f4e79;">
           <span>Include stopwords</span>
         </label>
       </div>
@@ -149,7 +149,7 @@
         datasets: [{
           label: `${data.n}-gram frequency`,
           data: top.map(g => g.frequency),
-          backgroundColor: '#2563eb',
+          backgroundColor: '#2d6ca8',
         }],
       },
       options: {

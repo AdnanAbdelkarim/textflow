@@ -245,9 +245,9 @@
         domLegend.className = 'coverage-legend-dom';
         domLegend.style.cssText = `
           position: absolute; top: 8px; right: 8px;
-          background: rgba(255,255,255,0.85); border: 1px dashed #cbd5e1;
+          background: rgba(255,255,255,0.85); border: 1px dashed #a7aeb6;
           border-radius: 6px; padding: 8px 10px;
-          font: 12px system-ui, sans-serif; color: #111827; pointer-events: none;
+          font: 12px system-ui, sans-serif; color: #1a1d21; pointer-events: none;
         `;
         wrap.appendChild(domLegend);
       }
@@ -256,7 +256,7 @@
         <div style="margin-bottom: 4px;"><strong>Legend</strong></div>
         <div style="margin: 3px 0;"> Horizontal: coverage targets (80%, 90%)</div>
         <div style="margin: 3px 0;"> Vertical: rank hitting targets (k₈₀ = ${v80.toLocaleString()}, k₉₀ = ${v90.toLocaleString()})</div>
-        <div style="margin-top: 6px; font-size: 11px; color: #6b7280;">Vocabulary size: ${vocabularySize.toLocaleString()} words</div>
+        <div style="margin-top: 6px; font-size: 11px; color: #5a6169;">Vocabulary size: ${vocabularySize.toLocaleString()} words</div>
       `;
     }
   

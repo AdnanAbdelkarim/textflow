@@ -19,7 +19,7 @@ function showLoadingBar(title, methodsLabel = '') {
     overlay.innerHTML = `
         <div class="preproc-modal">
             <div class="preproc-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d6ca8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
                 </svg>
             </div>
@@ -63,7 +63,7 @@ function setLoadingStep(stepIndex, sublabelOverride = null) {
         if (i < stepIndex) {
             stepEl.className = 'preproc-step ps-done';
             dotEl.className = 'ps-dot dot-done';
-            dotEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+            dotEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2d6ca8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
         } else if (i === stepIndex) {
             stepEl.className = 'preproc-step ps-active';
             dotEl.className = 'ps-dot dot-active';
@@ -989,7 +989,7 @@ class PreprocessingUI {
             return '';
         }
         
-        let html = '<div class="stat-item" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">';
+        let html = '<div class="stat-item" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e3e5e2;">';
         html += '<strong>Class Distribution:</strong>';
         html += '</div>';
 

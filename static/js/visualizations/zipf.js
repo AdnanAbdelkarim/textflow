@@ -232,10 +232,10 @@
         covGroup.append('line')
           .attr('x1', x(r)).attr('x2', x(r))
           .attr('y1', height - 18).attr('y2', height)
-          .attr('stroke', '#9ca3af').attr('stroke-dasharray', '4,4').attr('stroke-width', 1);
+          .attr('stroke', '#7c848d').attr('stroke-dasharray', '4,4').attr('stroke-width', 1);
         covGroup.append('text')
           .attr('x', x(r)).attr('y', height - 22).attr('text-anchor', 'middle')
-          .attr('font-size', 10).attr('fill', '#6b7280').text(`${step}%`);
+          .attr('font-size', 10).attr('fill', '#5a6169').text(`${step}%`);
       });
   
       const hapaxCount = data.filter(d => d.freq === 1).length;
@@ -247,7 +247,7 @@
         g.append('line')
           .attr('x1', x(hapaxRank)).attr('x2', x(hapaxRank))
           .attr('y1', 0).attr('y2', height)
-          .attr('stroke', '#ef4444').attr('stroke-dasharray', '6,4')
+          .attr('stroke', '#a32b22').attr('stroke-dasharray', '6,4')
           .attr('stroke-width', 1.5).attr('opacity', 0.6);
       }
   
@@ -282,12 +282,12 @@
         g.append('line')
           .attr('x1', x(start)).attr('x2', x(start))
           .attr('y1', 0).attr('y2', height)
-          .attr('stroke', '#6b7280').attr('stroke-dasharray', '4,4').attr('opacity', 0.7);
+          .attr('stroke', '#5a6169').attr('stroke-dasharray', '4,4').attr('opacity', 0.7);
   
         g.append('line')
           .attr('x1', x(end)).attr('x2', x(end))
           .attr('y1', 0).attr('y2', height)
-          .attr('stroke', '#6b7280').attr('stroke-dasharray', '4,4').attr('opacity', 0.7);
+          .attr('stroke', '#5a6169').attr('stroke-dasharray', '4,4').attr('opacity', 0.7);
       }
   
       if (showTopDots) {
@@ -341,7 +341,7 @@
       legend.className = 'zipf-legend-dom';
       Object.assign(legend.style, {
         position: 'absolute', top: '6px', right: '8px', maxWidth: '560px',
-        background: 'rgba(255,255,255,0.95)', border: '1px dashed #cbd5e1',
+        background: 'rgba(255,255,255,0.95)', border: '1px dashed #a7aeb6',
         borderRadius: '8px', padding: '10px 12px', fontSize: '12px',
         lineHeight: '1.35', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', zIndex: 10
       });
@@ -375,11 +375,11 @@
           }</span>
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin:4px 0;">
-          <span style="width:0;height:16px;border-left:2px dashed #6b7280;display:inline-block;"></span>
+          <span style="width:0;height:16px;border-left:2px dashed #5a6169;display:inline-block;"></span>
           <span><b>Gray dashed</b>: boundaries of the fit window. Bottom ticks mark coverage:
             k<sub>50</sub>=${k50}, k<sub>80</sub>=${k80}, k<sub>90</sub>=${k90}.</span>
         </div>
-        <hr style="border:none;border-top:1px dotted #e5e7eb;margin:8px 0;">
+        <hr style="border:none;border-top:1px dotted #e3e5e2;margin:8px 0;">
         <div><b>Corpus</b>: Tokens N=${tokens}; Types V=${types}; TTR=${ttr}; Herdan C=${herdan}</div>
       `;
       legendContainerEl.appendChild(legend);
