@@ -72,8 +72,14 @@ EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
     CMD curl -fsS "http://localhost:${PORT}/healthz" || exit 1
 
-# One worker, since a second would duplicate the loaded models in memory on a
-# host that provides about a gigabyte. Threads carry the concurrency.
+# One worker, since a second would duplicate the loaded models in memory.
+#
+# Three threads rather than eight. Each in-flight request builds its own term
+# matrix, so concurrency multiplies peak memory rather than just spreading the
+# CPU. Measured on a 512 MB instance, eight threads under simultaneous
+# requests reached 483 MB and the host closed connections. Three keeps the
+# peak well inside the limit while still overlapping requests.
 CMD ["sh", "-c", "exec gunicorn --bind 0.0.0.0:${PORT} \
-     --workers 1 --threads 8 --timeout 300 --graceful-timeout 30 \
+     --workers 1 --threads 3 --timeout 300 --graceful-timeout 30 \
+     --max-requests 200 --max-requests-jitter 40 \
      --access-logfile - --error-logfile - main:app"]
