@@ -108,6 +108,11 @@
           </div>
       </div>
       
+      <div class="panel-section" id="datasetSummarySection">
+          <h3>What will be trained</h3>
+          <div id="datasetSummary" class="panel-body">Reading the dataset...</div>
+      </div>
+
       <div class="panel-section">
           <h3>Training Configuration</h3>
           <div class="config-controls">
@@ -189,6 +194,7 @@
 
   <!-- ADD: Predictive page logic -->
   <script src="{{ url_for('static', filename='js/predictive.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/predictiveSummary.js') }}"></script>
   <footer class="copyright">
     © 2026 Adnan Abdelkarim, Uzair Ahmad. All rights reserved.
   </footer>
