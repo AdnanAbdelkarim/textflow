@@ -38,13 +38,13 @@
     --info-light: #dbeafe;
     
     /* Spacing Scale */
-    --space-xs: 4px;
-    --space-sm: 8px;
-    --space-md: 16px;
-    --space-lg: 24px;
-    --space-xl: 32px;
-    --space-2xl: 48px;
-    --space-3xl: 64px;
+    --space-xs: 3px;
+    --space-sm: 6px;
+    --space-md: 10px;
+    --space-lg: 14px;
+    --space-xl: 18px;
+    --space-2xl: 24px;
+    --space-3xl: 32px;
     
     /* Border Radius */
     --radius-sm: 6px;
@@ -104,11 +104,11 @@
     margin-bottom: var(--space-md);
   }
   
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.75rem; }
-  h4 { font-size: 1.5rem; }
-  h5 { font-size: 1.25rem; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1.05rem; }
+  h5 { font-size: 0.95rem; }
   h6 { font-size: 1rem; }
   
   p {
@@ -5383,3 +5383,70 @@ canvas#unifiedROCChart {
 #progressStatus {
     font-style: italic;
 }
+/* ===========================================================================
+   DENSITY PASS
+   ---------------------------------------------------------------------------
+   The layout was built with generous fixed padding and tall minimum heights.
+   With a real dataset loaded, measured content covered only a quarter to a
+   half of each page, so users scrolled past empty space to reach their own
+   results. These rules tighten the containers that were measured as the
+   largest contributors. They are kept together rather than edited in place so
+   the change is legible and reversible.
+
+   Nothing here changes a font stack, a colour or a component's behaviour.
+   =========================================================================== */
+
+/* Panels and cards: 30px of padding around a short form is most of a card. */
+.preprocessing-controls,
+.results-section,
+.control-panel,
+.comparison-section,
+.success-message,
+.section-content-panel { padding: var(--space-md) var(--space-lg); }
+
+.modal-body { padding: var(--space-lg); }
+.training-progress-modal .modal-content { padding: var(--space-lg); }
+
+/* Section rhythm: these stacked to 30px above and below every block. */
+.action-section,
+.classification-report-section,
+.confusion-matrix-section { margin: var(--space-lg) 0; }
+
+.modeling-header { gap: var(--space-md); }
+.models-two-column { gap: var(--space-lg); }
+.matrix-legend { gap: var(--space-lg); }
+
+/* Minimum heights reserved space whether or not anything filled it. The
+   visualizations keep a usable canvas, just not a screen and a half. */
+#wordCloud { min-height: 360px; }
+#networkContainer { min-height: 340px; }
+.expanded-content-area { min-height: 0; }
+textarea { min-height: 180px; }
+.upload-box { min-height: 150px; }
+
+/* The footer pushed a further 40px below content that had already ended. */
+.copyright { margin-top: var(--space-lg); padding: var(--space-sm); }
+
+/* Headings carried browser default margins on top of the section spacing. */
+h1, h2, h3, h4 { margin-top: 0; margin-bottom: var(--space-sm); line-height: 1.25; }
+.section-header { margin-bottom: var(--space-md); padding-bottom: var(--space-sm); }
+p { margin-bottom: var(--space-sm); }
+
+/* The page title and its one-line description occupied a full band across the
+   top of every tab before any content began. */
+.sticky-header { padding: var(--space-sm) 0; margin-bottom: var(--space-md); }
+
+/* Overview holds four figures and two buttons. Sitting them on one row leaves
+   the rest of the page for content rather than for a gap. */
+.metrics-container, .metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--space-sm);
+}
+.metric-card { padding: var(--space-md) var(--space-lg); }
+
+/* Model selection: the cards were tall enough that four of them filled the
+   viewport, leaving the training controls below the fold. */
+.checkbox-card { padding: var(--space-sm) var(--space-md); }
+.checkbox-card .model-name { line-height: 1.3; }
+.model-checkboxes { gap: var(--space-sm); }
