@@ -5885,3 +5885,33 @@ input[type="file"] { width: 100%; }
   /* A select sized to its longest option ran past the right edge. */
   select, .filter-select, #sentiment-filter { width: 100%; }
 }
+
+/* Sentiment summary row. The layout lived in inline styles, which no media
+   query could reach, so on a narrow screen the filter was pushed past the
+   right edge of the page. */
+.sentiment-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding: 10px 12px;
+  background: var(--primary-blue-lighter, #edf3f8);
+  border: 1px solid #8fb4d2;
+  border-radius: 8px;
+}
+.sentiment-counts { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); font-size: 14px; }
+.sentiment-chip {
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+.sentiment-filter-wrap { position: relative; }
+
+@media (max-width: 760px) {
+  .sentiment-filter-wrap { width: 100%; }
+  .sentiment-filter-wrap select { width: 100%; }
+}

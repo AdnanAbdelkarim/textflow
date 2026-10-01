@@ -75,13 +75,13 @@
         };
   
         const filterHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 12px; background: linear-gradient(135deg, #f0f9ff 0%, #edf3f8 100%); border-radius: 8px; border: 1px solid #8fb4d2;">
-            <div style="display: flex; gap: 20px; font-size: 14px;">
-              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Positive:</strong> <span style="color: #1e6b4f; font-weight: 600;">${sentimentCounts.Positive}</span></span>
-              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Negative:</strong> <span style="color: #a32b22; font-weight: 600;">${sentimentCounts.Negative}</span></span>
-              <span style="background: white; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"><strong>Neutral:</strong> <span style="color: #5a6169; font-weight: 600;">${sentimentCounts.Neutral}</span></span>
+          <div class="sentiment-summary">
+            <div class="sentiment-counts">
+              <span class="sentiment-chip"><strong>Positive:</strong> <span style="color: #1e6b4f; font-weight: 600;">${sentimentCounts.Positive}</span></span>
+              <span class="sentiment-chip"><strong>Negative:</strong> <span style="color: #a32b22; font-weight: 600;">${sentimentCounts.Negative}</span></span>
+              <span class="sentiment-chip"><strong>Neutral:</strong> <span style="color: #5a6169; font-weight: 600;">${sentimentCounts.Neutral}</span></span>
             </div>
-            <div style="position: relative;">
+            <div class="sentiment-filter-wrap">
               <select id="sentiment-filter" style="
                 padding: 8px 36px 8px 14px;
                 border: 2px solid #2d6ca8;
