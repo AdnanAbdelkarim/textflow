@@ -5723,7 +5723,17 @@ body {
    which is also how they confirm the upload parsed correctly.
    --------------------------------------------------------------------------- */
 
-.overview-panels { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+/* The summary row holds exactly three panels, so the columns are stated
+   rather than fitted. auto-fit produced a fourth track at a desktop width and
+   left it standing empty beside them. */
+.overview-panels { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 1080px) {
+  .overview-panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .overview-panels { grid-template-columns: minmax(0, 1fr); }
+}
 .overview-panel--wide { grid-column: 1 / -1; }
 
 .sample-scroll {
