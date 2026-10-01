@@ -571,7 +571,14 @@
       sessionStorage.setItem('textData', JSON.stringify({ text: labeledData.join('\n') }));
       sessionStorage.setItem('detectedTextCol', textCol);
       sessionStorage.setItem('detectedLabelCol', labelColumns[0]);
-  
+
+      // Labels are encoded to their column index above. Only the single-label
+      // path recorded the names, so a multi-label dataset showed every class
+      // as a bare index throughout the interface.
+      const multiLabelNameMap = {};
+      labelColumns.forEach((col, i) => { multiLabelNameMap[String(i)] = col; });
+      sessionStorage.setItem('labelNameMap', JSON.stringify(multiLabelNameMap));
+
       const rowsText = processedData.map(row => row.text);
       sessionStorage.setItem('lastCSVTextRows', JSON.stringify(rowsText));
   

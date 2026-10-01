@@ -44,11 +44,27 @@
 
     const counts = {};
     data.forEach(r => {
-      if (r.label === undefined || r.label === null || r.label === '') return;
+      // A multi-label row carries its class names directly; a single-label row
+      // carries an encoded index that has to be mapped back.
+      if (Array.isArray(r.labelNames) && r.labelNames.length) {
+        r.labelNames.forEach(n => { counts[n] = (counts[n] || 0) + 1; });
+        return;
+      }
+      if (r.label === undefined || r.label === null || r.label === ''
+          || r.label === '-1') return;
       const n = name(r.label);
       counts[n] = (counts[n] || 0) + 1;
     });
     const classes = Object.keys(counts).sort();
+
+    // Without classes there is nothing to train, and quoting a split of a
+    // corpus that cannot be modelled only misleads.
+    if (!classes.length) {
+      el.innerHTML = '<p class="panel-note">This dataset has no labels, so '
+        + 'there is nothing to train on. Upload a file with a label column on '
+        + 'the Input tab to use this tab.</p>';
+      return;
+    }
 
     const slider = document.getElementById('testSize');
     const testPct = slider ? Number(slider.value) : 20;
