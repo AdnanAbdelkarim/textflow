@@ -5830,3 +5830,58 @@ body {
   font-variant-numeric: tabular-nums;
 }
 .summary-figures span { font-size: 12px; color: #5a6169; }
+
+/* --- Narrow screens ---------------------------------------------------------
+   A grid or flex child defaults to min-width:auto, so a track cannot shrink
+   below its content's intrinsic width. On the Input tab that pushed the column
+   to 494px inside a 363px page and the whole page scrolled sideways on a
+   phone, with the note text cut mid-sentence. Letting the tracks shrink and
+   holding the controls to their container fixes that class of fault rather
+   than the one instance of it.
+   --------------------------------------------------------------------------- */
+
+.input-wrapper > *,
+.overview-panels > *,
+.preprocessing-controls > *,
+.container > *,
+.preview-grid > *,
+.summary-figures > * { min-width: 0; }
+
+input, select, textarea, button { max-width: 100%; }
+
+/* A file input reports a wide intrinsic size that no declared width overrides. */
+input[type="file"] { width: 100%; }
+
+@media (max-width: 760px) {
+  /* The tab row becomes one destination per line and fills the first screen.
+     Scrolling it sideways keeps the content in view. */
+  .tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 4px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-button { flex: 0 0 auto; white-space: nowrap; }
+
+  .section-label { font-size: 1.15rem; }
+  textarea { min-height: 140px; }
+
+  /* Truncating to an ellipsis at a 196px column shows nothing useful. The
+     table scrolls instead, and the text wraps to two lines. */
+  .sample-table td:last-child {
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .sample-table { min-width: 0; }
+  .sample-scroll { max-height: 45vh; }
+
+  /* A select sized to its longest option ran past the right edge. */
+  select, .filter-select, #sentiment-filter { width: 100%; }
+}
