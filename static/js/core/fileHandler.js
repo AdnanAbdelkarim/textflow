@@ -462,7 +462,19 @@
       file.text().then(csvText => _parseCSVText(csvText));
     }
 
-    function _parseCSVText(csvText) {
+    function _parseCSVText(rawText) {
+      // Normalise the upload before anything reads it. The shared reader
+      // detects the separator, survives unescaped quotes inside a field and
+      // only treats the first row as column names when it reads like names.
+      // Papa's defaults silently discarded 737 of the 5,574 messages in the
+      // SMS Spam Collection and turned the first message into a header.
+      //
+      // Everything downstream, here and in the Preprocessing and Predictive
+      // tabs, then works from one clean, properly quoted CSV.
+      const parsed = window.parseDelimitedText(rawText);
+      console.info('[TextFlow] read upload: ' + parsed.describe());
+      const csvText = window.toCleanCSV(parsed);
+
       return Promise.resolve().then(() => {
         // Only store raw CSV for labeled datasets - Preprocessing and
         // Predictive (the only consumers of uploadedCSV) are blocked for

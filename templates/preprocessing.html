@@ -15,6 +15,7 @@
   <script src="{{ url_for('static', filename='js/core/state.js') }}"></script>
   <script src="{{ url_for('static', filename='js/core/sessionCache.js') }}"></script>
   <script src="{{ url_for('static', filename='js/preprocessing.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/exclusiveChoice.js') }}"></script>
 <script src="{{ url_for('static', filename='js/pages/preprocessingPreview.js') }}"></script>
   <style>
     .preproc-overlay{
@@ -152,72 +153,56 @@
       <!-- Feature Extraction Section -->
       <div class="control-section">
         <h3>Feature Extraction</h3>
-        <div class="checkbox-group">
-          <label class="checkbox-wrapper">
-            <input type="checkbox" id="useTF" name="feature">
-            <span class="checkmark"></span>
-            Term Frequency (TF)
-          </label>
-          <label class="checkbox-wrapper">
-            <input type="checkbox" id="useTFIDF" name="feature">
-            <span class="checkmark"></span>
-            TF-IDF
-          </label>
-          <label class="checkbox-wrapper">
-            <input type="checkbox" id="useWord2Vec" name="feature">
-            <span class="checkmark"></span>
-            Word2Vec
-          </label>
+        <label class="field-label" for="featureMethod">Method</label>
+        <select id="featureMethod" class="control-select">
+          <option value="">Not selected</option>
+          <option value="useTF">Term Frequency (TF)</option>
+          <option value="useTFIDF">TF-IDF</option>
+          <option value="useWord2Vec">Word2Vec</option>
+        </select>
+        <div class="checkbox-group" hidden>
+          <input type="checkbox" id="useTF" name="feature">
+          <input type="checkbox" id="useTFIDF" name="feature">
+          <input type="checkbox" id="useWord2Vec" name="feature">
         </div>
-        <div class="info-text">Note: Only one feature extraction method can be used at a time</div>
       </div>
 
       <div class="control-section" id="normalizationSection">
         <h3>Text Normalization</h3>
-        <div class="info-text" id="normalizationDisabledMessage" style="color: #999; font-style: italic;">
-            Available only for TF and TF-IDF feature extraction methods
+        <div class="info-text" id="normalizationDisabledMessage" style="font-style: italic;">
+          Available only for TF and TF-IDF feature extraction methods
         </div>
-        <div class="checkbox-group" id="normalizationCheckboxes" style="display: none;">
-            <label class="checkbox-wrapper">
-                <input type="checkbox" id="useStemming" name="normalization">
-                <span class="checkmark"></span>
-                Apply Stemming
-            </label>
-            <label class="checkbox-wrapper">
-                <input type="checkbox" id="useLemmatization" name="normalization">
-                <span class="checkmark"></span>
-                Apply Lemmatization
-            </label>
+        <div id="normalizationCheckboxes" style="display: none;">
+          <label class="field-label" for="normalizationMethod">Method</label>
+          <select id="normalizationMethod" class="control-select">
+            <option value="">None</option>
+            <option value="useStemming">Stemming</option>
+            <option value="useLemmatization">Lemmatization</option>
+          </select>
+          <div hidden>
+            <input type="checkbox" id="useStemming" name="normalization">
+            <input type="checkbox" id="useLemmatization" name="normalization">
+          </div>
         </div>
-        <div class="info-text" id="normalizationNote" style="display: none;">
-            Note: Stemming and Lemmatization cannot be used together
-        </div>
-    </div>
+      </div>
 
       <!-- Class Imbalance Section -->
       <div class="control-section">
         <h3>Class Imbalance Handling</h3>
-        <div class="checkbox-group">
-          <label class="checkbox-wrapper">
-            <input type="checkbox" id="useSMOTE" name="imbalance">
-            <span class="checkmark"></span>
-            SMOTE (Synthetic Minority Over-sampling)
-          </label>
-          <label class="checkbox-wrapper">
-            <input type="checkbox" id="useOversampling" name="imbalance">
-            <span class="checkmark"></span>
-            Random Oversampling
-          </label>
-          <label class="checkbox-wrapper">
-            <input type="checkbox" id="useUndersampling" name="imbalance">
-            <span class="checkmark"></span>
-            Random Undersampling
-          </label>
+        <label class="field-label" for="imbalanceMethod">Method</label>
+        <select id="imbalanceMethod" class="control-select">
+          <option value="">None</option>
+          <option value="useSMOTE">SMOTE (synthetic minority over-sampling)</option>
+          <option value="useOversampling">Random oversampling</option>
+          <option value="useUndersampling">Random undersampling</option>
+        </select>
+        <div class="checkbox-group" hidden>
+          <input type="checkbox" id="useSMOTE" name="imbalance">
+          <input type="checkbox" id="useOversampling" name="imbalance">
+          <input type="checkbox" id="useUndersampling" name="imbalance">
         </div>
-        <div class="info-text">Note: Only one class imbalance method can be applied at a time</div>
       </div>
 
-      <!-- Vectorization Section -->
       <div class="control-section">
         <h3>Vectorization</h3>
         <div class="vector-controls">

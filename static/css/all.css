@@ -5925,3 +5925,23 @@ input[type="file"] { width: 100%; }
   .sentiment-filter-wrap { width: 100%; }
   .sentiment-filter-wrap select { width: 100%; }
 }
+
+/* Single-choice controls. These settings allow one option each, so they are
+   dropdowns rather than checkbox groups that had to explain the rule in a
+   note underneath and let it be broken first. */
+.field-label {
+  display: block;
+  font-size: 12px;
+  color: #5a6169;
+  margin-bottom: 4px;
+}
+.control-select {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 14px;
+  color: #1a1d21;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.control-select:focus { border-color: #2d6ca8; }
