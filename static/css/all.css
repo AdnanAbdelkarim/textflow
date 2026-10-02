@@ -5945,3 +5945,17 @@ input[type="file"] { width: 100%; }
   border-radius: 8px;
 }
 .control-select:focus { border-color: #2d6ca8; }
+
+/* The hidden attribute loses to any display rule set on the same element,
+   and .checkbox-group sets display:flex. The mirrored checkboxes behind the
+   dropdowns were therefore still drawn. */
+[hidden] { display: none !important; }
+
+/* The action row belongs to the whole set of panels, not to one column of
+   the grid, and should not stretch to the height of its row. */
+.preprocessing-controls > .action-buttons {
+  grid-column: 1 / -1;
+  align-self: start;
+  display: flex;
+  gap: var(--space-sm);
+}
