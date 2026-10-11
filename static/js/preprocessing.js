@@ -910,6 +910,20 @@ class PreprocessingUI {
             await new Promise(r => setTimeout(r, 400));
             hideLoadingBar();
 
+            // Record that preprocessing has been applied as soon as it has,
+            // rather than waiting for the Proceed button further down the
+            // page. Reaching Predictive Modelling through the tab bar is at
+            // least as natural as scrolling to that button, and doing so
+            // discarded the settings silently: the tab reported that no
+            // preprocessing had been done and refused to train.
+            try {
+                sessionStorage.setItem("preprocessingApplied", "true");
+                sessionStorage.setItem("preprocessingSettings",
+                    JSON.stringify(this.preprocessor.currentSettings));
+            } catch (e) {
+                console.warn("Could not record preprocessing state:", e);
+            }
+
             this.displayResults(results);
 
         } catch (error) {
