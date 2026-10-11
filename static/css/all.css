@@ -5458,11 +5458,23 @@ p { margin-bottom: var(--space-sm); }
    halves the height again. Each falls back to one column on a narrow screen.
    --------------------------------------------------------------------------- */
 
+/* The track count is stated rather than auto-fitted. A child spanning
+   grid-column 1 / -1, which the preview panel does, cannot be resolved
+   against an auto-fitted number of tracks, and the grid collapses to a
+   single column: the panels stacked vertically down the page and then
+   appeared to jump into place as later content changed the layout. */
 .preprocessing-controls {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-md);
   align-items: start;
+}
+
+@media (max-width: 1080px) {
+  .preprocessing-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .preprocessing-controls { grid-template-columns: minmax(0, 1fr); }
 }
 .preprocessing-controls .control-section { margin-bottom: 0; padding: var(--space-md); }
 
@@ -5959,3 +5971,8 @@ input[type="file"] { width: 100%; }
   display: flex;
   gap: var(--space-sm);
 }
+
+/* The Zipf legend sits over the plot it explains, so it folds away. */
+.zipf-legend-dom > summary { user-select: none; }
+.zipf-legend-dom:not([open]) { padding-bottom: 6px; }
+.zipf-legend-dom[open] > summary { margin-bottom: 6px; }

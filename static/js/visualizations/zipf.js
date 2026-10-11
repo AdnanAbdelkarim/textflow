@@ -337,12 +337,26 @@
       }
       legendContainerEl.querySelectorAll('.zipf-legend-dom').forEach(n => n.remove());
   
-      const legend = document.createElement('div');
+      // The legend is wide enough to hide the curve it describes, so it
+      // collapses to its heading. It opens by default the first time, since a
+      // reader meeting the chart needs the explanation, and remembers the
+      // choice afterwards.
+      const legend = document.createElement('details');
       legend.className = 'zipf-legend-dom';
+      let legendOpen = true;
+      try {
+        const stored = sessionStorage.getItem('zipfLegendOpen');
+        if (stored !== null) legendOpen = stored === 'true';
+      } catch (e) { /* default stands */ }
+      legend.open = legendOpen;
+      legend.addEventListener('toggle', () => {
+        try { sessionStorage.setItem('zipfLegendOpen', String(legend.open)); }
+        catch (e) { /* nothing to do */ }
+      });
       Object.assign(legend.style, {
         position: 'absolute', top: '6px', right: '8px', maxWidth: '560px',
-        background: 'rgba(255,255,255,0.95)', border: '1px dashed #a7aeb6',
-        borderRadius: '8px', padding: '10px 12px', fontSize: '12px',
+        background: 'rgba(255,255,255,0.96)', border: '1px dashed #a7aeb6',
+        borderRadius: '8px', padding: '8px 12px', fontSize: '12px',
         lineHeight: '1.35', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', zIndex: 10
       });
   
@@ -358,7 +372,8 @@
       const k90    = rankAtCoverage(90).toLocaleString();
   
       legend.innerHTML = `
-        <div style="font-weight:600;margin-bottom:6px;">How to read this chart</div>
+        <summary style="font-weight:600;cursor:pointer;list-style:revert;
+                        outline-offset:2px;">How to read this chart</summary>
         <div style="display:flex;align-items:center;gap:8px;margin:4px 0;">
           <span style="width:36px;height:0;border-top:3px solid #1e90ff;display:inline-block;"></span>
           <span><b>Blue line</b>: empirical log-log curve of word frequency vs. rank.</span>
