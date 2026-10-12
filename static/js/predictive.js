@@ -151,11 +151,19 @@ function getMethodsString(settings) {
   return methods.join(', ') || 'Raw Text';
 }
 
-function initializeEventListeners() {
+// Both this and the DOMContentLoaded fallback below reach the Run button.
+// Binding it twice ran every training job twice and left the button reading
+// "Running Models..." for good, because the second call captured the label the
+// first had already changed.
+function bindRunButton() {
   const runBtn = document.getElementById("runModel");
-  if (runBtn) {
-    runBtn.addEventListener("click", runSelectedModels);
-  }
+  if (!runBtn || runBtn.dataset.runBound === "true") return;
+  runBtn.dataset.runBound = "true";
+  runBtn.addEventListener("click", runSelectedModels);
+}
+
+function initializeEventListeners() {
+  bindRunButton();
 
   document.querySelectorAll('.checkbox-card input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', (e) => {
@@ -232,10 +240,14 @@ function showPreprocessingRequiredModal() {
   document.addEventListener('keydown', handleEscape);
 }
 
+const RUN_BUTTON_LABEL = '<span class="button-icon"></span> Run Selected Models';
+
 async function runSelectedModels() {
   const runBtn = document.getElementById("runModel");
-  const originalBtnText = runBtn.innerHTML;
-  
+  // A fixed label, not whatever the button happens to read now: restoring the
+  // captured text leaves "Running Models..." on screen if a run overlaps.
+  if (runBtn.disabled) return;
+
   try {
     runBtn.disabled = true;
     runBtn.innerHTML = '<span class="button-icon"></span> Running Models...';
@@ -273,7 +285,7 @@ async function runSelectedModels() {
     showNotification('Error running models: ' + error.message, 'error');
   } finally {
     runBtn.disabled = false;
-    runBtn.innerHTML = originalBtnText;
+    runBtn.innerHTML = RUN_BUTTON_LABEL;
   }
 }
 
@@ -1873,12 +1885,7 @@ document.addEventListener('DOMContentLoaded', function() {
   expandSection('accuracy');
   
   // Fallback binding for pages where the delegated handler is not installed.
-  const runBtn = document.getElementById("runModel");
-  if (runBtn) {
-    runBtn.addEventListener("click", async function() {
-      await runSelectedModels();
-    });
-  }
+  bindRunButton();
 
   const testSizeSlider = document.getElementById('testSize');
   const testSizeValue = document.getElementById('testSizeValue');
