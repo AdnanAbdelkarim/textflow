@@ -95,9 +95,13 @@
   
         const vocabularySize = freq.length;
         const fitEndRank = Math.min(5000, vocabularySize);
+        // Fitting from a fixed rank 50 is meaningless on a small vocabulary:
+        // with sixty types the window held only the last ten points, so the
+        // reported slope described the tail rather than the distribution.
+        const fitStartRank = Math.min(50, Math.max(2, Math.round(vocabularySize / 20)));
   
         const drawOpts = {
-          fitStartRank: 50, fitEndRank, showTopDots: true, coverageSteps: [50, 80, 90]
+          fitStartRank, fitEndRank, showTopDots: true, coverageSteps: [50, 80, 90]
         };
 
         const measuredWidth = plotWrapper.getBoundingClientRect().width
@@ -205,14 +209,14 @@
         .attr('x', width / 2).attr('y', height + 38)
         .attr('text-anchor', 'middle').attr('font-size', 18)
         .attr('font-weight', 'bold').attr('fill', '#000')
-        .text('Log(Rank)');
+        .text('Rank (log scale)');
   
       g.append('text')
         .attr('transform', 'rotate(-90)')
         .attr('x', -height / 2).attr('y', -48)
         .attr('text-anchor', 'middle').attr('font-size', 18)
         .attr('font-weight', 'bold').attr('fill', '#000')
-        .text('Log(Frequency)');
+        .text('Frequency (log scale)');
   
       const line = d3.line().x(d => x(d.rank)).y(d => y(d.freq));
       g.append('path').datum(data).attr('fill', 'none').attr('stroke', '#1e90ff')
