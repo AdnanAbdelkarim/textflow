@@ -185,7 +185,12 @@
       const width  = containerWidth - margin.left - margin.right - 60;
       const height = 430 - margin.top - margin.bottom;
   
-      const svg = root.append('svg')
+      // Chart and legend sit side by side: under the plot the legend fell
+      // below the fold on a laptop screen, and over the plot it covered the
+      // curve. The row wraps on a narrow window.
+      const row = root.append('div').attr('class', 'zipf-row');
+
+      const svg = row.append('svg')
         .attr('width', '100%')
         .attr('height', height + margin.top + margin.bottom)
         .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
@@ -334,12 +339,11 @@
         })
         .on('mouseleave', () => tip.style('opacity', 0));
   
-      // DOM legend
-      const legendContainerEl = containerElement.parentElement || containerElement;
-      if (getComputedStyle(legendContainerEl).position === 'static') {
-        legendContainerEl.style.position = 'relative';
-      }
-      legendContainerEl.querySelectorAll('.zipf-legend-dom').forEach(n => n.remove());
+      // DOM legend, in the same row as the chart it explains.
+      const legendContainerEl = row.node();
+      containerElement.querySelectorAll('.zipf-legend-dom').forEach(n => n.remove());
+      const outer = containerElement.parentElement;
+      if (outer) outer.querySelectorAll('.zipf-legend-dom').forEach(n => n.remove());
   
       // The legend is wide enough to hide the curve it describes, so it
       // collapses to its heading. It opens by default the first time, since a
@@ -357,10 +361,8 @@
         try { sessionStorage.setItem('zipfLegendOpen', String(legend.open)); }
         catch (e) { /* nothing to do */ }
       });
-      // Floating over the plot, this box covered the middle of the curve,
-      // which is the part worth looking at. It sits under the chart instead.
       Object.assign(legend.style, {
-        position: 'static', margin: '10px 0 0', maxWidth: '100%',
+        position: 'static', margin: '0',
         background: 'var(--surface-2, #f7f9fc)', border: '1px dashed #a7aeb6',
         borderRadius: '8px', padding: '8px 12px', fontSize: '12px',
         lineHeight: '1.35'

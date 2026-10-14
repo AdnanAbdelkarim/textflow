@@ -249,19 +249,30 @@ def api_cooccurrence():
         # -- Step 4: Co-occurrence via sparse matrix multiplication --------
         cooc = (X_final.T @ X_final).tocoo()
 
-        edges = []
-        for i, j, v in zip(cooc.row, cooc.col, cooc.data):
-            if i >= j:
-                continue
-            if v >= min_co:
-                edges.append((str(final_terms[i]), str(final_terms[j]), int(v)))
+        pairs = [
+            (str(final_terms[i]), str(final_terms[j]), int(v))
+            for i, j, v in zip(cooc.row, cooc.col, cooc.data)
+            if i < j
+        ]
 
-        # Fallback for sparse classes: retry with min_co=1
-        if not edges:
-            return jsonify({"nodes": [], "links": []})
+        edges = [e for e in pairs if e[2] >= min_co]
+
+        # A threshold that suits one corpus empties another: ten
+        # co-occurrences is nothing in a large collection and unreachable in a
+        # small one. Rather than hand back an empty chart, drop to the highest
+        # threshold this corpus can actually meet and say which one was used.
+        min_co_used = min_co
+        if not edges and pairs:
+            reachable = max(v for _, _, v in pairs)
+            min_co_used = max(2, min(min_co, reachable))
+            edges = [e for e in pairs if e[2] >= min_co_used]
+            if not edges:
+                min_co_used = 1
+                edges = pairs
 
         if not edges:
-            return jsonify({"nodes": [], "links": []})
+            return jsonify({"nodes": [], "links": [],
+                            "minCooccurrenceUsed": min_co_used})
 
         # -- Step 5: Top-N node selection - non-stopwords and stopwords separately -
         # Non-stopwords always get their top-N slots.
@@ -288,13 +299,15 @@ def api_cooccurrence():
 
         edges = [(a, b, c) for a, b, c in edges if a in keep and b in keep]
         if not edges:
-            return jsonify({"nodes": [], "links": []})
+            return jsonify({"nodes": [], "links": [],
+                            "minCooccurrenceUsed": min_co_used})
 
         node_ids = sorted({w for a, b, _ in edges for w in (a, b)})
         nodes_out = [{"id": w} for w in node_ids]
         links_out = [{"source": a, "target": b, "value": c} for a, b, c in edges]
 
-        return jsonify({"nodes": nodes_out, "links": links_out})
+        return jsonify({"nodes": nodes_out, "links": links_out,
+                        "minCooccurrenceUsed": min_co_used})
 
     except Exception as e:
         logging.exception("api_cooccurrence failed")

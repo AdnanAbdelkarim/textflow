@@ -112,6 +112,11 @@
         }
   
         lastNetworkCall = { className, timestamp: new Date().toISOString(), stack: new Error().stack };
+
+        // The server lowers the threshold when the corpus cannot meet the one
+        // in the box. Say so, rather than show a graph that quietly disagrees
+        // with the number on screen.
+        notifyThreshold(net.minCooccurrenceUsed, payload.minCooccurrence);
   
         if (className) {
           renderKeywordNetworkForClass(net, className);
@@ -182,6 +187,23 @@
     }
   
     /**
+     * Tell the reader when the effective threshold is not the one they asked
+     * for, and clear the notice again once it is.
+     */
+    function notifyThreshold(used, asked) {
+      const el = document.getElementById('networkThresholdNote');
+      if (!el) return;
+      if (Number.isFinite(used) && Number.isFinite(asked) && used < asked) {
+        el.textContent = `No pair of terms co-occurs in ${asked} documents, ` +
+                         `so the network is drawn at ${used}.`;
+        el.hidden = false;
+      } else {
+        el.textContent = '';
+        el.hidden = true;
+      }
+    }
+
+    /**
      * Core D3 force-directed graph renderer.
      */
     function renderKeywordNetwork(graph, containerId) {
@@ -201,7 +223,8 @@
         const h = +viewBox[3];
         svg.append('text').attr('x', w / 2).attr('y', h / 2)
            .attr('text-anchor', 'middle').style('font-size', '16px').style('fill', 'crimson')
-           .text('No results for current settings.');
+           .text('No pairs of terms occur together often enough to draw. '
+                 + 'Lower the minimum co-occurrence.');
         return;
       }
   

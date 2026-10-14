@@ -5976,3 +5976,27 @@ input[type="file"] { width: 100%; }
 .zipf-legend-dom > summary { user-select: none; }
 .zipf-legend-dom:not([open]) { padding-bottom: 6px; }
 .zipf-legend-dom[open] > summary { margin-bottom: 6px; }
+
+/* Shown when the co-occurrence threshold a corpus can meet is lower than the
+   one requested, so the chart and the control agree with each other. */
+.hint-note {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted, #5a6169);
+  flex-basis: 100%;
+}
+.hint-note[hidden] { display: none !important; }
+
+/* The Zipf chart and its legend share a row: under the plot the legend fell
+   below the fold, and over the plot it covered the curve. */
+.zipf-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.zipf-row > svg { flex: 1 1 620px; min-width: 0; }
+.zipf-row > .zipf-legend-dom { flex: 1 1 320px; max-width: 420px; }
+@media (max-width: 1100px) {
+  .zipf-row > .zipf-legend-dom { max-width: 100%; }
+}
