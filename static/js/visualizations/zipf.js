@@ -357,11 +357,13 @@
         try { sessionStorage.setItem('zipfLegendOpen', String(legend.open)); }
         catch (e) { /* nothing to do */ }
       });
+      // Floating over the plot, this box covered the middle of the curve,
+      // which is the part worth looking at. It sits under the chart instead.
       Object.assign(legend.style, {
-        position: 'absolute', top: '6px', right: '8px', maxWidth: '560px',
-        background: 'rgba(255,255,255,0.96)', border: '1px dashed #a7aeb6',
+        position: 'static', margin: '10px 0 0', maxWidth: '100%',
+        background: 'var(--surface-2, #f7f9fc)', border: '1px dashed #a7aeb6',
         borderRadius: '8px', padding: '8px 12px', fontSize: '12px',
-        lineHeight: '1.35', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', zIndex: 10
+        lineHeight: '1.35'
       });
   
       const tokens = totalTokens.toLocaleString();
